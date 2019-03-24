@@ -67,8 +67,8 @@ begin
         BCDin <= "0001010";
         
         if( BTNC = '0' or
-          (unsigned(SW(8 downto 7 )) = 6 and SW(6) = '0') or
-          (unsigned(SW(8 downto 7 )) = 7 and SW(6) = '0'))
+          (unsigned(SW(8 downto 7 )) = 2 and SW(6) = '0') or
+          (unsigned(SW(8 downto 7 )) = 3 and SW(6) = '0'))
         then
             -- Check if the first display is on and the binary input is below 100
            if (unsigned(SW(8 downto 7 )) = 3) and unsigned(SW(6 downto 0)) < 100
