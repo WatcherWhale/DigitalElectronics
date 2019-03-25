@@ -66,6 +66,9 @@ begin
         -- Making sure BCDin gets a value
         BCDin <= "0001010";
         
+        -- Check if we need to invert the input
+        -- This is true when the Button is not pressed
+        -- Or when the last bit is '0'
         if( BTNC = '0' or
           (unsigned(SW(8 downto 7 )) = 2 and SW(6) = '0') or
           (unsigned(SW(8 downto 7 )) = 3 and SW(6) = '0'))
@@ -96,20 +99,25 @@ begin
                 BCDin <= unsigned(SW(15 downto 9)) / 10;
            end if;
        else
+           -- Check which display we need to use
            if (unsigned(SW(8 downto 7)) = 3)
            then
+                -- Invert the input add 1 and get the units
                 BCDin <= (unsigned(not SW(6 downto 0)) + 1) rem 10;
                 
             elsif(unsigned(SW(8 downto 7)) = 2)
             then
+                -- Invert the input add 1 and get the dozens
                 BCDin <= (unsigned(not SW(6 downto 0)) + 1) / 10;
                 
             elsif (unsigned(SW(8 downto 7)) = 1)
             then
+                -- Invert the input add 1 and get the units
                 BCDin <= (unsigned(not SW(15 downto 9)) + 1) rem 10;
                 
             elsif(unsigned(SW(8 downto 7)) = 0)
             then
+                -- Invert the input add 1 and get the dozens
                 BCDin <= (unsigned(not SW(15 downto 9)) + 1) / 10;  
             end if;
        end if;
