@@ -46,10 +46,7 @@ begin
     
     -- Check if the switches have been updated
     pInputChanged : process (SW,BTNC)
-    begin  
-        -- Active High
-        DP <= not BTNC;
-        
+    begin       
         -- Check if the 7 segment displays should be on or off 
         -- These need to be active low
         AN(7) <= not(not(SW(7)) and not(SW(8) ) );  -- 0 & 0
@@ -66,12 +63,16 @@ begin
         -- Making sure BCDin gets a value
         BCDin <= "0001010";
         
+        DP <= '1';
+        
         -- Check if we need to invert the input
         -- This is true when the Button is not pressed
         -- Or when the last bit is '0'
         if( BTNC = '0' or
           (unsigned(SW(8 downto 7 )) = 2 and SW(6) = '0') or
-          (unsigned(SW(8 downto 7 )) = 3 and SW(6) = '0'))
+          (unsigned(SW(8 downto 7 )) = 3 and SW(6) = '0') or
+          (unsigned(SW(8 downto 7 )) = 0 and SW(15) = '0') or
+          (unsigned(SW(8 downto 7 )) = 1 and SW(15) = '0'))
         then
             -- Check if the first display is on and the binary input is below 100
            if (unsigned(SW(8 downto 7 )) = 3) and unsigned(SW(6 downto 0)) < 100
@@ -99,6 +100,9 @@ begin
                 BCDin <= unsigned(SW(15 downto 9)) / 10;
            end if;
        else
+           
+           DP <= '0';
+           
            -- Check which display we need to use
            if (unsigned(SW(8 downto 7)) = 3)
            then
