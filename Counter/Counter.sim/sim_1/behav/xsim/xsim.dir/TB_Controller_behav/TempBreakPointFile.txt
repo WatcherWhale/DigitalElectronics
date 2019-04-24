@@ -1,0 +1,2 @@
+Breakpoint File Version 1.0
+25 true C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Counter.vhd

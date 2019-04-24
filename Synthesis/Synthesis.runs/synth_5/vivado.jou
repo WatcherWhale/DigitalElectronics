@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Apr 19 16:05:27 2019
+# Process ID: 7780
+# Current directory: C:/Projects/DigitalElectronics/Synthesis/Synthesis.runs/synth_5
+# Command line: vivado.exe -log synthesise.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source synthesise.tcl
+# Log file: C:/Projects/DigitalElectronics/Synthesis/Synthesis.runs/synth_5/synthesise.vds
+# Journal file: C:/Projects/DigitalElectronics/Synthesis/Synthesis.runs/synth_5\vivado.jou
+#-----------------------------------------------------------
+source synthesise.tcl -notrace

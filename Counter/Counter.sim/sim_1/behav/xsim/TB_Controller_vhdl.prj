@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd" \
+"../../../../Counter.srcs/sources_1/new/Controller.vhd" \
+"../../../../Counter.srcs/sources_1/new/Counter.vhd" \
+"../../../../Counter.srcs/sources_1/new/Tick.vhd" \
+"../../../../Counter.srcs/sim_1/new/TB_Controller.vhd" \
+
+# Do not sort compile order
+nosort
