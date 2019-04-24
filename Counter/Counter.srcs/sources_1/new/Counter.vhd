@@ -14,7 +14,7 @@ architecture Behavioral of Counter is
     
 begin
 
-    count : process(CLK)
+    count : process(CLK,counter)
     begin
         if rising_edge(CLK)
         then

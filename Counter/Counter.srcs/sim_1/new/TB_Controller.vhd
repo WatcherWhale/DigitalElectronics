@@ -22,15 +22,16 @@ architecture Behavioral of TB_Controller is
 
 begin
     
-    ctrl : controller
+    ctrl : Controller
         Generic map(g_max_count => 59)
-        Port map (CLK100MHZ => clock,
-        AN => AN,
-        C => C);
+        Port map (
+            CLK100MHZ => clock,
+            AN => AN,
+            C => C);
     
-    pStimuli: process
+    pStimuli : process
     begin
-        for I in 0 to 100000000
+        for I in 0 to 1000000000
         loop
             clock <= not clock;
             wait for 10ns;

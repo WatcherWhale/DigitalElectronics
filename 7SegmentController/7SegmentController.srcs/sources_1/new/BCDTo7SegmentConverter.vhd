@@ -6,13 +6,13 @@ use IEEE.numeric_std.all;
 
 entity BCDTo7SegmentConverter is
     Port ( BCD : in UNSIGNED(3 downto 0);
-           SEG : out std_logic_vector(6 downto 0));
+           SEG : out std_logic_vector(0 to 6));
 end BCDTo7SegmentConverter;
 
 architecture Behavioral of BCDTo7SegmentConverter is
     
     -- Create an array type
-    type tSeg is array(0 to 9) of std_logic_vector (6 downto 0);
+    type tSeg is array(0 to 9) of std_logic_vector (0 to 6);
     
     -- Create a constant array of the previously defined type
     -- This array contains the 7 Segment code for the corresponding index
@@ -34,10 +34,10 @@ begin
         then
             -- Convert the UNSIGNED BCD Code to an integer
             -- Take the element with index equals to the previous integer
-            SEG <= cSeg(TO_INTEGER(BCD));
+            SEG <= not cSeg(TO_INTEGER(BCD));
         else
             --If the BCD code is invalid return a E of error
-            SEG <= "1001111";
+            SEG <= not "1001111";
         end if;
     end process pBCD;
 end Behavioral;

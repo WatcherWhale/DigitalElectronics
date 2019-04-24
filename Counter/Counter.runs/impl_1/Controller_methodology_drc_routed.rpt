@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Apr 24 08:57:55 2019
+| Date         : Wed Apr 24 12:58:19 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Controller_methodology_drc_routed.rpt -pb Controller_methodology_drc_routed.pb -rpx Controller_methodology_drc_routed.rpx
 | Design       : Controller
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 13
+             Violations found: 24
 +-----------+----------+-----------------------------+------------+
 | Rule      | Severity | Description                 | Violations |
 +-----------+----------+-----------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell | 13         |
+| TIMING-17 | Warning  | Non-clocked sequential cell | 24         |
 +-----------+----------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -74,27 +74,82 @@ Related violations: <none>
 
 TIMING-17#9 Warning
 Non-clocked sequential cell  
-The clock pin generateCounters[1].cntr/counter_reg[1]/C is not reached by a timing clock
+The clock pin generateCounters[1].cntr/counter_reg[0]_rep__0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Warning
 Non-clocked sequential cell  
-The clock pin generateCounters[1].cntr/counter_reg[1]_rep/C is not reached by a timing clock
+The clock pin generateCounters[1].cntr/counter_reg[0]_rep__1/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#11 Warning
 Non-clocked sequential cell  
-The clock pin generateCounters[1].cntr/counter_reg[2]/C is not reached by a timing clock
+The clock pin generateCounters[1].cntr/counter_reg[0]_rep__2/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#12 Warning
 Non-clocked sequential cell  
-The clock pin generateCounters[1].cntr/counter_reg[2]_rep/C is not reached by a timing clock
+The clock pin generateCounters[1].cntr/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Warning
 Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[1]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[1]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[1]_rep__1/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[1]_rep__2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[1]_rep__3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[2]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Warning
+Non-clocked sequential cell  
 The clock pin generateCounters[1].cntr/counter_reg[2]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[2]_rep__1/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[2]_rep__2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#23 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[2]_rep__3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#24 Warning
+Non-clocked sequential cell  
+The clock pin generateCounters[1].cntr/counter_reg[2]_rep__4/C is not reached by a timing clock
 Related violations: <none>
 
 

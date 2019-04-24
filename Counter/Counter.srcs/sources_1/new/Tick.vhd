@@ -10,12 +10,12 @@ end Tick;
 
 architecture Behavioral of Tick is
     
-    signal counter : integer range 0 to 10000000/(2 * g_Freq);
+    signal counter : integer range 0 to 10000000/(2*g_Freq);
     signal CLK : std_logic := '0';    
     
 begin
     
-    baseClockTick : process(CLK_in)
+    baseClockTick : process(CLK_in,CLK)
     begin
     
         if rising_edge(CLK_in)
