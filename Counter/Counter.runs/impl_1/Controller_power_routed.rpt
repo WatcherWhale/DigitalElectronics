@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Apr 24 12:58:20 2019
+| Date             : Fri Apr 26 12:15:47 2019
 | Host             : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command          : report_power -file Controller_power_routed.rpt -pb Controller_power_summary_routed.pb -rpx Controller_power_routed.rpx
 | Design           : Controller
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.267        |
+| Total On-Chip Power (W)  | 0.281        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.170        |
+| Dynamic (W)              | 0.183        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.8         |
-| Junction Temperature (C) | 26.2         |
+| Max Ambient (C)          | 83.7         |
+| Junction Temperature (C) | 26.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |     0.032 |     4923 |       --- |             --- |
-|   LUT as Logic |     0.028 |     3620 |     63400 |            5.71 |
-|   CARRY4       |     0.004 |      933 |     15850 |            5.89 |
-|   Register     |    <0.001 |       62 |    126800 |            0.05 |
-|   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.027 |     4597 |       --- |             --- |
+| Slice Logic    |     0.027 |     2358 |       --- |             --- |
+|   LUT as Logic |     0.024 |     1626 |     63400 |            2.56 |
+|   CARRY4       |     0.003 |      418 |     15850 |            2.64 |
+|   Register     |    <0.001 |       74 |    126800 |            0.06 |
+|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
+|   Others       |     0.000 |       12 |       --- |             --- |
+| Signals        |     0.022 |     2035 |       --- |             --- |
 | MMCM           |     0.106 |        1 |         6 |           16.67 |
-| DSPs           |     0.003 |        4 |       240 |            1.67 |
-| I/O            |    <0.001 |       16 |       210 |            7.62 |
+| I/O            |     0.028 |       16 |       210 |            7.62 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.267 |          |           |                 |
+| Total          |     0.281 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.078 |       0.063 |      0.015 |
-| Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |
-| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
+| Vccint    |       1.000 |     0.064 |       0.049 |      0.015 |
+| Vccaux    |       1.800 |     0.078 |       0.060 |      0.018 |
+| Vcco33    |       3.300 |     0.012 |       0.008 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -144,9 +144,9 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| Controller                 |     0.170 |
-|   generateCounters[0].cntr |     0.006 |
-|   generateCounters[1].cntr |     0.050 |
+| Controller                 |     0.183 |
+|   generateCounters[0].cntr |     0.008 |
+|   generateCounters[1].cntr |     0.034 |
 |   wiz                      |     0.107 |
 |     inst                   |     0.107 |
 +----------------------------+-----------+

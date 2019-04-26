@@ -1,3 +1,4 @@
+-- Created by Mathias Maes
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -101,14 +102,10 @@ begin
             elsif counters(1) = 7
             then
                 -- Only take the last digit
-                BCD <= to_unsigned(counters(0) / powerTable(7),4);
+                BCD <= to_unsigned(counters(0) / powerTable(0),4);
             else
                 -- Take the correct digit
-                -- BCD = X rem 10^(Y+1) - X rem 10^(Y) WITH X = counters(0) AND Y = counters(1)
-                BCD <= to_unsigned(
-                ((counters(0) rem powerTable(counters(1) + 1)) * powerTable(counters(1) + 1)
-                    - (counters(0) rem powerTable(counters(1))) * powerTable(counters(1)))
-                    /powerTable(counters(1)), 4);
+                BCD <= to_unsigned( (counters(0)/powerTable(7-counters(1)) rem 10 ) , 4);
             end if;
         end if;
     end process;
