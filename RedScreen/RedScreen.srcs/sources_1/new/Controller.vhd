@@ -1,43 +1,30 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 26.04.2019 12:17:45
--- Design Name: 
--- Module Name: Controller - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+use IEEE.NUMERIC_STD.ALL;
 
 entity Controller is
---  Port ( );
+ Port (
+    CLK100MHZ : in std_logic);
 end Controller;
 
 architecture Behavioral of Controller is
+    
+    -- Signals
+    signal pixelClock : std_logic;
+    
+    -- Components
+    component clk_wiz_0
+    Port(
+      pixelClock : out std_logic;
+      CLK100MHZ  : in  std_logic);
+    end component;
 
 begin
-
+    
+    clk : clk_wiz_0
+    Port map(
+        pixelClock => pixelClock,
+        CLK100MHZ => CLK100MHZ
+        );
 
 end Behavioral;
