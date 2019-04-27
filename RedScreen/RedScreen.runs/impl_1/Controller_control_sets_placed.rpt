@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Apr 27 12:52:27 2019
+| Date         : Sat Apr 27 13:41:53 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Controller_control_sets_placed.rpt
 | Design       : Controller
@@ -60,10 +60,10 @@ Table of Contents
 +----------------------+---------------+-----------------------+------------------+----------------+
 |     Clock Signal     | Enable Signal |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
 +----------------------+---------------+-----------------------+------------------+----------------+
-|  VSync/HS/can_writeH |               | VSync/VSync_i_1_n_0   |                1 |              1 |
 |  clk/inst/pixelClock |               | VSync/HS/Sync_i_1_n_0 |                1 |              1 |
-|  VSync/HS/can_writeH |               |                       |                4 |             11 |
+|  VSync/HS/can_writeH |               | VSync/VSync_i_1_n_0   |                1 |              1 |
 |  clk/inst/pixelClock |               |                       |                2 |             11 |
+|  VSync/HS/can_writeH |               |                       |                4 |             11 |
 +----------------------+---------------+-----------------------+------------------+----------------+
 
 

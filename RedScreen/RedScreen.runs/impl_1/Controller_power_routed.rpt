@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sat Apr 27 12:52:56 2019
+| Date             : Sat Apr 27 13:42:22 2019
 | Host             : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command          : report_power -file Controller_power_routed.rpt -pb Controller_power_summary_routed.pb -rpx Controller_power_routed.rpx
 | Design           : Controller
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.216        |
+| Total On-Chip Power (W)  | 0.217        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.118        |
+| Dynamic (W)              | 0.119        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |       65 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       25 |     63400 |            0.04 |
+| Slice Logic    |    <0.001 |       75 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       30 |     63400 |            0.05 |
 |   Register     |    <0.001 |       24 |    126800 |            0.02 |
-|   Others       |     0.000 |        7 |       --- |             --- |
-| Signals        |    <0.001 |       37 |       --- |             --- |
+|   Others       |     0.000 |        6 |       --- |             --- |
+| Signals        |    <0.001 |       60 |       --- |             --- |
 | MMCM           |     0.115 |        1 |         6 |           16.67 |
-| I/O            |     0.003 |       15 |       210 |            7.14 |
+| I/O            |     0.004 |       27 |       210 |           12.86 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.216 |          |           |                 |
+| Total          |     0.217 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -90,17 +90,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                        | Action                                                                                                             |
-+-----------------------------+------------+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                               |                                                                                                                    |
-| Clock nodes activity        | Low        | User specified less than 75% of clocks         | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
-| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                                    |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
-| Device models               | High       | Device models are Production                   |                                                                                                                    |
-|                             |            |                                                |                                                                                                                    |
-| Overall confidence level    | Low        |                                                |                                                                                                                    |
-+-----------------------------+------------+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -142,7 +142,7 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| Controller |     0.118 |
+| Controller |     0.119 |
 |   clk      |     0.115 |
 |     inst   |     0.115 |
 +------------+-----------+

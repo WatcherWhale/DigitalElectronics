@@ -21,9 +21,6 @@ architecture Behavioral of HPulse is
     
 begin
 
-    -- Vragen:
-    -- Waar beginnen de signalen? back porch in  begin meetellen of niet
-    -- If statements in stappen of allemaal teglijk?
     tick : process(Clock_in,HCounter)
     begin
         if(rising_edge(Clock_in))

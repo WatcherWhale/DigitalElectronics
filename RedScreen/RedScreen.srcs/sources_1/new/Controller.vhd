@@ -66,7 +66,7 @@ begin
         
         if(Write = '1')
         then
-            VGA_B <= "1111";
+            VGA_R <= "1111";
         end if;
     end process;
     
