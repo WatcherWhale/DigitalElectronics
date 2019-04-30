@@ -24,18 +24,20 @@ end VPulse;
 architecture Behavioral of VPulse is
     
     -- Signals
-    signal can_writeH : std_logic;
-    signal can_writeV : std_logic;
+    signal can_writeH : std_logic := '0';
+    signal can_writeV : std_logic := '0';
     
-    signal VCounter : integer range 0 to g_visible + g_front + g_sync + g_back - 1;
-    
+    signal VCounter : integer range 0 to (g_visible + g_front + g_sync + g_back) := 0;
+    signal HCounter : integer;
+
     -- Components
     component HPulse
         Port(
         Clock_in  : in  std_logic;
         Can_write : out std_logic;
-        Xpos      : out integer range 0 to g_visible - 1;
-        Sync      : out std_logic);
+        Xpos      : out integer; --range 0 to g_visible - 1; Kijk of dit niet de reden was
+        Sync      : out std_logic;
+        HCounter_out  : out integer);
     end component;
 
 begin
@@ -44,42 +46,47 @@ begin
     Port map(Clock_in => pixelClock,
              Sync => HSync,
              xPos => xPos,
-             Can_write => can_writeH);
+             Can_write => can_writeH,
+             HCounter_out => HCounter);
      
-    onHPulse : process(can_writeH, VCounter)
-    begin
-        if(rising_edge(can_writeH))
+    onHPulse : process(pixelClock)
+    begin        
+        if(rising_edge(pixelClock))
         then
             can_writeV <= '0'; 
             VSync <= '0';
             yPos <= 0;
             
             -- Send pulses
-            if VCounter < g_visible
+            if VCounter <= g_visible
             then
                 can_writeV <= '1';
                 VSync <= '1';
                 yPos <= VCounter;
-            elsif VCounter < g_visible + g_front
+            elsif VCounter <= g_visible + g_front
             then
                 can_writeV <= '0';
                 VSync <= '1';
-            elsif VCounter < g_visible + g_front + g_sync
+            elsif VCounter <= g_visible + g_front + g_sync
             then
                 can_writeV <= '0';
                 VSync <= '0';
-            elsif VCounter < g_visible + g_front + g_sync + g_back
+            elsif VCounter <= g_visible + g_front + g_sync + g_back
             then
                 can_writeV <= '0';
                 VSync <= '1';
             end if;
             
-            -- Count
-            if VCounter = g_visible + g_front + g_sync + g_back - 1
-            then
-                VCounter <= 0;
-            else
-                VCounter <= VCounter + 1;
+            --Check if we can count
+            if can_writeH = '1' AND HCounter = 1 then
+                can_writeV <= '1';
+                -- Count
+                if VCounter >= g_visible + g_front + g_sync + g_back
+                then
+                    VCounter <= 0;
+                else
+                    VCounter <= VCounter + 1;
+                end if;
             end if;
         end if;
     end process;

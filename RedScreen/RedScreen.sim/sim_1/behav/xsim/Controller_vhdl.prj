@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../RedScreen.srcs/sources_1/new/HPulse.vhd" \
+"../../../../RedScreen.srcs/sources_1/new/VPulse.vhd" \
+"../../../../RedScreen.srcs/sources_1/new/Controller.vhd" \
+
+# Do not sort compile order
+nosort

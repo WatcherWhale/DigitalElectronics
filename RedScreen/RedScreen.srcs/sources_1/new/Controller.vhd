@@ -6,8 +6,8 @@ entity Controller is
  Port (
     CLK100MHZ : in std_logic;
     VGA_R : out std_logic_vector(3 downto 0);
-    VGA_G : out std_logic_vector(3 downto 0) := "0000";
-    VGA_B : out std_logic_vector(3 downto 0) := "0000";
+    VGA_G : out std_logic_vector(3 downto 0);
+    VGA_B : out std_logic_vector(3 downto 0);
     VGA_HS : out std_logic;
     VGA_VS : out std_logic
     );

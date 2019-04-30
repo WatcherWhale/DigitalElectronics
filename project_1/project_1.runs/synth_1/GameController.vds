@@ -1,0 +1,489 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Apr 30 15:36:38 2019
+# Process ID: 14712
+# Current directory: C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log GameController.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source GameController.tcl
+# Log file: C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/GameController.vds
+# Journal file: C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source GameController.tcl -notrace
+Command: synth_design -top GameController -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22036 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 410.160 ; gain = 100.297
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'GameController' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:30]
+INFO: [Synth 8-3491] module 'clockGenerator' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-14712-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:5' bound to instance 'clkgen' of component 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-14712-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'VPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:5' bound to instance 'VSync' of component 'VPulse' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'VPulse' [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
+	Parameter g_visible bound to: 480 - type: integer 
+	Parameter g_front bound to: 10 - type: integer 
+	Parameter g_back bound to: 33 - type: integer 
+	Parameter g_sync bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'HPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/HPulse.vhd:5' bound to instance 'HS' of component 'HPulse' [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'HPulse' [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/HPulse.vhd:18]
+	Parameter g_visible bound to: 640 - type: integer 
+	Parameter g_front bound to: 16 - type: integer 
+	Parameter g_sync bound to: 96 - type: integer 
+	Parameter g_back bound to: 48 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'HPulse' (1#1) [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/HPulse.vhd:18]
+WARNING: [Synth 8-549] port width mismatch for port 'Xpos': port width = 10, actual width = 9 [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:37]
+WARNING: [Synth 8-549] port width mismatch for port 'Xpos': port width = 9, actual width = 32 [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'VPulse' (2#1) [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
+	Parameter g_startX bound to: 20 - type: integer 
+	Parameter g_startY bound to: 30 - type: integer 
+INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player1' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:30]
+	Parameter g_startX bound to: 20 - type: integer 
+	Parameter g_startY bound to: 30 - type: integer 
+	Parameter g_fieldH bound to: 470 - type: integer 
+	Parameter g_screenH bound to: 480 - type: integer 
+	Parameter g_width bound to: 15 - type: integer 
+	Parameter g_height bound to: 50 - type: integer 
+	Parameter g_speed bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Player' (3#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:30]
+WARNING: [Synth 8-3848] Net C in module/entity GameController does not have driver. [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:11]
+WARNING: [Synth 8-3848] Net AN in module/entity GameController does not have driver. [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'GameController' (4#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:30]
+WARNING: [Synth 8-3917] design GameController has port VGA_G[3] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_G[2] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_G[1] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_G[0] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[3] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[2] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[1] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[0] driven by constant 0
+WARNING: [Synth 8-3331] design GameController has unconnected port C[0]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[1]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[2]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[3]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[4]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[5]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[6]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[7]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[6]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[5]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[4]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[3]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[2]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[1]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[0]
+WARNING: [Synth 8-3331] design GameController has unconnected port BTND
+WARNING: [Synth 8-3331] design GameController has unconnected port BTNL
+WARNING: [Synth 8-3331] design GameController has unconnected port BTNR
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 465.801 ; gain = 155.938
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 465.801 ; gain = 155.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 465.801 ; gain = 155.938
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/ip/clockGenerator/clockGenerator/clockGenerator_in_context.xdc] for cell 'clkgen'
+Finished Parsing XDC File [c:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/ip/clockGenerator/clockGenerator/clockGenerator_in_context.xdc] for cell 'clkgen'
+Parsing XDC File [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constrs_1/new/Nexys-A7-100t-Master.xdc]
+Finished Parsing XDC File [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constrs_1/new/Nexys-A7-100t-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constrs_1/new/Nexys-A7-100t-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/GameController_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/GameController_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 812.750 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 812.750 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 812.750 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 812.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 812.750 ; gain = 502.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 812.750 ; gain = 502.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/ip/clockGenerator/clockGenerator/clockGenerator_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/ip/clockGenerator/clockGenerator/clockGenerator_in_context.xdc, line 5).
+Applied set_property DONT_TOUCH = true for clkgen. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 812.750 ; gain = 502.887
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'Pos_reg[1]' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:77]
+WARNING: [Synth 8-327] inferring latch for variable 'Pos_reg[3]' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:77]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 812.750 ; gain = 502.887
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module GameController 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+Module HPulse 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module VPulse 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module Player 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design GameController has port VGA_G[3] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_G[2] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_G[1] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_G[0] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[3] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[2] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[1] driven by constant 0
+WARNING: [Synth 8-3917] design GameController has port VGA_B[0] driven by constant 0
+WARNING: [Synth 8-3331] design GameController has unconnected port C[0]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[1]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[2]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[3]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[4]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[5]
+WARNING: [Synth 8-3331] design GameController has unconnected port C[6]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[7]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[6]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[5]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[4]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[3]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[2]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[1]
+WARNING: [Synth 8-3331] design GameController has unconnected port AN[0]
+WARNING: [Synth 8-3331] design GameController has unconnected port BTND
+WARNING: [Synth 8-3331] design GameController has unconnected port BTNL
+WARNING: [Synth 8-3331] design GameController has unconnected port BTNR
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][31]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][30]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][29]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][28]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][27]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][26]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][25]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][24]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][23]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][22]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][21]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][20]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][19]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][18]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][17]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][16]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][15]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][14]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][13]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][12]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][11]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][10]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][9]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][8]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][7]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][6]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][5]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][4]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][3]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][2]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][1]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[1][0]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][31]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][30]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][29]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][28]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][27]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][26]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][25]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][24]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][23]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][22]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][21]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][20]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][19]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][18]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][17]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][16]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][15]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][14]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][13]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][12]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][11]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][10]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][9]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][8]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][7]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][6]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][5]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][4]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][3]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][2]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][1]) is unused and will be removed from module GameController.
+WARNING: [Synth 8-3332] Sequential element (Player1/Pos_reg[3][0]) is unused and will be removed from module GameController.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 812.750 ; gain = 502.887
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clkgen/CLKGame' to pin 'clkgen/bbstub_CLKGame/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clkgen/CLKPixel' to pin 'clkgen/bbstub_CLKPixel/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 812.750 ; gain = 502.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 824.063 ; gain = 514.199
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------+----------+
+|      |BlackBox name  |Instances |
++------+---------------+----------+
+|1     |clockGenerator |         1|
++------+---------------+----------+
+
+Report Cell Usage: 
++------+----------------------+------+
+|      |Cell                  |Count |
++------+----------------------+------+
+|1     |clockGenerator_bbox_0 |     1|
+|2     |CARRY4                |    40|
+|3     |LUT1                  |     9|
+|4     |LUT2                  |    74|
+|5     |LUT3                  |    40|
+|6     |LUT4                  |    24|
+|7     |LUT5                  |    49|
+|8     |LUT6                  |    50|
+|9     |FDRE                  |    31|
+|10    |FDSE                  |     2|
+|11    |OBUF                  |    14|
+|12    |OBUFT                 |    15|
++------+----------------------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   350|
+|2     |  VSync  |VPulse |   214|
+|3     |    HS   |HPulse |   185|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 92 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 825.938 ; gain = 169.125
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 825.938 ; gain = 516.074
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 825.938 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 122 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 825.938 ; gain = 527.535
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 825.938 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/GameController.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file GameController_utilization_synth.rpt -pb GameController_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 30 15:37:04 2019...

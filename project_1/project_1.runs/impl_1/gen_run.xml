@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1556631396">
+  <File Type="ROUTE-PWR" Name="GameController_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="GameController.tcl"/>
+  <File Type="BITSTR-BMM" Name="GameController_bd.bmm"/>
+  <File Type="ROUTE-PWR-SUM" Name="GameController_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="GameController_reports.tcl"/>
+  <File Type="OPT-DCP" Name="GameController_opt.dcp"/>
+  <File Type="OPT-DRC" Name="GameController_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="GameController.hwdef"/>
+  <File Type="PWROPT-DCP" Name="GameController_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="GameController_placed.dcp"/>
+  <File Type="PLACE-IO" Name="GameController_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="GameController_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="GameController_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="GameController_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="GameController_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="GameController.bgn"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="GameController_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="GameController.bin"/>
+  <File Type="PHYSOPT-DCP" Name="GameController_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="GameController.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="GameController_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="GameController_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="GameController_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="GameController_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="GameController_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="GameController_drc_routed.rpx"/>
+  <File Type="BITSTR-LTX" Name="GameController.ltx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="GameController_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="GameController.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="GameController_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="GameController_methodology_drc_routed.pb"/>
+  <File Type="BITSTR-SYSDEF" Name="GameController.sysdef"/>
+  <File Type="ROUTE-PWR-RPX" Name="GameController_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="GameController_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="GameController_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="GameController_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="GameController_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="GameController_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-CLK" Name="GameController_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="GameController_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="GameController_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="GameController_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="GameController_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="GameController_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="GameController.bit"/>
+  <File Type="BITSTR-RBT" Name="GameController.rbt"/>
+  <File Type="BITSTR-NKY" Name="GameController.nky"/>
+  <File Type="BG-DRC" Name="GameController.drc"/>
+  <File Type="RDI-RDI" Name="GameController.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../RedScreen/RedScreen.srcs/sources_1/new/HPulse.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Player.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/GameController.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Ball.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="GameController"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/Nexys-A7-100t-Master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clockGenerator"/>
+</GenRun>
