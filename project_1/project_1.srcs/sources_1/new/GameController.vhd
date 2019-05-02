@@ -131,21 +131,28 @@ begin
         if(Write = '1')
         then
             -- Player
-            --if x >= p1Pos(0) AND x <= p1Pos(2) AND y >= p1Pos(1) AND y <= p1Pos(3)
-            --then
-            --    VGA_R <= "1111";
-            --    VGA_G <= "1111";
-            --    VGA_B <= "1111";
-            --end if;
+            if x >= p1Pos(0) AND x <= p1Pos(2) AND y >= p1Pos(1) AND y <= p1Pos(3)
+            then
+                VGA_R <= "1111";
+                VGA_G <= "1111";
+                VGA_B <= "1111";
+            end if;
             
-            VGA_R <= std_logic_vector(to_unsigned((x*16)/640,4));
+            --VGA_R <= std_logic_vector(to_unsigned((x*16)/640,4));
                         
-            --if(9 <= y AND y <= 11) OR (480-11 <= y AND y <= 480 - 9) 
-            --then
-            --    VGA_R <= "1111";
-            --    VGA_G <= "1111";
-            --    VGA_B <= "1111";
-            --end if;
+            if(9 <= y AND y <= 11) OR (480-11 <= y AND y <= 480 - 9) 
+            then
+                VGA_R <= "1111";
+                VGA_G <= "1111";
+                VGA_B <= "1111";
+            end if;
+            
+            if(9 <= x AND x <= 11) OR (640-11 <= x AND x <= 640 - 9) 
+            then
+                VGA_R <= "1111";
+                VGA_G <= "1111";
+                VGA_B <= "1111";
+            end if;
             
         end if;
                 

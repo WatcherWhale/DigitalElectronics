@@ -33,6 +33,7 @@ architecture Behavioral of Player is
     
     signal StepCounter : integer range 0 to 10000000/(2*g_speed) - 1; 
     signal Move        : integer range -1 to 1;
+    signal Moved       : std_logic;
     signal Pos         : tPosArr := (
         g_startX,
         g_startY,
@@ -42,40 +43,42 @@ architecture Behavioral of Player is
     
 begin
 
-    pStepper : process(CLKGame,StepCounter)
+    pStepper : process(CLKGame)
     begin
         if rising_edge(CLKGame)
         then
-            Move <= 0;
-            
-            if Up = '1' XOR Down = '1' -- Prevent counting when player uses up and down
+            if(StepCounter = 100000000/(2*g_speed) - 1 )
             then
-                if StepCounter >= 10000000/(2*g_speed) - 1
-                then
-                    StepCounter <= 0;
-                    
-                    if Up = '1'
-                    then
-                        Move <= 1;
-                    elsif Down = '1'
-                    then
-                        Move <= -1;
-                    end if;
-                else
-                    StepCounter <= StepCounter + 1;
-                     Move <= 0;
-                end if;
-            else
                 StepCounter <= 0;
+            else
+                StepCounter <= StepCounter + 1;
+            end if;
+        end if;
+    end process;
+
+    pStep : process(StepCounter)
+    begin
+        Move <= 0;
+        Moved <= '0';
+
+        if(StepCounter = 100000000/(2*g_speed) - 1)
+        then
+            if Up = '1'
+            then
+                Moved <= '1';
+                Move <= 1;
+            elsif Down = '1'
+            then
+                Moved <= '1';
+                Move <= -1;
             end if;
         end if;
     end process;
     
-    pMove : process(Move,Pos)
+    pMove : process(Move,Moved,Pos)
     begin
-        -- Move and constrain to playfield
-        if(Pos(1) + Move >= (g_fieldH - g_screenH)/2) AND (Pos(3) + Move <= g_fieldH + (g_fieldH - g_screenH)/2)
-        then        
+        if Moved = '1'
+        then
             Pos(1) <= Pos(1) + Move;
             Pos(3) <= Pos(3) + Move;
         end if;

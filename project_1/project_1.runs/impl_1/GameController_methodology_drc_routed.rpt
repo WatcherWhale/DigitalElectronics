@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Tue Apr 30 15:38:08 2019
+| Date         : Thu May  2 15:00:29 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_methodology -file GameController_methodology_drc_routed.rpt -pb GameController_methodology_drc_routed.pb -rpx GameController_methodology_drc_routed.rpx
 | Design       : GameController
@@ -23,73 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 12
-+-----------+----------+-----------------------------+------------+
-| Rule      | Severity | Description                 | Violations |
-+-----------+----------+-----------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell | 12         |
-+-----------+----------+-----------------------------+------------+
+             Violations found: 0
++------+----------+-------------+------------+
+| Rule | Severity | Description | Violations |
++------+----------+-------------+------------+
++------+----------+-------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-17#1 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#2 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#3 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#4 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#5 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#6 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[5]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#7 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[6]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#8 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#9 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[8]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#10 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VCounter_reg[9]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#11 Warning
-Non-clocked sequential cell  
-The clock pin VSync/VSync_reg/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#12 Warning
-Non-clocked sequential cell  
-The clock pin VSync/can_writeV_reg/C is not reached by a timing clock
-Related violations: <none>
-
 
