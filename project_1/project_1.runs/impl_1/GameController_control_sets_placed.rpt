@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu May  2 14:59:58 2019
+| Date         : Mon May  6 15:07:04 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file GameController_control_sets_placed.rpt
 | Design       : GameController
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     5 |
-| Unused register locations in slices containing registers |    32 |
+| Number of unique control sets                            |    13 |
+| Unused register locations in slices containing registers |    44 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,7 +35,13 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      1 |            2 |
-|     10 |            3 |
+|      3 |            1 |
+|      6 |            1 |
+|      7 |            2 |
+|     10 |            2 |
+|     11 |            1 |
+|     14 |            2 |
+|    16+ |            2 |
 +--------+--------------+
 
 
@@ -45,26 +51,34 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | No                     |              14 |            9 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              21 |            8 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | Yes                   | No                     |              60 |           20 |
+| Yes          | No                    | No                     |              71 |           19 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              10 |            3 |
+| Yes          | Yes                   | No                     |               3 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------+---------------+---------------------+------------------+----------------+
-|      Clock Signal     | Enable Signal |   Set/Reset Signal  | Slice Load Count | Bel Load Count |
-+-----------------------+---------------+---------------------+------------------+----------------+
-|  clkgen/inst/CLKPixel |               |                     |                1 |              1 |
-|  clkgen/inst/CLKPixel |               | VSync/VSync_i_1_n_0 |                1 |              1 |
-|  clkgen/inst/CLKPixel |               | VSync/HS/clear      |                4 |             10 |
-|  clkgen/inst/CLKPixel |               | VSync/yPos[0]       |                3 |             10 |
-|  clkgen/inst/CLKPixel | VSync/HS/E[0] | VSync/HS/SR[0]      |                3 |             10 |
-+-----------------------+---------------+---------------------+------------------+----------------+
++-----------------------+---------------+-----------------------+------------------+----------------+
+|      Clock Signal     | Enable Signal |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
++-----------------------+---------------+-----------------------+------------------+----------------+
+|  clkgen/inst/CLKPixel |               |                       |                1 |              1 |
+|  clkgen/inst/CLKPixel |               | VSync/VSync_i_1_n_0   |                1 |              1 |
+|  clkgen/inst/CLKPixel | VSync/HS/E[0] | VSync/HS/SR[0]        |                1 |              3 |
+|  clkgen/inst/CLKGame  |               |                       |                4 |              6 |
+|  ScoreBoard/clk/CLK   |               |                       |                4 |              7 |
+|  clkgen/inst/CLKPixel | VSync/HS/E[0] |                       |                3 |              7 |
+|  clkgen/inst/CLKPixel |               | VSync/HS/clear        |                5 |             10 |
+|  clkgen/inst/CLKPixel |               | VSync/yPos[9]_i_1_n_0 |                3 |             10 |
+|  clkgen/inst/CLKGame  |               | ScoreBoard/clk/CLK_0  |                3 |             11 |
+|  clkgen/inst/CLKGame  |               | Player1/moveClock/CLK |                4 |             14 |
+|  clkgen/inst/CLKGame  |               | Player2/moveClock/CLK |                4 |             14 |
+|  CLK_0                | Player2/yPos  |                       |                8 |             32 |
+|  CLK                  | Player1/yPos  |                       |                8 |             32 |
++-----------------------+---------------+-----------------------+------------------+----------------+
 
 

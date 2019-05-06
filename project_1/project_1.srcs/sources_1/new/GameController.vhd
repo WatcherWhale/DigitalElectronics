@@ -3,6 +3,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity GameController is
+    Generic(
+        g_playerH : integer := 100;
+        g_playerW : integer := 15);
     Port (
         -- Clock
         CLK100MHZ : in std_logic;
@@ -28,8 +31,8 @@ entity GameController is
 end GameController;
 
 architecture Behavioral of GameController is
-    
-    type tPosArr is array(0 to 3) of integer;
+    -- Types
+    type tIntarr is array(0 to 1) of integer;
     
     -- Signals
     -- Clocks
@@ -41,7 +44,11 @@ architecture Behavioral of GameController is
     signal Write : std_logic;
     
     -- Players
-    signal p1Pos : tPosArr := (20,30,35,50);
+    signal p1Pos : tIntarr := (20,30);
+    signal p2Pos : tIntarr := (620,30);
+
+    -- Scores
+    signal Scores : tIntarr := (0,0);
 
     -- Components
     component clockGenerator
@@ -68,17 +75,27 @@ architecture Behavioral of GameController is
     component Player
         Generic(
         g_startX  : integer;
-        g_startY  : integer);
+        g_startY  : integer;
+        g_height  : integer;
+        g_width   : integer);
     Port(
         CLKGame : in std_logic; 
         
         Up   : in std_logic;
         Down : in std_logic;
         
-        X1    : out integer;
-        X2    : out integer;
-        Y1    : out integer;
-        Y2    : out integer
+        X     : out integer;
+        Y     : out integer
+    );
+    end component;
+
+    component ScoreDisplay
+    Port (
+        gameClock : in std_logic;
+        Score1    : in integer range 0 to 9999;
+        Score2    : in integer range 0 to 9999;
+        AN        : out std_logic_vector(7 downto 0);
+        C         : out std_logic_vector(6 downto 0)
     );
     end component;
 
@@ -101,17 +118,29 @@ begin
         Write => Write);
         
     Player1 : Player
-    Generic map(g_startX => 20, g_startY => 30)
+    Generic map(g_startX => 20, g_startY => 30,g_height => g_playerH, g_width => g_playerW)
     Port map(CLKGame => GameClock,
              Up => BTNU,
-             Down => BTNC,
-             X1 => p1Pos(0),
-             Y1 => p1Pos(1),
-             X2 => p1Pos(2),
-             Y2 => p1Pos(3));
-        
-    -- Processes
+             Down => BTNL,
+             X => p1Pos(0),
+             Y => p1Pos(1));
     
+    Player2 : Player
+    Generic map(g_startX => 605, g_startY => 30,g_height => g_playerH, g_width => g_playerW)
+    Port map(CLKGame => GameClock,
+             Up => BTNR,
+             Down => BTND,
+             X => p2Pos(0),
+             Y => p2Pos(1));
+
+    ScoreBoard : ScoreDisplay
+    Port map (gameClock => GameClock, 
+              Score1 => Scores(0),
+              Score2 => Scores(1),
+              AN => AN,
+              C  => C);
+
+    -- Processes
     pBallMove : process(x,y) -- Change sensitivity list
     begin
         -- Check if there is a collision
@@ -121,7 +150,7 @@ begin
         -- Collision with wall = ball reset & score upkeep
     end process;
     
-    pUpdateDisplay : process(x,y,Write)
+    pUpdateDisplay : process(x,y,Write,p1Pos,p2Pos)
     begin
         VGA_R <= "0000";
         VGA_G <= "0000";
@@ -129,30 +158,36 @@ begin
         
         -- Write all pixels
         if(Write = '1')
-        then
+        then        
             -- Player
-            if x >= p1Pos(0) AND x <= p1Pos(2) AND y >= p1Pos(1) AND y <= p1Pos(3)
+            if x >= p1Pos(0) AND x <= p1Pos(0) + g_playerW AND y >= p1Pos(1) AND y <= p1Pos(1) + g_playerH
             then
                 VGA_R <= "1111";
-                VGA_G <= "1111";
-                VGA_B <= "1111";
+                VGA_G <= "0000";
+                VGA_B <= "0000";
             end if;
             
-            --VGA_R <= std_logic_vector(to_unsigned((x*16)/640,4));
+            if x >= p2Pos(0) AND x <= p2Pos(0) + g_playerW AND y >= p2Pos(1) AND y <= p2Pos(1) + g_playerH
+            then
+                VGA_R <= "0000";
+                VGA_G <= "0000";
+                VGA_B <= "1111";
+            end if;
                         
-            if(9 <= y AND y <= 11) OR (480-11 <= y AND y <= 480 - 9) 
+            if((9 <= y AND y <= 11) AND (9 <= x AND x <= 640-11)) OR ((480-11 <= y AND y <= 480 - 9) AND (9 <= x AND x <= 640-9))
             then
                 VGA_R <= "1111";
                 VGA_G <= "1111";
                 VGA_B <= "1111";
             end if;
             
-            if(9 <= x AND x <= 11) OR (640-11 <= x AND x <= 640 - 9) 
+            if ((9 <= x AND x <= 11) AND (9 <= y AND y <= 480-11)) OR ((640-11 <= x AND x <= 640 - 9) AND (9 <= y AND y <= 480-9)) 
             then
                 VGA_R <= "1111";
                 VGA_G <= "1111";
                 VGA_B <= "1111";
             end if;
+            
             
         end if;
                 
