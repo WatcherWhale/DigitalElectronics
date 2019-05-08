@@ -53,33 +53,9 @@ begin
     begin        
         if(rising_edge(pixelClock))
         then
-            can_writeV <= '0'; 
-            VSync <= '0';
-            yPos <= 0;
-            
-            -- Send pulses
-            if VCounter <= g_visible
-            then
-                can_writeV <= '1';
-                VSync <= '1';
-                yPos <= VCounter;
-            elsif VCounter <= g_visible + g_front
-            then
-                can_writeV <= '0';
-                VSync <= '1';
-            elsif VCounter <= g_visible + g_front + g_sync
-            then
-                can_writeV <= '0';
-                VSync <= '0';
-            elsif VCounter <= g_visible + g_front + g_sync + g_back
-            then
-                can_writeV <= '0';
-                VSync <= '1';
-            end if;
-            
             --Check if we can count
-            if can_writeH = '1' AND HCounter = 1 then
-                can_writeV <= '1';
+            if can_writeH = '1' AND HCounter = 0
+            then
                 -- Count
                 if VCounter >= g_visible + g_front + g_sync + g_back
                 then
@@ -88,6 +64,33 @@ begin
                     VCounter <= VCounter + 1;
                 end if;
             end if;
+        end if;
+    end process;
+    
+    pCounted : process(VCounter)
+    begin
+        can_writeV <= '0'; 
+        VSync <= '0';
+        yPos <= 0;
+        
+        -- Send pulses
+        if VCounter <= g_visible
+        then
+            can_writeV <= '1';
+            VSync <= '1';
+            yPos <= VCounter;
+        elsif VCounter <= g_visible + g_front
+        then
+            can_writeV <= '0';
+            VSync <= '1';
+        elsif VCounter <= g_visible + g_front + g_sync
+        then
+            can_writeV <= '0';
+            VSync <= '0';
+        elsif VCounter <= g_visible + g_front + g_sync + g_back
+        then
+            can_writeV <= '0';
+            VSync <= '1';
         end if;
     end process;
     

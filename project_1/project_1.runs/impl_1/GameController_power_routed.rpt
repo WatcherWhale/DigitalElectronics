@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Mon May  6 15:07:40 2019
+| Date             : Wed May  8 11:38:34 2019
 | Host             : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command          : report_power -file GameController_power_routed.rpt -pb GameController_power_summary_routed.pb -rpx GameController_power_routed.rpx
 | Design           : GameController
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.244        |
+| Total On-Chip Power (W)  | 0.246        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.147        |
+| Dynamic (W)              | 0.149        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        6 |       --- |             --- |
-| Slice Logic    |     0.008 |     1534 |       --- |             --- |
-|   LUT as Logic |     0.007 |      897 |     63400 |            1.41 |
-|   CARRY4       |    <0.001 |      275 |     15850 |            1.74 |
-|   Register     |    <0.001 |      148 |    126800 |            0.12 |
+| Clocks         |     0.002 |        6 |       --- |             --- |
+| Slice Logic    |     0.008 |     3540 |       --- |             --- |
+|   LUT as Logic |     0.007 |     2272 |     63400 |            3.58 |
+|   CARRY4       |     0.001 |      531 |     15850 |            3.35 |
+|   Register     |    <0.001 |      257 |    126800 |            0.20 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     63400 |           <0.01 |
-|   Others       |     0.000 |       19 |       --- |             --- |
-|   BUFG         |     0.000 |        2 |        32 |            6.25 |
-| Signals        |     0.007 |     1111 |       --- |             --- |
+|   Others       |     0.000 |       24 |       --- |             --- |
+|   BUFG         |     0.000 |        3 |        32 |            9.38 |
+| Signals        |     0.007 |     2596 |       --- |             --- |
 | MMCM           |     0.115 |        1 |         6 |           16.67 |
-| I/O            |     0.016 |       34 |       210 |           16.19 |
+| I/O            |     0.016 |       35 |       210 |           16.67 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.244 |          |           |                 |
+| Total          |     0.246 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.031 |       0.016 |      0.015 |
+| Vccint    |       1.000 |     0.033 |       0.018 |      0.015 |
 | Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
-| Vcco33    |       3.300 |     0.009 |       0.005 |      0.004 |
+| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -130,10 +130,10 @@ Table of Contents
 +-------------------------+-------------------------------------+-----------------+
 | Clock                   | Domain                              | Constraint (ns) |
 +-------------------------+-------------------------------------+-----------------+
-| CLK100MHZ               | CLK100MHZ                           |            10.0 |
 | CLKGame_clockGenerator  | clkgen/inst/CLKGame_clockGenerator  |           100.0 |
 | CLKPixel_clockGenerator | clkgen/inst/CLKPixel_clockGenerator |            39.7 |
 | clkfbout_clockGenerator | clkgen/inst/clkfbout_clockGenerator |            10.0 |
+| clkgen/inst/CLK100MHZ   | CLK100MHZ_IBUF_BUFG                 |            10.0 |
 +-------------------------+-------------------------------------+-----------------+
 
 
@@ -146,10 +146,11 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| GameController |     0.147 |
+| GameController |     0.149 |
 |   ScoreBoard   |     0.013 |
 |   clkgen       |     0.116 |
 |     inst       |     0.116 |
+|   sqBall       |     0.001 |
 +----------------+-----------+
 
 

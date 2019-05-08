@@ -4,8 +4,11 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity GameController is
     Generic(
-        g_playerH : integer := 100;
-        g_playerW : integer := 15);
+        g_playerH   : integer := 100;
+        g_playerW   : integer := 15;
+        
+        g_ballSize  : integer := 10;
+        g_ballSpeed : integer := 100);
     Port (
         -- Clock
         CLK100MHZ : in std_logic;
@@ -26,13 +29,18 @@ entity GameController is
         BTND : in std_logic;
         BTNL : in std_logic;
         BTNR : in std_logic;
-        BTNC : in std_logic
+        BTNC : in std_logic;
+        
+        SW   : in std_logic_vector(15 downto 0)
     );
 end GameController;
 
 architecture Behavioral of GameController is
     -- Types
     type tIntarr is array(0 to 1) of integer;
+    
+    -- Constants
+    constant sincos45 : integer := 707107;
     
     -- Signals
     -- Clocks
@@ -47,8 +55,17 @@ architecture Behavioral of GameController is
     signal p1Pos : tIntarr := (20,30);
     signal p2Pos : tIntarr := (620,30);
 
+    -- Ball
+    signal ballPos : tIntarr := (315,235);
+    signal ballSpeed : tIntarr := (0,0);
+    signal ballFlip : std_logic_vector(1 downto 0);
+
     -- Scores
     signal Scores : tIntarr := (0,0);
+    
+    signal Playing : std_logic := '0';
+    
+     
 
     -- Components
     component clockGenerator
@@ -99,6 +116,18 @@ architecture Behavioral of GameController is
     );
     end component;
 
+    component Ball
+    Port (
+        CLKGame : in std_logic;
+    
+        speedY : in integer;
+        speedX : in integer;
+    
+        x : out integer;
+        y : out integer
+    );
+    end component;
+
 begin
     -- Map Components
     clkgen : clockGenerator
@@ -140,17 +169,59 @@ begin
               AN => AN,
               C  => C);
 
-    -- Processes
-    pBallMove : process(x,y) -- Change sensitivity list
+    sqBall : Ball
+    Port map(
+        CLKGame => GameClock,
+        speedX  => ballSpeed(0),
+        speedY  => ballSpeed(1),
+        x => ballPos(0),
+        y => ballPos(1)
+    );
+
+    -- Processes 
+    pBallMove : process(ballPos,p1Pos,p2Pos) -- Change sensitivity list
     begin
         -- Check if there is a collision
-        -- Then set Collide std_logic to '1' and detect rising edge in Ball Component
-        -- Have to do here because here is all the player/ball/wall info
+        ballFlip <= "00";
         
-        -- Collision with wall = ball reset & score upkeep
+        if (ballPos(0) <= p1Pos(0)) AND (ballPos(1)+g_ballSize >= p1Pos(1)) AND (ballPos(1) <= p1Pos(1))
+        then
+            ballFlip(0) <= '1';
+        elsif (ballPos(0) >= p2Pos(0)) AND (ballPos(1)+g_ballSize >= p2Pos(1)) AND (ballPos(1) <= p2Pos(1))
+        then
+            ballFlip(0) <= '1';
+        elsif ballPos(0) = -1 --Change to any wall
+        then
+            ballFlip(1) <= '1';
+        end if;
+        
     end process;
     
-    pUpdateDisplay : process(x,y,Write,p1Pos,p2Pos)
+    pSpeedFlipFlop : process(CLK100MHZ)
+    begin
+        if rising_edge(CLK100MHZ)
+        then
+            if BTNC = '1' AND Playing = '0'
+            then
+                Playing <= '1';
+                ballSpeed(0) <= sincos45/10000;
+                ballSpeed(1) <= sincos45/10000;
+            elsif BTNC = '1' AND Playing = '1'
+            then
+                ballSpeed(0) <= 0;
+                ballSpeed(1) <= 0;
+            elsif ballFlip(0) = '1'
+                then
+                    ballSpeed(0) <= ballSpeed(0) * (-1);
+            elsif ballFlip(1) = '1'
+            then
+                ballSpeed(0) <= ballSpeed(0) * (-1);
+            end if;
+        
+        end if;
+    end process;
+    
+    pUpdateDisplay : process(x,y,Write,p1Pos,p2Pos,ballPos)
     begin
         VGA_R <= "0000";
         VGA_G <= "0000";
@@ -173,6 +244,13 @@ begin
                 VGA_G <= "0000";
                 VGA_B <= "1111";
             end if;
+            
+            if x >= ballPos(0) AND x <= ballPos(0) + g_ballSize AND y >= ballPos(1) AND y <= ballPos(1) + g_ballSize
+            then
+                VGA_R <= "1111";
+                VGA_G <= "1111";
+                VGA_B <= "1111";
+            end if;
                         
             if((9 <= y AND y <= 11) AND (9 <= x AND x <= 640-11)) OR ((480-11 <= y AND y <= 480 - 9) AND (9 <= x AND x <= 640-9))
             then
@@ -187,7 +265,6 @@ begin
                 VGA_G <= "1111";
                 VGA_B <= "1111";
             end if;
-            
             
         end if;
                 

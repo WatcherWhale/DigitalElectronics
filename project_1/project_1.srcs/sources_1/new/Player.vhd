@@ -59,7 +59,7 @@ begin
                     end if;
                 elsif Down = '1'
                 then
-                    if(yPos + 1 <= g_fieldH + g_height)
+                    if(yPos + 1 <= g_screenH - ((g_screenH - g_fieldH)/2 + g_height))
                     then
                         yPos <= yPos + 1;
                     end if;

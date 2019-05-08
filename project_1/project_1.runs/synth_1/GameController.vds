@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon May  6 15:05:58 2019
-# Process ID: 17768
+# Start of session at: Wed May  8 11:36:48 2019
+# Process ID: 18944
 # Current directory: C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1
 # Command line: vivado.exe -log GameController.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source GameController.tcl
 # Log file: C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/GameController.vds
@@ -15,16 +15,18 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14416 
+INFO: Helper process launched with PID 18284 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 410.324 ; gain = 100.555
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 410.277 ; gain = 100.699
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'GameController' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'GameController' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:38]
 	Parameter g_playerH bound to: 100 - type: integer 
 	Parameter g_playerW bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'clockGenerator' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-17768-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:5' bound to instance 'clkgen' of component 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:104]
-INFO: [Synth 8-638] synthesizing module 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-17768-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'VPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:5' bound to instance 'VSync' of component 'VPulse' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:111]
+	Parameter g_ballSize bound to: 10 - type: integer 
+	Parameter g_ballSpeed bound to: 100 - type: integer 
+INFO: [Synth 8-3491] module 'clockGenerator' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-18944-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:5' bound to instance 'clkgen' of component 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:133]
+INFO: [Synth 8-638] synthesizing module 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-18944-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'VPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:5' bound to instance 'VSync' of component 'VPulse' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:140]
 INFO: [Synth 8-638] synthesizing module 'VPulse' [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
 	Parameter g_visible bound to: 480 - type: integer 
 	Parameter g_front bound to: 10 - type: integer 
@@ -43,7 +45,7 @@ INFO: [Synth 8-256] done synthesizing module 'VPulse' (2#1) [C:/Projects/Digital
 	Parameter g_startY bound to: 30 - type: integer 
 	Parameter g_height bound to: 100 - type: integer 
 	Parameter g_width bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player1' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:120]
+INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player1' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:149]
 INFO: [Synth 8-638] synthesizing module 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
 	Parameter g_startX bound to: 20 - type: integer 
 	Parameter g_startY bound to: 30 - type: integer 
@@ -62,7 +64,7 @@ INFO: [Synth 8-256] done synthesizing module 'Player' (4#1) [C:/Projects/Digital
 	Parameter g_startY bound to: 30 - type: integer 
 	Parameter g_height bound to: 100 - type: integer 
 	Parameter g_width bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player2' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:128]
+INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player2' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:157]
 INFO: [Synth 8-638] synthesizing module 'Player__parameterized1' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
 	Parameter g_startX bound to: 605 - type: integer 
 	Parameter g_startY bound to: 30 - type: integer 
@@ -74,7 +76,7 @@ INFO: [Synth 8-638] synthesizing module 'Player__parameterized1' [C:/Projects/Di
 	Parameter g_Freq bound to: 300 - type: integer 
 INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'moveClock' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'Player__parameterized1' (4#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
-INFO: [Synth 8-3491] module 'ScoreDisplay' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:5' bound to instance 'ScoreBoard' of component 'ScoreDisplay' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:136]
+INFO: [Synth 8-3491] module 'ScoreDisplay' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:5' bound to instance 'ScoreBoard' of component 'ScoreDisplay' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:165]
 INFO: [Synth 8-638] synthesizing module 'ScoreDisplay' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:15]
 	Parameter g_Freq bound to: 1600 - type: integer 
 INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'clk' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:37]
@@ -85,10 +87,34 @@ INFO: [Synth 8-3491] module 'BCDTo7SegmentConverter' declared at 'C:/Projects/Di
 INFO: [Synth 8-638] synthesizing module 'BCDTo7SegmentConverter' [C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd:12]
 INFO: [Synth 8-256] done synthesizing module 'BCDTo7SegmentConverter' (5#1) [C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd:12]
 INFO: [Synth 8-256] done synthesizing module 'ScoreDisplay' (6#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'GameController' (7#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:33]
-WARNING: [Synth 8-3331] design GameController has unconnected port BTNC
+INFO: [Synth 8-3491] module 'Ball' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:5' bound to instance 'sqBall' of component 'Ball' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:172]
+INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:20]
+	Parameter g_timeStep bound to: 100 - type: integer 
+	Parameter g_Freq bound to: 200 - type: integer 
+INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'moveClock' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'Tick__parameterized4' [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
+	Parameter g_Freq bound to: 200 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Tick__parameterized4' (6#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'Ball' (7#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'GameController' (8#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:38]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[15]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[14]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[13]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[12]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[11]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[10]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[9]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[8]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[7]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[6]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[5]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[4]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[3]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[2]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[1]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.363 ; gain = 156.594
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.387 ; gain = 156.809
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -101,10 +127,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.363 ; gain = 156.594
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.387 ; gain = 156.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.363 ; gain = 156.594
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.387 ; gain = 156.809
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -117,24 +143,24 @@ Parsing XDC File [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constr
 Finished Parsing XDC File [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constrs_1/new/Nexys-A7-100t-Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constrs_1/new/Nexys-A7-100t-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/GameController_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/GameController_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 822.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 823.523 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 822.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 823.523 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 822.238 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 822.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 823.523 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 823.523 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 822.238 ; gain = 512.469
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 822.238 ; gain = 512.469
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -143,12 +169,17 @@ Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/P
 Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/ip/clockGenerator/clockGenerator/clockGenerator_in_context.xdc, line 5).
 Applied set_property DONT_TOUCH = true for clkgen. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 822.238 ; gain = 512.469
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "CLK" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "CLK" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CLK" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "ballFlip" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "ballFlip" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "ballSpeed[0]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ballSpeed[0]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 822.238 ; gain = 512.469
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -161,9 +192,9 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 8     
-	   2 Input     31 Bit       Adders := 2     
-	   2 Input     15 Bit       Adders := 6     
+	   2 Input     32 Bit       Adders := 12    
+	   2 Input     31 Bit       Adders := 4     
+	   2 Input     15 Bit       Adders := 7     
 	   2 Input     12 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 2     
@@ -172,24 +203,29 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
-	               32 Bit    Registers := 1     
-	               15 Bit    Registers := 2     
+	               32 Bit    Registers := 2     
+	               15 Bit    Registers := 3     
 	               12 Bit    Registers := 1     
 	               10 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 5     
++---Multipliers : 
+	                 1x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 4     
 	   4 Input     32 Bit        Muxes := 2     
-	   2 Input     31 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 6     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 4     
+	   2 Input     15 Bit        Muxes := 7     
 	   2 Input     12 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 11    
+	   2 Input      4 Bit        Muxes := 10    
 	   3 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -200,10 +236,19 @@ Hierarchical RTL Component report
 Module GameController 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 4     
+	   2 Input     32 Bit       Adders := 6     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Multipliers : 
+	                 1x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 6     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   5 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module HPulse 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -218,12 +263,10 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     10 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module Tick 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -281,6 +324,24 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 5     
 	   3 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 1     
+Module Tick__parameterized4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module Ball 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -300,31 +361,56 @@ Warning: Parallel synthesis criteria is not met
 INFO: [Synth 8-5546] ROM "moveClock/CLK" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "moveClock/CLK" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "clk/CLK" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design GameController has unconnected port BTNC
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[10]' (FDR) to 'VSync/yPos_reg[11]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[11]' (FDR) to 'VSync/yPos_reg[12]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[12]' (FDR) to 'VSync/yPos_reg[13]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[13]' (FDR) to 'VSync/yPos_reg[14]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[14]' (FDR) to 'VSync/yPos_reg[15]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[15]' (FDR) to 'VSync/yPos_reg[16]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[16]' (FDR) to 'VSync/yPos_reg[17]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[17]' (FDR) to 'VSync/yPos_reg[18]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[18]' (FDR) to 'VSync/yPos_reg[19]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[19]' (FDR) to 'VSync/yPos_reg[20]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[20]' (FDR) to 'VSync/yPos_reg[21]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[21]' (FDR) to 'VSync/yPos_reg[22]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[22]' (FDR) to 'VSync/yPos_reg[23]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[23]' (FDR) to 'VSync/yPos_reg[24]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[24]' (FDR) to 'VSync/yPos_reg[25]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[25]' (FDR) to 'VSync/yPos_reg[26]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[26]' (FDR) to 'VSync/yPos_reg[27]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[27]' (FDR) to 'VSync/yPos_reg[28]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[28]' (FDR) to 'VSync/yPos_reg[29]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[29]' (FDR) to 'VSync/yPos_reg[30]'
-INFO: [Synth 8-3886] merging instance 'VSync/yPos_reg[30]' (FDR) to 'VSync/yPos_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (VSync/\yPos_reg[31] )
+INFO: [Synth 8-5546] ROM "moveClock/CLK" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[15]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[14]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[13]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[12]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[11]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[10]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[9]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[8]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[7]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[6]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[5]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[4]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[3]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[2]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[1]
+WARNING: [Synth 8-3331] design GameController has unconnected port SW[0]
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][31]' (FDRE) to 'ballSpeed_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][0]' (FDRE) to 'ballSpeed_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][1]' (FDSE) to 'ballSpeed_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][2]' (FDSE) to 'ballSpeed_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][3]' (FDRE) to 'ballSpeed_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][4]' (FDRE) to 'ballSpeed_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][5]' (FDRE) to 'ballSpeed_reg[1][7]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][7]' (FDRE) to 'ballSpeed_reg[1][8]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][8]' (FDRE) to 'ballSpeed_reg[1][9]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][9]' (FDRE) to 'ballSpeed_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][10]' (FDRE) to 'ballSpeed_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][11]' (FDRE) to 'ballSpeed_reg[1][12]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][12]' (FDRE) to 'ballSpeed_reg[1][13]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][13]' (FDRE) to 'ballSpeed_reg[1][14]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][14]' (FDRE) to 'ballSpeed_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][15]' (FDRE) to 'ballSpeed_reg[1][16]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][16]' (FDRE) to 'ballSpeed_reg[1][17]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][17]' (FDRE) to 'ballSpeed_reg[1][18]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][18]' (FDRE) to 'ballSpeed_reg[1][19]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][19]' (FDRE) to 'ballSpeed_reg[1][20]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][20]' (FDRE) to 'ballSpeed_reg[1][21]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][21]' (FDRE) to 'ballSpeed_reg[1][22]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][22]' (FDRE) to 'ballSpeed_reg[1][23]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][23]' (FDRE) to 'ballSpeed_reg[1][24]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][24]' (FDRE) to 'ballSpeed_reg[1][25]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][25]' (FDRE) to 'ballSpeed_reg[1][26]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][26]' (FDRE) to 'ballSpeed_reg[1][27]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][27]' (FDRE) to 'ballSpeed_reg[1][28]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][28]' (FDRE) to 'ballSpeed_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][29]' (FDRE) to 'ballSpeed_reg[1][30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ballSpeed_reg[1][30] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 822.238 ; gain = 512.469
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 823.523 ; gain = 513.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -339,13 +425,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clkgen/CLKGame' to pin 'c
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clkgen/CLKPixel' to pin 'clkgen/bbstub_CLKPixel/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 822.238 ; gain = 512.469
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 823.523 ; gain = 513.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 831.898 ; gain = 522.129
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 823.523 ; gain = 513.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -357,7 +443,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -381,7 +467,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -394,7 +480,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -406,25 +492,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -442,57 +528,59 @@ Report Cell Usage:
 |      |Cell                  |Count |
 +------+----------------------+------+
 |1     |clockGenerator_bbox_0 |     1|
-|2     |BUFG                  |     2|
-|3     |CARRY4                |   275|
-|4     |LUT1                  |    85|
-|5     |LUT2                  |   470|
-|6     |LUT3                  |   233|
-|7     |LUT4                  |   208|
-|8     |LUT5                  |    30|
-|9     |LUT6                  |    64|
+|2     |BUFG                  |     3|
+|3     |CARRY4                |   531|
+|4     |LUT1                  |   184|
+|5     |LUT2                  |   578|
+|6     |LUT3                  |   612|
+|7     |LUT4                  |   384|
+|8     |LUT5                  |   374|
+|9     |LUT6                  |   598|
 |10    |MUXF7                 |     1|
-|11    |FDRE                  |   147|
-|12    |FDSE                  |     1|
-|13    |IBUF                  |     4|
-|14    |OBUF                  |    29|
+|11    |FDRE                  |   257|
+|12    |IBUF                  |     5|
+|13    |OBUF                  |    29|
 +------+----------------------+------+
 
 Report Instance Areas: 
 +------+--------------+-----------------------+------+
 |      |Instance      |Module                 |Cells |
 +------+--------------+-----------------------+------+
-|1     |top           |                       |  1551|
-|2     |  Player1     |Player                 |   235|
+|1     |top           |                       |  3558|
+|2     |  Player1     |Player                 |   298|
 |3     |    moveClock |Tick_0                 |    26|
-|4     |  Player2     |Player__parameterized1 |   235|
+|4     |  Player2     |Player__parameterized1 |   289|
 |5     |    moveClock |Tick                   |    26|
 |6     |  ScoreBoard  |ScoreDisplay           |   585|
 |7     |    clk       |Tick__parameterized2   |    22|
-|8     |  VSync       |VPulse                 |   266|
-|9     |    HS        |HPulse                 |   132|
+|8     |  VSync       |VPulse                 |   323|
+|9     |    HS        |HPulse                 |   162|
+|10    |  sqBall      |Ball                   |  1710|
+|11    |    moveClock |Tick__parameterized4   |    26|
 +------+--------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 841.988 ; gain = 176.344
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 841.988 ; gain = 532.219
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 919.555 ; gain = 252.840
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 276 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 532 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 841.988 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 919.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-71 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+93 Infos, 33 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 841.988 ; gain = 543.688
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.988 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 919.555 ; gain = 621.441
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 919.555 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/GameController.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file GameController_utilization_synth.rpt -pb GameController_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May  6 15:06:28 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed May  8 11:37:25 2019...
