@@ -22,7 +22,7 @@ architecture Behavioral of HPulse is
     
 begin
 
-    tick : process(Clock_in)
+    pTick : process(Clock_in)
     begin
         if(rising_edge(Clock_in))
         then       
@@ -36,7 +36,7 @@ begin
         end if;
     end process;
 
-    sendPulse : process(Hcounter)
+    pSendPulse : process(Hcounter)
     begin
         -- Default Values
         Can_write <= '0';
@@ -64,7 +64,7 @@ begin
         end if;
     end process;
     
-    updateCounter : process(HCounter)
+    pUpdateCounter : process(HCounter)
     begin
         Hcounter_out <= HCounter;
     end process;

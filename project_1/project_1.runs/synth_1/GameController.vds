@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed May  8 11:36:48 2019
-# Process ID: 18944
+# Start of session at: Mon May 20 20:37:42 2019
+# Process ID: 5104
 # Current directory: C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1
 # Command line: vivado.exe -log GameController.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source GameController.tcl
 # Log file: C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/GameController.vds
@@ -15,18 +15,22 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18284 
+INFO: Helper process launched with PID 11248 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 410.277 ; gain = 100.699
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 409.922 ; gain = 100.266
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'GameController' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'GameController' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:39]
 	Parameter g_playerH bound to: 100 - type: integer 
 	Parameter g_playerW bound to: 15 - type: integer 
 	Parameter g_ballSize bound to: 10 - type: integer 
-	Parameter g_ballSpeed bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'clockGenerator' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-18944-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:5' bound to instance 'clkgen' of component 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:133]
-INFO: [Synth 8-638] synthesizing module 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-18944-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'VPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:5' bound to instance 'VSync' of component 'VPulse' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:140]
+	Parameter g_ballSpeed bound to: 150 - type: integer 
+	Parameter g_colorSpeed bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'clockGenerator' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-5104-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:5' bound to instance 'clkgen' of component 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'clockGenerator' [C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/.Xil/Vivado-5104-DELLLAPTOPMAES/realtime/clockGenerator_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'Random' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Random.vhd:8' bound to instance 'randGen' of component 'Random' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'Random' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Random.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Random' (1#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Random.vhd:18]
+INFO: [Synth 8-3491] module 'VPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:5' bound to instance 'VSync' of component 'VPulse' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:176]
 INFO: [Synth 8-638] synthesizing module 'VPulse' [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
 	Parameter g_visible bound to: 480 - type: integer 
 	Parameter g_front bound to: 10 - type: integer 
@@ -38,17 +42,17 @@ INFO: [Synth 8-638] synthesizing module 'HPulse' [C:/Projects/DigitalElectronics
 	Parameter g_front bound to: 16 - type: integer 
 	Parameter g_sync bound to: 96 - type: integer 
 	Parameter g_back bound to: 48 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'HPulse' (1#1) [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/HPulse.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'HPulse' (2#1) [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/HPulse.vhd:19]
 WARNING: [Synth 8-549] port width mismatch for port 'Hcounter_out': port width = 10, actual width = 32 [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:40]
-INFO: [Synth 8-256] done synthesizing module 'VPulse' (2#1) [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'VPulse' (3#1) [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
 	Parameter g_startX bound to: 20 - type: integer 
-	Parameter g_startY bound to: 30 - type: integer 
+	Parameter g_startY bound to: 190 - type: integer 
 	Parameter g_height bound to: 100 - type: integer 
 	Parameter g_width bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player1' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:149]
+INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player1' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:185]
 INFO: [Synth 8-638] synthesizing module 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
 	Parameter g_startX bound to: 20 - type: integer 
-	Parameter g_startY bound to: 30 - type: integer 
+	Parameter g_startY bound to: 190 - type: integer 
 	Parameter g_fieldH bound to: 460 - type: integer 
 	Parameter g_screenH bound to: 480 - type: integer 
 	Parameter g_width bound to: 15 - type: integer 
@@ -58,16 +62,34 @@ INFO: [Synth 8-638] synthesizing module 'Player' [C:/Projects/DigitalElectronics
 INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'moveClock' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:43]
 INFO: [Synth 8-638] synthesizing module 'Tick' [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
 	Parameter g_Freq bound to: 300 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Tick' (3#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'Player' (4#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'Tick' (4#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'Player' (5#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
 	Parameter g_startX bound to: 605 - type: integer 
-	Parameter g_startY bound to: 30 - type: integer 
+	Parameter g_startY bound to: 190 - type: integer 
+	Parameter g_ballSize bound to: 10 - type: integer 
 	Parameter g_height bound to: 100 - type: integer 
 	Parameter g_width bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'Player2' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:157]
+INFO: [Synth 8-3491] module 'AI' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/AI.vhd:5' bound to instance 'Player2' of component 'AI' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:193]
+INFO: [Synth 8-638] synthesizing module 'AI' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/AI.vhd:32]
+	Parameter g_startX bound to: 605 - type: integer 
+	Parameter g_startY bound to: 190 - type: integer 
+	Parameter g_fieldH bound to: 460 - type: integer 
+	Parameter g_screenH bound to: 480 - type: integer 
+	Parameter g_width bound to: 15 - type: integer 
+	Parameter g_height bound to: 100 - type: integer 
+	Parameter g_speed bound to: 150 - type: integer 
+	Parameter g_ballSize bound to: 10 - type: integer 
+	Parameter g_startX bound to: 605 - type: integer 
+	Parameter g_startY bound to: 190 - type: integer 
+	Parameter g_fieldH bound to: 460 - type: integer 
+	Parameter g_screenH bound to: 480 - type: integer 
+	Parameter g_width bound to: 15 - type: integer 
+	Parameter g_height bound to: 100 - type: integer 
+	Parameter g_speed bound to: 150 - type: integer 
+INFO: [Synth 8-3491] module 'Player' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:5' bound to instance 'aiPlayer' of component 'Player' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/AI.vhd:62]
 INFO: [Synth 8-638] synthesizing module 'Player__parameterized1' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
 	Parameter g_startX bound to: 605 - type: integer 
-	Parameter g_startY bound to: 30 - type: integer 
+	Parameter g_startY bound to: 190 - type: integer 
 	Parameter g_fieldH bound to: 460 - type: integer 
 	Parameter g_screenH bound to: 480 - type: integer 
 	Parameter g_width bound to: 15 - type: integer 
@@ -75,46 +97,70 @@ INFO: [Synth 8-638] synthesizing module 'Player__parameterized1' [C:/Projects/Di
 	Parameter g_speed bound to: 150 - type: integer 
 	Parameter g_Freq bound to: 300 - type: integer 
 INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'moveClock' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'Player__parameterized1' (4#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
-INFO: [Synth 8-3491] module 'ScoreDisplay' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:5' bound to instance 'ScoreBoard' of component 'ScoreDisplay' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:165]
+INFO: [Synth 8-256] done synthesizing module 'Player__parameterized1' (5#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd:28]
+WARNING: [Synth 8-614] signal 'random' is read in the process but is not in the sensitivity list [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/AI.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'AI' (6#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/AI.vhd:32]
+INFO: [Synth 8-3491] module 'ScoreDisplay' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:5' bound to instance 'ScoreBoard' of component 'ScoreDisplay' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:205]
 INFO: [Synth 8-638] synthesizing module 'ScoreDisplay' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:15]
 	Parameter g_Freq bound to: 1600 - type: integer 
-INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'clk' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:37]
+INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'clk' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:38]
 INFO: [Synth 8-638] synthesizing module 'Tick__parameterized2' [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
 	Parameter g_Freq bound to: 1600 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Tick__parameterized2' (4#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
-INFO: [Synth 8-3491] module 'BCDTo7SegmentConverter' declared at 'C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd:7' bound to instance 'converter' of component 'BCDTo7SegmentConverter' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'Tick__parameterized2' (6#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
+INFO: [Synth 8-3491] module 'BCDTo7SegmentConverter' declared at 'C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd:7' bound to instance 'converter' of component 'BCDTo7SegmentConverter' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:42]
 INFO: [Synth 8-638] synthesizing module 'BCDTo7SegmentConverter' [C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'BCDTo7SegmentConverter' (5#1) [C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'ScoreDisplay' (6#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:15]
-INFO: [Synth 8-3491] module 'Ball' declared at 'C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:5' bound to instance 'sqBall' of component 'Ball' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:172]
-INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:20]
-	Parameter g_timeStep bound to: 100 - type: integer 
-	Parameter g_Freq bound to: 200 - type: integer 
-INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'moveClock' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'BCDTo7SegmentConverter' (7#1) [C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'ScoreDisplay' (8#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd:15]
+	Parameter g_Freq bound to: -300 - type: integer 
+INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'genClock' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:213]
 INFO: [Synth 8-638] synthesizing module 'Tick__parameterized4' [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
-	Parameter g_Freq bound to: 200 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Tick__parameterized4' (6#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'Ball' (7#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'GameController' (8#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:38]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[15]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[14]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[13]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[12]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[11]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[10]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[9]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[8]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[7]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[6]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[5]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[4]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[3]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[2]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[1]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[0]
+	Parameter g_Freq bound to: -300 - type: integer 
+WARNING: [Synth 8-6774] Null subtype or type declaration found [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Tick__parameterized4' (8#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
+	Parameter g_Freq bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Tick' declared at 'C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:5' bound to instance 'genClock' of component 'Tick' [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:213]
+INFO: [Synth 8-638] synthesizing module 'Tick__parameterized6' [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
+	Parameter g_Freq bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Tick__parameterized6' (8#1) [C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd:11]
+WARNING: [Synth 8-614] signal 'Color' is read in the process but is not in the sensitivity list [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:299]
+INFO: [Synth 8-256] done synthesizing module 'GameController' (9#1) [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:39]
+WARNING: [Synth 8-3331] design Tick__parameterized4 has unconnected port CLK_in
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[31]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[30]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[29]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[28]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[27]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[26]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[25]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[24]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[23]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[22]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[21]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[20]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[19]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[18]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[17]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[16]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[15]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[14]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[13]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[12]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[11]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[10]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[9]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[8]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[7]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[6]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[5]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[4]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[3]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[2]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[1]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[0]
+WARNING: [Synth 8-3331] design GameController has unconnected port BTND
+WARNING: [Synth 8-3331] design GameController has unconnected port BTNR
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.387 ; gain = 156.809
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 465.852 ; gain = 156.195
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -127,10 +173,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.387 ; gain = 156.809
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 465.852 ; gain = 156.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.387 ; gain = 156.809
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 465.852 ; gain = 156.195
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -143,24 +189,24 @@ Parsing XDC File [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constr
 Finished Parsing XDC File [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constrs_1/new/Nexys-A7-100t-Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/DigitalElectronics/project_1/project_1.srcs/constrs_1/new/Nexys-A7-100t-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/GameController_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/GameController_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 823.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 826.023 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 823.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 826.023 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 823.523 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 823.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 826.023 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 826.023 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 826.023 ; gain = 516.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 826.023 ; gain = 516.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -169,17 +215,21 @@ Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/P
 Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/ip/clockGenerator/clockGenerator/clockGenerator_in_context.xdc, line 5).
 Applied set_property DONT_TOUCH = true for clkgen. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 826.023 ; gain = 516.367
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "CLK" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "CLK" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "powerTable[3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "powerTable[3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "CLK" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "ballFlip" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "ballFlip" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5544] ROM "ballSpeed[0]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "ballSpeed[0]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:293]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:294]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:295]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:293]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:294]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/GameController.vhd:295]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 823.523 ; gain = 513.945
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 826.023 ; gain = 516.367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -192,40 +242,50 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 12    
-	   2 Input     31 Bit       Adders := 4     
-	   2 Input     15 Bit       Adders := 7     
+	   2 Input     32 Bit       Adders := 18    
+	   2 Input     31 Bit       Adders := 7     
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input     15 Bit       Adders := 6     
 	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 2     
-	   2 Input      3 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
+	   3 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 2     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 5     
 +---Registers : 
-	               32 Bit    Registers := 2     
-	               15 Bit    Registers := 3     
+	               32 Bit    Registers := 4     
+	               31 Bit    Registers := 1     
+	               21 Bit    Registers := 1     
+	               15 Bit    Registers := 2     
 	               12 Bit    Registers := 1     
 	               10 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
-+---Multipliers : 
-	                 1x32  Multipliers := 1     
+	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 5     
 	   4 Input     32 Bit        Muxes := 2     
-	   3 Input     32 Bit        Muxes := 1     
-	   2 Input     31 Bit        Muxes := 4     
-	   2 Input     15 Bit        Muxes := 7     
+	   8 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 8     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 6     
 	   2 Input     12 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 10    
-	   3 Input      4 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 3     
+	   6 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 8     
+	   3 Input      4 Bit        Muxes := 1     
 	   5 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 11    
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 15    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -236,19 +296,38 @@ Hierarchical RTL Component report
 Module GameController 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 6     
+	   2 Input     32 Bit       Adders := 12    
+	   2 Input     31 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Multipliers : 
-	                 1x32  Multipliers := 1     
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   3 Input     32 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 5     
+	   8 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 6     
 	   5 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module Random 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               31 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     31 Bit        Muxes := 1     
 Module HPulse 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -291,8 +370,21 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 2     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
 +---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
+Module AI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module Tick__parameterized2 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -314,34 +406,26 @@ Detailed RTL Component Info :
 	   2 Input     15 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	                3 Bit    Registers := 1     
 +---Muxes : 
 	   4 Input     32 Bit        Muxes := 2     
 	   2 Input     31 Bit        Muxes := 2     
 	   2 Input     15 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 5     
-	   3 Input      4 Bit        Muxes := 2     
+	   6 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-Module Tick__parameterized4 
+Module Tick__parameterized6 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     15 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
 +---Registers : 
-	               15 Bit    Registers := 1     
+	               21 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-Module Ball 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input     31 Bit       Adders := 2     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
-	   2 Input     31 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -358,33 +442,77 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "genClocks[1].genClock/CLK" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "moveClock/CLK" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "moveClock/CLK" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "aiPlayer/moveClock/CLK" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "clk/CLK" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "moveClock/CLK" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[15]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[14]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[13]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[12]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[11]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[10]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[9]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[8]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[7]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[6]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[5]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[4]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[3]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[2]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[1]
-WARNING: [Synth 8-3331] design GameController has unconnected port SW[0]
-INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][31]' (FDRE) to 'ballSpeed_reg[1][0]'
-INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][0]' (FDRE) to 'ballSpeed_reg[1][3]'
-INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][1]' (FDSE) to 'ballSpeed_reg[1][6]'
-INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][2]' (FDSE) to 'ballSpeed_reg[1][6]'
+INFO: [Synth 8-5546] ROM "genClocks[1].genClock/CLK" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP L2, operation Mode is: A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: Generating DSP L2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator L2 is absorbed into DSP L2.
+DSP Report: operator L2 is absorbed into DSP L2.
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[31]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[30]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[29]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[28]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[27]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[26]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[25]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[24]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[23]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[22]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[21]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[20]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[19]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[18]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[17]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[16]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[15]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[14]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[13]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[12]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[11]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[10]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[9]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[8]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[7]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[6]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[5]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[4]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[3]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[2]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[1]
+WARNING: [Synth 8-3331] design AI has unconnected port ballX[0]
+WARNING: [Synth 8-3331] design GameController has unconnected port BTND
+WARNING: [Synth 8-3331] design GameController has unconnected port BTNR
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][2]' (FDRE) to 'ballSpeed_reg[1][3]'
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][3]' (FDRE) to 'ballSpeed_reg[1][4]'
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][4]' (FDRE) to 'ballSpeed_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][5]' (FDRE) to 'ballSpeed_reg[1][7]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][5]' (FDRE) to 'ballSpeed_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][6]' (FDRE) to 'ballSpeed_reg[1][7]'
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][7]' (FDRE) to 'ballSpeed_reg[1][8]'
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][8]' (FDRE) to 'ballSpeed_reg[1][9]'
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][9]' (FDRE) to 'ballSpeed_reg[1][10]'
@@ -408,9 +536,61 @@ INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][26]' (FDRE) to 'ballSpee
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][27]' (FDRE) to 'ballSpeed_reg[1][28]'
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][28]' (FDRE) to 'ballSpeed_reg[1][29]'
 INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][29]' (FDRE) to 'ballSpeed_reg[1][30]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ballSpeed_reg[1][30] )
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[1][30]' (FDRE) to 'ballSpeed_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][2]' (FDRE) to 'ballSpeed_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][3]' (FDRE) to 'ballSpeed_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][4]' (FDRE) to 'ballSpeed_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][5]' (FDRE) to 'ballSpeed_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][6]' (FDRE) to 'ballSpeed_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][7]' (FDRE) to 'ballSpeed_reg[0][8]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][8]' (FDRE) to 'ballSpeed_reg[0][9]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][9]' (FDRE) to 'ballSpeed_reg[0][10]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][10]' (FDRE) to 'ballSpeed_reg[0][11]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][11]' (FDRE) to 'ballSpeed_reg[0][12]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][12]' (FDRE) to 'ballSpeed_reg[0][13]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][13]' (FDRE) to 'ballSpeed_reg[0][14]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][14]' (FDRE) to 'ballSpeed_reg[0][15]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][15]' (FDRE) to 'ballSpeed_reg[0][16]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][16]' (FDRE) to 'ballSpeed_reg[0][17]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][17]' (FDRE) to 'ballSpeed_reg[0][18]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][18]' (FDRE) to 'ballSpeed_reg[0][19]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][19]' (FDRE) to 'ballSpeed_reg[0][20]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][20]' (FDRE) to 'ballSpeed_reg[0][21]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][21]' (FDRE) to 'ballSpeed_reg[0][22]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][22]' (FDRE) to 'ballSpeed_reg[0][23]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][23]' (FDRE) to 'ballSpeed_reg[0][24]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][24]' (FDRE) to 'ballSpeed_reg[0][25]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][25]' (FDRE) to 'ballSpeed_reg[0][26]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][26]' (FDRE) to 'ballSpeed_reg[0][27]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][27]' (FDRE) to 'ballSpeed_reg[0][28]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][28]' (FDRE) to 'ballSpeed_reg[0][29]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][29]' (FDRE) to 'ballSpeed_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'ballSpeed_reg[0][30]' (FDRE) to 'ballSpeed_reg[0][31]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 823.523 ; gain = 513.945
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 905.102 ; gain = 595.445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|GameController | A*B            | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | A*B            | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | A*B            | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|GameController | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -425,13 +605,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clkgen/CLKGame' to pin 'c
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clkgen/CLKPixel' to pin 'clkgen/bbstub_CLKPixel/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 823.523 ; gain = 513.945
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:01:26 . Memory (MB): peak = 905.102 ; gain = 595.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 823.523 ; gain = 513.945
+Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 905.102 ; gain = 595.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -443,7 +623,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished Technology Mapping : Time (s): cpu = 00:01:29 ; elapsed = 00:01:33 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -467,7 +647,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished IO Insertion : Time (s): cpu = 00:01:32 ; elapsed = 00:01:35 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -480,7 +660,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:32 ; elapsed = 00:01:35 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -492,25 +672,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:33 ; elapsed = 00:01:36 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:33 ; elapsed = 00:01:36 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:33 ; elapsed = 00:01:36 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:33 ; elapsed = 00:01:36 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -528,59 +708,61 @@ Report Cell Usage:
 |      |Cell                  |Count |
 +------+----------------------+------+
 |1     |clockGenerator_bbox_0 |     1|
-|2     |BUFG                  |     3|
-|3     |CARRY4                |   531|
-|4     |LUT1                  |   184|
-|5     |LUT2                  |   578|
-|6     |LUT3                  |   612|
-|7     |LUT4                  |   384|
-|8     |LUT5                  |   374|
-|9     |LUT6                  |   598|
-|10    |MUXF7                 |     1|
-|11    |FDRE                  |   257|
-|12    |IBUF                  |     5|
-|13    |OBUF                  |    29|
+|2     |BUFG                  |     2|
+|3     |CARRY4                |   532|
+|4     |DSP48E1               |     6|
+|5     |DSP48E1_1             |     3|
+|6     |LUT1                  |   202|
+|7     |LUT2                  |   611|
+|8     |LUT3                  |   547|
+|9     |LUT4                  |   328|
+|10    |LUT5                  |   203|
+|11    |LUT6                  |   573|
+|12    |FDRE                  |   201|
+|13    |IBUF                  |    19|
+|14    |OBUF                  |    29|
 +------+----------------------+------+
 
 Report Instance Areas: 
-+------+--------------+-----------------------+------+
-|      |Instance      |Module                 |Cells |
-+------+--------------+-----------------------+------+
-|1     |top           |                       |  3558|
-|2     |  Player1     |Player                 |   298|
-|3     |    moveClock |Tick_0                 |    26|
-|4     |  Player2     |Player__parameterized1 |   289|
-|5     |    moveClock |Tick                   |    26|
-|6     |  ScoreBoard  |ScoreDisplay           |   585|
-|7     |    clk       |Tick__parameterized2   |    22|
-|8     |  VSync       |VPulse                 |   323|
-|9     |    HS        |HPulse                 |   162|
-|10    |  sqBall      |Ball                   |  1710|
-|11    |    moveClock |Tick__parameterized4   |    26|
-+------+--------------+-----------------------+------+
++------+--------------------------+-----------------------+------+
+|      |Instance                  |Module                 |Cells |
++------+--------------------------+-----------------------+------+
+|1     |top                       |                       |  3258|
+|2     |  Player1                 |Player                 |   231|
+|3     |    moveClock             |Tick_0                 |    26|
+|4     |  Player2                 |AI                     |   302|
+|5     |    aiPlayer              |Player__parameterized1 |   302|
+|6     |      moveClock           |Tick                   |    26|
+|7     |  ScoreBoard              |ScoreDisplay           |   575|
+|8     |    clk                   |Tick__parameterized2   |    22|
+|9     |  VSync                   |VPulse                 |   339|
+|10    |    HS                    |HPulse                 |   188|
+|11    |  \genClocks[1].genClock  |Tick__parameterized6   |    34|
+|12    |  randGen                 |Random                 |   315|
++------+--------------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:33 ; elapsed = 00:01:36 . Memory (MB): peak = 938.586 ; gain = 628.930
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 919.555 ; gain = 252.840
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 919.555 ; gain = 609.977
+Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 938.586 ; gain = 268.758
+Synthesis Optimization Complete : Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 938.586 ; gain = 628.930
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 532 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 541 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 919.555 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 938.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-93 Infos, 33 Warnings, 0 Critical Warnings and 0 Errors encountered.
+131 Infos, 73 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 919.555 ; gain = 621.441
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 919.555 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:37 ; elapsed = 00:01:41 . Memory (MB): peak = 938.586 ; gain = 640.391
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 938.586 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/DigitalElectronics/project_1/project_1.runs/synth_1/GameController.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file GameController_utilization_synth.rpt -pb GameController_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May  8 11:37:25 2019...
+INFO: [Common 17-206] Exiting Vivado at Mon May 20 20:39:30 2019...

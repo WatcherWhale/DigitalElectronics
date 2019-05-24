@@ -20,7 +20,7 @@ entity Player is
         Up   : in std_logic;
         Down : in std_logic;
         
-        X    : out integer;
+        x    : out integer;
         y    : out integer
     );
 end Player;
@@ -70,8 +70,8 @@ begin
     
     pUpdatePosition : process(xPos,yPos)
     begin
-        X <= xPos;
-        Y <= yPos;
+        x <= xPos;
+        y <= yPos;
     end process;
 
 end Behavioral;

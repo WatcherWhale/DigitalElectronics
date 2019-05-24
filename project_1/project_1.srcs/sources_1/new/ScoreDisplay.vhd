@@ -20,6 +20,7 @@ architecture Behavioral of ScoreDisplay is
     signal displayCounter : integer range 0 to 7;
     signal displayClock   : std_logic;
     signal BCD            : unsigned(3 downto 0);
+    signal tempC          : std_logic_vector(6 downto 0);
 
     component Tick
         Generic ( g_Freq : integer);
@@ -39,7 +40,7 @@ begin
         Port map(CLK_in  => gameClock,
                  CLK_out => displayClock);
     converter : BCDTo7SegmentConverter
-        Port map(BCD => BCD,SEG =>C);
+        Port map(BCD => BCD,SEG =>tempC);
 
     pCount : process(displayClock)
     begin
@@ -56,37 +57,60 @@ begin
 
     pShow : process(Score1,Score2,displayCounter)
     begin
-        AN <= "00000000";
-
+        AN <= "11111111";
+        AN(displayCounter) <= '0';
+        
         if(displayCounter < 4)
         then
             if displayCounter = 0
             then
                 -- Only take the first digit
-                BCD <= to_unsigned(Score1 rem 10,4);
+                BCD <= to_unsigned(Score2 rem 10,4);
             elsif displayCounter = 3
             then
                 -- Only take the last digit
-                BCD <= to_unsigned(Score1 / powerTable(0),4);
+                BCD <= to_unsigned(Score2 / 1000,4);
             else
                 -- Take the correct digit
-                BCD <= to_unsigned( (Score1/powerTable(3-displayCounter) rem 10 ) , 4);
+                BCD <= to_unsigned( (Score2/powerTable(3-displayCounter) rem 10 ) , 4);
             end if;
         else
             if displayCounter - 3 = 0
             then
                 -- Only take the first digit
-                BCD <= to_unsigned(Score2 rem 10,4);
-            elsif displayCounter - 3 = 3
+                BCD <= to_unsigned(Score1 rem 10,4);
+            elsif displayCounter - 4 = 3
             then
                 -- Only take the last digit
-                BCD <= to_unsigned(Score2 / powerTable(0),4);
+                BCD <= to_unsigned(Score1 / powerTable(0),4);
             else
                 -- Take the correct digit
-                BCD <= to_unsigned( (Score2/powerTable(3-(displayCounter-3)) rem 10 ) , 4);
+                BCD <= to_unsigned( (Score1/powerTable(3-(displayCounter-4)) rem 10 ) , 4);
             end if;
         end if;
-
+    end process;
+    
+    pCathodes : process(tempC, Score1, Score2, displayCounter)
+    begin
+        C <= "1111111";
+        if Score1 = 6 AND Score2 = 9
+        then
+            if displayCounter rem 4 = 0
+            then
+                C <= "0100000";
+            elsif displayCounter rem 4 = 1 
+            then
+                C <= "0100100";
+            elsif displayCounter rem 4 = 2 
+            then
+                C <= "1001111";
+            elsif displayCounter rem 4 = 3 
+            then
+                C <= "0011000";
+            end if;
+        else
+            C <= tempC;
+        end if;
     end process;
 
 end Behavioral;

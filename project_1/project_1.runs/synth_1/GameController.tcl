@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,10 +32,11 @@ set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
 set_property ip_output_repo c:/Projects/DigitalElectronics/project_1/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
+  C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/AI.vhd
   C:/Projects/DigitalElectronics/7SegmentController/7SegmentController.srcs/sources_1/new/BCDTo7SegmentConverter.vhd
-  C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Ball.vhd
   C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/HPulse.vhd
   C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Player.vhd
+  C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/Random.vhd
   C:/Projects/DigitalElectronics/project_1/project_1.srcs/sources_1/new/ScoreDisplay.vhd
   C:/Projects/DigitalElectronics/Counter/Counter.srcs/sources_1/new/Tick.vhd
   C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd

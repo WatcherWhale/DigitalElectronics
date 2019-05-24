@@ -8,7 +8,8 @@ entity GameController is
         g_playerW   : integer := 15;
         
         g_ballSize  : integer := 10;
-        g_ballSpeed : integer := 100);
+        g_ballSpeed : integer := 150;
+        g_colorSpeed: integer := 2);
     Port (
         -- Clock
         CLK100MHZ : in std_logic;
@@ -38,26 +39,27 @@ end GameController;
 architecture Behavioral of GameController is
     -- Types
     type tIntarr is array(0 to 1) of integer;
-    
-    -- Constants
-    constant sincos45 : integer := 707107;
+    type tColor is array(0 to 2) of Unsigned(3 downto 0);
+    type tClockArr is array(0 to 1) of std_logic;
     
     -- Signals
     -- Clocks
     signal PixelClock : std_logic;
     signal GameClock  : std_logic;
+    signal specialClocks : tClockArr;
     
     -- VGA
     signal x,y : integer;
     signal Write : std_logic;
+    signal Color : tColor := ("1111","1111","1111");
     
     -- Players
     signal p1Pos : tIntarr := (20,30);
-    signal p2Pos : tIntarr := (620,30);
+    signal p2Pos : tIntarr := (620,510);
 
     -- Ball
     signal ballPos : tIntarr := (315,235);
-    signal ballSpeed : tIntarr := (0,0);
+    signal ballSpeed : tIntarr := (others => 0);
     signal ballFlip : std_logic_vector(1 downto 0);
 
     -- Scores
@@ -65,7 +67,10 @@ architecture Behavioral of GameController is
     
     signal Playing : std_logic := '0';
     
-     
+     -- Random
+     signal RES : std_logic := '1';
+     signal randNumber : integer;
+     signal randSeed : std_logic_vector(30 downto 0);
 
     -- Components
     component clockGenerator
@@ -106,6 +111,26 @@ architecture Behavioral of GameController is
     );
     end component;
 
+    component AI
+        Generic(
+        g_startX  : integer;
+        g_startY  : integer;
+        g_ballSize: integer;
+        g_height  : integer;
+        g_width   : integer);
+    Port(
+        CLKGame : in std_logic; 
+
+        ballX : in integer;
+        ballY : in integer;
+        
+        X     : out integer;
+        Y     : out integer;
+        
+        random : in integer
+    );
+    end component;
+
     component ScoreDisplay
     Port (
         gameClock : in std_logic;
@@ -115,17 +140,20 @@ architecture Behavioral of GameController is
         C         : out std_logic_vector(6 downto 0)
     );
     end component;
-
-    component Ball
-    Port (
-        CLKGame : in std_logic;
     
-        speedY : in integer;
-        speedX : in integer;
-    
-        x : out integer;
-        y : out integer
-    );
+    component Tick
+        Generic ( g_Freq : integer);
+        Port ( CLK_in : in STD_LOGIC;
+               CLK_out : out STD_LOGIC);
+   end component;
+   
+   component Random
+        Port(
+        CLK  : in std_logic;
+        seed : in std_logic_vector(30 downto 0);
+        RES  : in std_logic;
+        Number : out integer
+        );
     end component;
 
 begin
@@ -137,6 +165,14 @@ begin
         CLK100MHZ => CLK100MHZ
     );
     
+    randGen : Random
+        Port map(
+            CLK => CLK100MHZ,
+            seed => randSeed,
+            RES => RES,
+            Number => randNumber
+        );
+    
     VSync : VPulse
      Port map(
         pixelClock => PixelClock,
@@ -147,20 +183,24 @@ begin
         Write => Write);
         
     Player1 : Player
-    Generic map(g_startX => 20, g_startY => 30,g_height => g_playerH, g_width => g_playerW)
+    Generic map(g_startX => 20, g_startY => 190,g_height => g_playerH, g_width => g_playerW)
     Port map(CLKGame => GameClock,
              Up => BTNU,
              Down => BTNL,
              X => p1Pos(0),
              Y => p1Pos(1));
     
-    Player2 : Player
-    Generic map(g_startX => 605, g_startY => 30,g_height => g_playerH, g_width => g_playerW)
+    Player2 : AI
+    Generic map(g_startX => 605, g_startY => 190,g_height => g_playerH, g_width => g_playerW, g_ballSize => g_ballSize)
     Port map(CLKGame => GameClock,
-             Up => BTNR,
-             Down => BTND,
+             --Up => BTNR,
+             --Down => BTND,
              X => p2Pos(0),
-             Y => p2Pos(1));
+             Y => p2Pos(1),
+             ballX => ballPos(0),
+             ballY => ballPos(1),
+             random => randNumber
+             );
 
     ScoreBoard : ScoreDisplay
     Port map (gameClock => GameClock, 
@@ -168,59 +208,94 @@ begin
               Score2 => Scores(1),
               AN => AN,
               C  => C);
-
-    sqBall : Ball
-    Port map(
-        CLKGame => GameClock,
-        speedX  => ballSpeed(0),
-        speedY  => ballSpeed(1),
-        x => ballPos(0),
-        y => ballPos(1)
-    );
-
-    -- Processes 
-    pBallMove : process(ballPos,p1Pos,p2Pos) -- Change sensitivity list
-    begin
-        -- Check if there is a collision
-        ballFlip <= "00";
-        
-        if (ballPos(0) <= p1Pos(0)) AND (ballPos(1)+g_ballSize >= p1Pos(1)) AND (ballPos(1) <= p1Pos(1))
-        then
-            ballFlip(0) <= '1';
-        elsif (ballPos(0) >= p2Pos(0)) AND (ballPos(1)+g_ballSize >= p2Pos(1)) AND (ballPos(1) <= p2Pos(1))
-        then
-            ballFlip(0) <= '1';
-        elsif ballPos(0) = -1 --Change to any wall
-        then
-            ballFlip(1) <= '1';
-        end if;
-        
-    end process;
     
-    pSpeedFlipFlop : process(CLK100MHZ)
+    genClocks : for I in 0 to 1 generate
+        genClock : Tick
+        Generic map(g_Freq => (g_ballSpeed * (I-1) + g_colorSpeed * (I))*2)
+        Port map(CLK_in => GameClock,
+                 CLK_out => specialClocks(I));
+    end generate;
+              
+    pBallTick : process(specialClocks(0))
     begin
-        if rising_edge(CLK100MHZ)
+        if rising_edge(specialClocks(0))
         then
-            if BTNC = '1' AND Playing = '0'
+
+            if(ballSpeed(0) = 0) AND Playing = '1'
             then
-                Playing <= '1';
-                ballSpeed(0) <= sincos45/10000;
-                ballSpeed(1) <= sincos45/10000;
-            elsif BTNC = '1' AND Playing = '1'
+                ballSpeed(0) <= 1;
+            elsif ballSpeed(1) = 0 AND Playing = '1'
             then
-                ballSpeed(0) <= 0;
-                ballSpeed(1) <= 0;
-            elsif ballFlip(0) = '1'
-                then
-                    ballSpeed(0) <= ballSpeed(0) * (-1);
-            elsif ballFlip(1) = '1'
-            then
-                ballSpeed(0) <= ballSpeed(0) * (-1);
+                ballSpeed(1) <= 1;
             end if;
-        
+
+            ballPos(0) <= ballPos(0) + ballSpeed(0);
+            ballPos(1) <= ballPos(1) + ballSpeed(1);
+            
+            if BTNC = '1'
+            then
+                RES <= '0';   
+                Playing <= '1';
+                             
+                ballSpeed(0) <= (randNumber rem 3) - 1;
+                ballSpeed(1) <= (randNumber rem 3) - 1;
+
+                ballPos(0) <= 315;
+                ballPos(1) <= 235;
+
+                Scores(0) <= 0;
+                Scores(1) <= 0;
+            end if;
+            
+            if  ballPos(1) <= 11
+            then
+                ballSpeed(1) <= 1;
+            elsif ballPos(1) + g_ballSize >= 480 - 11
+            then
+                ballSpeed(1) <= -1;
+            end if;
+            
+            if ballPos(0) + g_ballSize >= 640 - 11
+            then
+                Scores(0) <= Scores(0) + 1;
+                
+                ballPos(0) <= 315;
+                ballPos(1) <= 235;
+                ballSpeed(0) <= -1;
+                ballSpeed(1) <= randNumber rem 3 - 1;
+                
+            elsif ballPos(0) <= 11
+            then
+                Scores(1) <= Scores(1) + 1;
+                
+                ballPos(0) <= 315;
+                ballPos(1) <= 235;
+                ballSpeed(0) <= 1;
+                ballSpeed(1) <= randNumber rem 3 - 1;
+                
+            end if;
+            
+            if ballPos(0) <= p1Pos(0) + g_playerW AND ballpos(1) >= p1Pos(1) AND ballPos(1) + g_ballSize <= p1Pos(1) + g_playerH
+            then
+                ballSpeed(0) <= 1;
+            elsif ballPos(0) + g_ballSize >= p2Pos(0) AND ballpos(1) >= p2Pos(1) AND ballPos(1) + g_ballSize <= p2Pos(1) + g_playerH
+            then
+                ballSpeed(0) <= -1;
+            end if;
         end if;
     end process;
     
+    pColorTick : process(specialClocks(1))
+    begin
+        if rising_edge(specialClocks(1))
+        then 
+            -- Check overflow
+            Color(0) <= to_unsigned((randNumber) ** 2 rem 10,4) + 6;
+            Color(1) <= to_unsigned((randNumber + 1) ** 2 rem 10,4) + 6;
+            Color(2) <= to_unsigned((randNumber + 2) ** 2 rem 10,4) + 6;
+        end if;
+    end process;
+        
     pUpdateDisplay : process(x,y,Write,p1Pos,p2Pos,ballPos)
     begin
         VGA_R <= "0000";
@@ -247,19 +322,19 @@ begin
             
             if x >= ballPos(0) AND x <= ballPos(0) + g_ballSize AND y >= ballPos(1) AND y <= ballPos(1) + g_ballSize
             then
-                VGA_R <= "1111";
-                VGA_G <= "1111";
-                VGA_B <= "1111";
+                VGA_R <= std_logic_vector(Color(0));  
+                VGA_G <= std_logic_vector(Color(1));
+                VGA_B <= std_logic_vector(Color(2));
             end if;
                         
             if((9 <= y AND y <= 11) AND (9 <= x AND x <= 640-11)) OR ((480-11 <= y AND y <= 480 - 9) AND (9 <= x AND x <= 640-9))
             then
-                VGA_R <= "1111";
+                VGA_R <= "1111";  
                 VGA_G <= "1111";
                 VGA_B <= "1111";
             end if;
             
-            if ((9 <= x AND x <= 11) AND (9 <= y AND y <= 480-11)) OR ((640-11 <= x AND x <= 640 - 9) AND (9 <= y AND y <= 480-9)) 
+            if ((9 <= x AND x <= 11) OR (640-11 <= x AND x <= 640 - 9) OR (319 <= x AND x <= 321) ) AND (9 <= y AND y <= 480-9)
             then
                 VGA_R <= "1111";
                 VGA_G <= "1111";
@@ -268,6 +343,11 @@ begin
             
         end if;
                 
+    end process;
+    
+    pUpdateSeed : process(SW)
+    begin
+        randSeed(15 downto 0) <= SW;
     end process;
 
 end Behavioral;

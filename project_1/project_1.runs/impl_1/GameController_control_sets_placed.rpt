@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed May  8 11:38:01 2019
+| Date         : Mon May 20 20:40:37 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file GameController_control_sets_placed.rpt
 | Design       : GameController
@@ -23,7 +23,7 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    13 |
+| Number of unique control sets                            |    12 |
 | Unused register locations in slices containing registers |    31 |
 +----------------------------------------------------------+-------+
 
@@ -34,12 +34,12 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      5 |            1 |
+|      6 |            1 |
 |      7 |            1 |
-|      8 |            1 |
 |     10 |            2 |
 |     11 |            1 |
-|     14 |            3 |
+|     12 |            1 |
+|     14 |            2 |
 |    16+ |            4 |
 +--------+--------------+
 
@@ -50,34 +50,33 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              91 |           32 |
+| No           | No                    | No                     |              41 |           24 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              63 |           19 |
-| Yes          | No                    | No                     |              64 |           16 |
+| No           | Yes                   | No                     |              70 |           20 |
+| Yes          | No                    | No                     |              64 |           19 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              39 |           11 |
+| Yes          | Yes                   | No                     |              10 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------+---------------------------+-----------------------+------------------+----------------+
-|      Clock Signal     |       Enable Signal       |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
-+-----------------------+---------------------------+-----------------------+------------------+----------------+
-|  CLK100MHZ_IBUF_BUFG  |                           |                       |                1 |              5 |
-|  ScoreBoard/clk/CLK   |                           |                       |                4 |              7 |
-|  clkgen/inst/CLKGame  |                           |                       |                5 |              8 |
-|  clkgen/inst/CLKPixel |                           | VSync/HS/clear        |                4 |             10 |
-|  clkgen/inst/CLKPixel | VSync/HS/E[0]             | VSync/HS/SR[0]        |                3 |             10 |
-|  clkgen/inst/CLKGame  |                           | ScoreBoard/clk/CLK_0  |                3 |             11 |
-|  clkgen/inst/CLKGame  |                           | sqBall/moveClock/CLK  |                4 |             14 |
-|  clkgen/inst/CLKGame  |                           | Player1/moveClock/CLK |                4 |             14 |
-|  clkgen/inst/CLKGame  |                           | Player2/moveClock/CLK |                4 |             14 |
-|  CLK100MHZ_IBUF_BUFG  | sqBall/xPos_reg[31]_rep_0 | BTNC_IBUF             |                8 |             29 |
-|  CLK_1                | Player1/yPos              |                       |                8 |             32 |
-|  CLK_0                | Player2/yPos              |                       |                8 |             32 |
-|  CLK                  |                           |                       |               22 |             71 |
-+-----------------------+---------------------------+-----------------------+------------------+----------------+
++----------------------------+-----------------------+--------------------------------+------------------+----------------+
+|        Clock Signal        |     Enable Signal     |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
++----------------------------+-----------------------+--------------------------------+------------------+----------------+
+|  ScoreBoard/clk/CLK        |                       |                                |                3 |              6 |
+|  clkgen/inst/CLKGame       |                       |                                |                5 |              7 |
+|  clkgen/inst/CLKPixel      |                       | VSync/HS/clear                 |                3 |             10 |
+|  clkgen/inst/CLKPixel      | VSync/HS/E[0]         | VSync/HS/SR[0]                 |                3 |             10 |
+|  clkgen/inst/CLKGame       |                       | ScoreBoard/clk/CLK_0           |                3 |             11 |
+|  genClocks[1].genClock/CLK |                       |                                |                7 |             12 |
+|  clkgen/inst/CLKGame       |                       | Player2/aiPlayer/moveClock/CLK |                4 |             14 |
+|  clkgen/inst/CLKGame       |                       | Player1/moveClock/CLK          |                4 |             14 |
+|  CLK100MHZ_IBUF            |                       |                                |                9 |             16 |
+|  clkgen/inst/CLKGame       |                       | genClocks[1].genClock/CLK_0    |                6 |             21 |
+|  CLK_1                     | Player2/aiPlayer/yPos |                                |               11 |             32 |
+|  CLK_0                     | Player1/yPos          |                                |                8 |             32 |
++----------------------------+-----------------------+--------------------------------+------------------+----------------+
 
 

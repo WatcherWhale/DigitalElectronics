@@ -3,9 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity Ball is
-    Generic(
-        g_timeStep : integer := 100
-        );
     Port (
         CLKGame : in std_logic;
     
@@ -33,7 +30,7 @@ architecture Behavioral of Ball is
 
 begin
     moveClock : Tick
-        Generic map(g_Freq => g_timeStep * 2)
+        Generic map(g_Freq => 100)
         Port map(CLK_in => CLKGame,
                  CLK_out => stepClock);
                  
@@ -48,8 +45,8 @@ begin
      
      pStepped : process(xPos,yPos)
      begin
-        x <= xPos/g_timeStep;
-        y <= yPos/g_timeStep;
+        x <= xPos;
+        y <= yPos;
      end process;
 
 end Behavioral;
