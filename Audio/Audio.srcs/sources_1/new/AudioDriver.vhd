@@ -8,8 +8,7 @@ entity AudioDriver is
     );
     Port (
         CLK_in : in std_logic;
-        AUD_PWM : out std_logic;
-        AUD_SD : out std_logic
+        AUD_PWM : out std_logic
     );
 end AudioDriver;
 
@@ -50,6 +49,5 @@ begin
     end process;
     
     AUD_PWM <= pwmOut;
-    AUD_SD <= '1';
 
 end Behavioral;

@@ -1,3 +1,10 @@
+-- AI(cpu) toegevoegd
+-- Bots geluidjes
+-- Een easter egg (score 6-9)
+-- Random Generator met LSFR
+-- * Regenboog kleuren van het balletje
+-- * AI(cpu) Dommer gemaakt
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -32,7 +39,10 @@ entity GameController is
         BTNR : in std_logic;
         BTNC : in std_logic;
         
-        SW   : in std_logic_vector(15 downto 0)
+        SW   : in std_logic_vector(15 downto 0);
+        
+        AUD_PWM : out std_logic;
+        AUD_SD : out std_logic
     );
 end GameController;
 
@@ -141,6 +151,13 @@ architecture Behavioral of GameController is
     );
     end component;
     
+    component AudioDriver
+    Port (
+        CLK_in : in std_logic;
+        AUD_PWM : out std_logic
+    );
+    end component;
+    
     component Tick
         Generic ( g_Freq : integer);
         Port ( CLK_in : in STD_LOGIC;
@@ -188,7 +205,8 @@ begin
              Up => BTNU,
              Down => BTNL,
              X => p1Pos(0),
-             Y => p1Pos(1));
+             Y => p1Pos(1)
+             );
     
     Player2 : AI
     Generic map(g_startX => 605, g_startY => 190,g_height => g_playerH, g_width => g_playerW, g_ballSize => g_ballSize)
@@ -199,8 +217,7 @@ begin
              Y => p2Pos(1),
              ballX => ballPos(0),
              ballY => ballPos(1),
-             random => randNumber
-             );
+             random => randNumber);
 
     ScoreBoard : ScoreDisplay
     Port map (gameClock => GameClock, 
@@ -208,10 +225,16 @@ begin
               Score2 => Scores(1),
               AN => AN,
               C  => C);
+              
+    au : AudioDriver
+        Port map(
+            CLK_in => GameClock,
+            AUD_PWM => AUD_PWM
+        );
     
     genClocks : for I in 0 to 1 generate
         genClock : Tick
-        Generic map(g_Freq => (g_ballSpeed * (I-1) + g_colorSpeed * (I))*2)
+        Generic map(g_Freq => (g_ballSpeed * (1-I) + g_colorSpeed * (I))*2)
         Port map(CLK_in => GameClock,
                  CLK_out => specialClocks(I));
     end generate;
@@ -220,7 +243,8 @@ begin
     begin
         if rising_edge(specialClocks(0))
         then
-
+            AUD_SD <= '0';
+            
             if(ballSpeed(0) = 0) AND Playing = '1'
             then
                 ballSpeed(0) <= 1;
@@ -234,25 +258,36 @@ begin
             
             if BTNC = '1'
             then
-                RES <= '0';   
-                Playing <= '1';
-                             
-                ballSpeed(0) <= (randNumber rem 3) - 1;
-                ballSpeed(1) <= (randNumber rem 3) - 1;
-
-                ballPos(0) <= 315;
-                ballPos(1) <= 235;
-
-                Scores(0) <= 0;
-                Scores(1) <= 0;
+                if Playing = '0'
+                then
+                    RES <= '0';
+                    Playing <= '1';
+                    
+                    ballSpeed(0) <= (randNumber rem 3) - 1;
+                    ballSpeed(1) <= (randNumber rem 3) - 1;
+                else
+                    RES <= '1';   
+                    Playing <= '0';
+                                 
+                    ballSpeed(0) <= 0;
+                    ballSpeed(1) <= 0;
+    
+                    ballPos(0) <= 315;
+                    ballPos(1) <= 235;
+    
+                    Scores(0) <= 0;
+                    Scores(1) <= 0;
+                end if;
             end if;
             
             if  ballPos(1) <= 11
             then
                 ballSpeed(1) <= 1;
+                AUD_SD <= '1';
             elsif ballPos(1) + g_ballSize >= 480 - 11
             then
                 ballSpeed(1) <= -1;
+                AUD_SD <= '1';
             end if;
             
             if ballPos(0) + g_ballSize >= 640 - 11
@@ -278,9 +313,11 @@ begin
             if ballPos(0) <= p1Pos(0) + g_playerW AND ballpos(1) >= p1Pos(1) AND ballPos(1) + g_ballSize <= p1Pos(1) + g_playerH
             then
                 ballSpeed(0) <= 1;
+                AUD_SD <= '1';
             elsif ballPos(0) + g_ballSize >= p2Pos(0) AND ballpos(1) >= p2Pos(1) AND ballPos(1) + g_ballSize <= p2Pos(1) + g_playerH
             then
                 ballSpeed(0) <= -1;
+                AUD_SD <= '1';
             end if;
         end if;
     end process;
@@ -288,8 +325,7 @@ begin
     pColorTick : process(specialClocks(1))
     begin
         if rising_edge(specialClocks(1))
-        then 
-            -- Check overflow
+        then
             Color(0) <= to_unsigned((randNumber) ** 2 rem 10,4) + 6;
             Color(1) <= to_unsigned((randNumber + 1) ** 2 rem 10,4) + 6;
             Color(2) <= to_unsigned((randNumber + 2) ** 2 rem 10,4) + 6;
@@ -306,7 +342,7 @@ begin
         if(Write = '1')
         then        
             -- Player
-            if x >= p1Pos(0) AND x <= p1Pos(0) + g_playerW AND y >= p1Pos(1) AND y <= p1Pos(1) + g_playerH
+            if x >= p1Pos(0) AND x <= p1Pos(0) + g_playerW AND y >= p1Pos(1) AND y <= p1Pos(1) + g_playerH 
             then
                 VGA_R <= "1111";
                 VGA_G <= "0000";
@@ -318,13 +354,6 @@ begin
                 VGA_R <= "0000";
                 VGA_G <= "0000";
                 VGA_B <= "1111";
-            end if;
-            
-            if x >= ballPos(0) AND x <= ballPos(0) + g_ballSize AND y >= ballPos(1) AND y <= ballPos(1) + g_ballSize
-            then
-                VGA_R <= std_logic_vector(Color(0));  
-                VGA_G <= std_logic_vector(Color(1));
-                VGA_B <= std_logic_vector(Color(2));
             end if;
                         
             if((9 <= y AND y <= 11) AND (9 <= x AND x <= 640-11)) OR ((480-11 <= y AND y <= 480 - 9) AND (9 <= x AND x <= 640-9))
@@ -339,6 +368,13 @@ begin
                 VGA_R <= "1111";
                 VGA_G <= "1111";
                 VGA_B <= "1111";
+            end if;
+            
+            if x >= ballPos(0) AND x <= ballPos(0) + g_ballSize AND y >= ballPos(1) AND y <= ballPos(1) + g_ballSize
+            then
+                VGA_R <= std_logic_vector(Color(0));  
+                VGA_G <= std_logic_vector(Color(1));
+                VGA_B <= std_logic_vector(Color(2));
             end if;
             
         end if;

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon May 20 20:39:30 2019
+| Date         : Fri May 24 12:21:43 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_utilization -file GameController_utilization_synth.rpt -pb GameController_utilization_synth.pb
 | Design       : GameController
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 2058 |     0 |     63400 |  3.25 |
-|   LUT as Logic          | 2058 |     0 |     63400 |  3.25 |
+| Slice LUTs*             | 2663 |     0 |     63400 |  4.20 |
+|   LUT as Logic          | 2663 |     0 |     63400 |  4.20 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  201 |     0 |    126800 |  0.16 |
-|   Register as Flip Flop |  201 |     0 |    126800 |  0.16 |
+| Slice Registers         |  332 |     0 |    126800 |  0.26 |
+|   Register as Flip Flop |  332 |     0 |    126800 |  0.26 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 201   |          Yes |       Reset |            - |
+| 13    |          Yes |         Set |            - |
+| 319   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -91,7 +91,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   49 |     0 |       210 | 23.33 |
+| Bonded IOB                  |   51 |     0 |       210 | 24.29 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -113,7 +113,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    2 |     0 |        32 |  6.25 |
+| BUFGCTRL   |    3 |     0 |        32 |  9.38 |
 | BUFIO      |    0 |     0 |        24 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         6 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
@@ -147,18 +147,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  611 |                 LUT |
-| LUT6     |  573 |                 LUT |
-| LUT3     |  547 |                 LUT |
-| CARRY4   |  532 |          CarryLogic |
-| LUT4     |  328 |                 LUT |
-| LUT5     |  203 |                 LUT |
-| LUT1     |  202 |                 LUT |
-| FDRE     |  201 |        Flop & Latch |
-| OBUF     |   29 |                  IO |
+| LUT2     |  912 |                 LUT |
+| LUT6     |  727 |                 LUT |
+| CARRY4   |  662 |          CarryLogic |
+| LUT3     |  611 |                 LUT |
+| LUT4     |  571 |                 LUT |
+| FDRE     |  319 |        Flop & Latch |
+| LUT5     |  253 |                 LUT |
+| LUT1     |  212 |                 LUT |
+| OBUF     |   31 |                  IO |
 | IBUF     |   20 |                  IO |
+| FDSE     |   13 |        Flop & Latch |
 | DSP48E1  |    9 |    Block Arithmetic |
-| BUFG     |    2 |               Clock |
+| BUFG     |    3 |               Clock |
 +----------+------+---------------------+
 
 

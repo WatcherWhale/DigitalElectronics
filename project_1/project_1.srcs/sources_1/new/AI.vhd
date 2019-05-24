@@ -25,7 +25,8 @@ entity AI is
         x    : out integer;
         y    : out integer;
         
-        random : in integer
+        random : in integer;
+        shrink : in integer
     );
 end AI;
 
