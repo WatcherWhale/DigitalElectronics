@@ -95,6 +95,7 @@ begin
         C <= "1111111";
         if Score1 = 6 AND Score2 = 9
         then
+            -- Easter EGG (=PISG)
             if displayCounter rem 4 = 0
             then
                 C <= "0100000";

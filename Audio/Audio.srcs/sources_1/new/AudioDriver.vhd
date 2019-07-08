@@ -38,6 +38,8 @@ begin
     begin
         if rising_edge(dataClock)
         then
+            -- Create a PWM signal of a block wave with a frequency of 44100/g_outFreq(500) (= 88,2 Hz)
+            -- PWM = Pulse With Modulation
             if counter = DataFreq/(4*g_outFreq) - 1
             then
                 counter <= 0;

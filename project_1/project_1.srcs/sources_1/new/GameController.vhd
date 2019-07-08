@@ -239,12 +239,15 @@ begin
                  CLK_out => specialClocks(I));
     end generate;
               
+    -- Ball mechanics
     pBallTick : process(specialClocks(0))
     begin
         if rising_edge(specialClocks(0))
         then
+            -- Disable all the outpus by default
             AUD_SD <= '0';
             
+            -- Make sure the ball has a speed in both the X and Y directions
             if(ballSpeed(0) = 0) AND Playing = '1'
             then
                 ballSpeed(0) <= 1;
@@ -252,23 +255,28 @@ begin
             then
                 ballSpeed(1) <= 1;
             end if;
-
+            
+            -- Move the ball with the given speeds
             ballPos(0) <= ballPos(0) + ballSpeed(0);
             ballPos(1) <= ballPos(1) + ballSpeed(1);
             
+            -- If the center button is pressed
             if BTNC = '1'
             then
+                -- And the game is not started yet
                 if Playing = '0'
                 then
                     RES <= '0';
                     Playing <= '1';
                     
+                    -- Get a random speed for both balls
                     ballSpeed(0) <= (randNumber rem 3) - 1;
                     ballSpeed(1) <= (randNumber rem 3) - 1;
                 else
                     RES <= '1';   
                     Playing <= '0';
-                                 
+                    
+                    -- Reset the ballspeed, ball position and scores
                     ballSpeed(0) <= 0;
                     ballSpeed(1) <= 0;
     
@@ -280,6 +288,8 @@ begin
                 end if;
             end if;
             
+            -- If the ball bunces on the top or bottom wall
+            -- Play a sound and multiply the vertical(Y) speed with -1
             if  ballPos(1) <= 11
             then
                 ballSpeed(1) <= 1;
@@ -290,6 +300,12 @@ begin
                 AUD_SD <= '1';
             end if;
             
+            -- If the ball touches one of the side walls
+            -- Add a point for the oposing player
+            -- Reset the ball position
+            -- Set the ball speed so that
+            --      The ball goes to the losing player
+            --      In a random vertical direction
             if ballPos(0) + g_ballSize >= 640 - 11
             then
                 Scores(0) <= Scores(0) + 1;
@@ -310,6 +326,8 @@ begin
                 
             end if;
             
+            -- If the ball bunces on a player
+            -- Play a sound and multiply the horizontal(X) speed with -1            
             if ballPos(0) <= p1Pos(0) + g_playerW AND ballpos(1) >= p1Pos(1) AND ballPos(1) + g_ballSize <= p1Pos(1) + g_playerH
             then
                 ballSpeed(0) <= 1;
@@ -322,10 +340,12 @@ begin
         end if;
     end process;
     
+    -- Change the ball to a random color everytime the colorClock has a rising edge
     pColorTick : process(specialClocks(1))
     begin
         if rising_edge(specialClocks(1))
         then
+            -- Create seamingly random colors with just one number
             Color(0) <= to_unsigned((randNumber) ** 2 rem 10,4) + 6;
             Color(1) <= to_unsigned((randNumber + 1) ** 2 rem 10,4) + 6;
             Color(2) <= to_unsigned((randNumber + 2) ** 2 rem 10,4) + 6;
@@ -341,7 +361,7 @@ begin
         -- Write all pixels
         if(Write = '1')
         then        
-            -- Player
+            -- Players
             if x >= p1Pos(0) AND x <= p1Pos(0) + g_playerW AND y >= p1Pos(1) AND y <= p1Pos(1) + g_playerH 
             then
                 VGA_R <= "1111";
@@ -355,7 +375,8 @@ begin
                 VGA_G <= "0000";
                 VGA_B <= "1111";
             end if;
-                        
+            
+            -- Walls            
             if((9 <= y AND y <= 11) AND (9 <= x AND x <= 640-11)) OR ((480-11 <= y AND y <= 480 - 9) AND (9 <= x AND x <= 640-9))
             then
                 VGA_R <= "1111";  
@@ -370,6 +391,7 @@ begin
                 VGA_B <= "1111";
             end if;
             
+            -- Ball
             if x >= ballPos(0) AND x <= ballPos(0) + g_ballSize AND y >= ballPos(1) AND y <= ballPos(1) + g_ballSize
             then
                 VGA_R <= std_logic_vector(Color(0));  
@@ -383,6 +405,7 @@ begin
     
     pUpdateSeed : process(SW)
     begin
+        -- Set the seed for the ransom to the values of the dipswitches
         randSeed(15 downto 0) <= SW;
     end process;
 
