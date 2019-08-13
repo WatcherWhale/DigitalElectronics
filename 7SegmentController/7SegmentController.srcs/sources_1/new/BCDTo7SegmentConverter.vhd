@@ -33,10 +33,12 @@ begin
         if BCD < 10
         then
             -- Convert the UNSIGNED BCD Code to an integer
-            -- Take the element with index equals to the previous integer
+            --  and using this as an index of cSeg.
+            -- Adding a not port to reverse the bits because the 7Seg displays
+            --  are active low.
             SEG <= not cSeg(TO_INTEGER(BCD));
         else
-            --If the BCD code is invalid return a E of error
+            -- If the BCD code is invalid return E(rror)
             SEG <= not "1001111";
         end if;
     end process pBCD;

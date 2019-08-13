@@ -49,21 +49,22 @@ begin
     begin       
         -- Check if the 7 segment displays should be on or off 
         -- These need to be active low
+        -- This is too low level, try to convert this into if-statements
         AN(7) <= not(not(SW(7)) and not(SW(8) ) );  -- 0 & 0
         AN(6) <= not(SW(7) and not(SW(8)));         -- 0 & 1
         AN(1) <= not(SW(8) and not(SW(7)));         -- 1 & 0
         AN(0) <= not(SW(7) and SW(8));              -- 1 & 1
         
-        -- Set the unused displays off
-        AN(2) <= '1';
-        AN(3) <= '1';
-        AN(4) <= '1';
-        AN(5) <= '1';
+        -- Set the unused displays off        
+        AN(5 downto 2) <= "1111";
         
-        -- Making sure BCDin gets a value
+        -- Setting inital values
         BCDin <= "0001010";
-        
         DP <= '1';
+        
+        -- Note: The first exercise is without 2's-complement so just ignore
+        --       the DP and the first if else you should just use what is
+        --       in the if statement
         
         -- Check if we need to invert the input
         -- This is true when the Button is not pressed
@@ -100,9 +101,7 @@ begin
                 BCDin <= unsigned(SW(15 downto 9)) / 10;
            end if;
        else
-           
            DP <= '0';
-           
            -- Check which display we need to use
            if (unsigned(SW(8 downto 7)) = 3)
            then
@@ -130,15 +129,16 @@ begin
     -- Check if the 7 Segment code has been changed
     pSegmentUpdated : process(SEGout)
     begin
-        -- Reverse the displays
-        -- Add a not port because the 7 segment displays are active low        
-        CA <= not SEGout(6);
-        CB <= not SEGout(5);
-        CC <= not SEGout(4);
-        CD <= not SEGout(3);
-        CE <= not SEGout(2);
-        CF <= not SEGout(1);
-        CG <= not SEGout(0);
+        -- Connect the 7Segment std_logic_vector to the cathodes
+        -- If you are using a std_logic_vector for the cathodes:
+        --   C <= SEGout;    
+        CA <= SEGout(6);
+        CB <= SEGout(5);
+        CC <= SEGout(4);
+        CD <= SEGout(3);
+        CE <= SEGout(2);
+        CF <= SEGout(1);
+        CG <= SEGout(0);
     end process;
     
 end Behavioral;
