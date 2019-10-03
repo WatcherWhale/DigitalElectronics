@@ -29,7 +29,7 @@ architecture Behavioral of BCDTo7SegmentConverter is
     
 begin
     pBCD : process (BCD)
-    begin        
+    begin      		
         if BCD < 10
         then
             -- Convert the UNSIGNED BCD Code to an integer
