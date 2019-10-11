@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity HPulse is
     Generic(
-    g_visible : integer := 640; -- Enkel 520 pixels???? Rest gedupliceert
+    g_visible : integer := 640;
     g_front   : integer := 16;
     g_sync    : integer := 96;
     g_back    : integer := 48);
