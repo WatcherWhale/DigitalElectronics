@@ -46,20 +46,30 @@ begin
     pStart : process
         variable inLine : line;
         variable char : character;
+        variable i : integer;
+        variable coord : integer;
+        variable value : integer;
+        variable temp : integer;
     begin
         file_open(testFile, "testvector.txt", read_mode);
         
-        while not endfile(testfile)
-        loop
-            readline(testFile,inLine);
-            read(inLine,char);
+        readline(testFile,inLine);
+        read(inLine,char);
             
-            if char = 'B'
-            then
-                Start <= '1';
-            end if;
+        if char = 'B'
+        then
+            Start <= '1';
+            readline(testfile,inLine);
             
-        end loop;
+            i := 0;
+            coord := 0;
+            value := 0;
+            while inLine'length > 0
+            loop
+                read(inLine, temp);
+                value := value * 10 + temp;
+            end loop;
+        end if;
         
         file_close(testfile);
         
