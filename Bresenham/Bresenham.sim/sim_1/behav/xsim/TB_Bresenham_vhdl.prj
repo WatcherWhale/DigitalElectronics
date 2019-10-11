@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Bresenham.srcs/sources_1/new/Bresenham.vhd" \
+"../../../../Bresenham.srcs/sim_1/new/TB_Bresenham.vhd" \
+
+# Do not sort compile order
+nosort

@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Oct  3 12:47:06 2019
-# Process ID: 47968
+# Start of session at: Thu Oct 10 10:59:29 2019
+# Process ID: 1820
 # Current directory: C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1
 # Command line: vivado.exe -log Controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Controller.tcl
 # Log file: C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/Controller.vds
@@ -15,18 +15,17 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 49908 
+INFO: Helper process launched with PID 21620 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 412.172 ; gain = 101.918
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 411.543 ; gain = 101.715
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:16]
-INFO: [Synth 8-3491] module 'ClockingWizard' declared at 'C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-47968-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:5' bound to instance 'clocker' of component 'ClockingWizard' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:62]
-INFO: [Synth 8-638] synthesizing module 'ClockingWizard' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-47968-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'ClockingWizard' declared at 'C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-1820-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:5' bound to instance 'clocker' of component 'ClockingWizard' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'ClockingWizard' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-1820-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:13]
 WARNING: [Synth 8-5640] Port 'douta' is missing in component declaration [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:34]
-WARNING: [Synth 8-5640] Port 'dinb' is missing in component declaration [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:34]
-INFO: [Synth 8-3491] module 'VideoMemory' declared at 'C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-47968-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:5' bound to instance 'vidMemory' of component 'VideoMemory' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:67]
-INFO: [Synth 8-638] synthesizing module 'VideoMemory' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-47968-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'VPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:5' bound to instance 'VSync' of component 'VPulse' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:79]
+INFO: [Synth 8-3491] module 'VideoMemory' declared at 'C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-1820-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:5' bound to instance 'vidMemory' of component 'VideoMemory' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'VideoMemory' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/.Xil/Vivado-1820-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'VPulse' declared at 'C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:5' bound to instance 'VSync' of component 'VPulse' [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:81]
 INFO: [Synth 8-638] synthesizing module 'VPulse' [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
 	Parameter g_visible bound to: 480 - type: integer 
 	Parameter g_front bound to: 10 - type: integer 
@@ -43,7 +42,7 @@ WARNING: [Synth 8-549] port width mismatch for port 'Hcounter_out': port width =
 INFO: [Synth 8-256] done synthesizing module 'VPulse' (2#1) [C:/Projects/DigitalElectronics/RedScreen/RedScreen.srcs/sources_1/new/VPulse.vhd:24]
 INFO: [Synth 8-256] done synthesizing module 'Controller' (3#1) [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/sources_1/new/Controller.vhd:16]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 468.879 ; gain = 158.625
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 468.230 ; gain = 158.402
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -56,10 +55,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 468.879 ; gain = 158.625
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 468.230 ; gain = 158.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 468.879 ; gain = 158.625
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 468.230 ; gain = 158.402
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -74,24 +73,24 @@ Parsing XDC File [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/co
 Finished Parsing XDC File [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/constrs_1/new/nexys.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.srcs/constrs_1/new/nexys.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Controller_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 787.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 787.918 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 787.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 787.918 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 787.520 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 787.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 787.918 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 787.918 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 787.520 ; gain = 477.266
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 787.918 ; gain = 478.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 787.520 ; gain = 477.266
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 787.918 ; gain = 478.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -101,10 +100,10 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c
 Applied set_property DONT_TOUCH = true for clocker. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for vidMemory. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 787.520 ; gain = 477.266
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 787.918 ; gain = 478.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 787.520 ; gain = 477.266
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 787.918 ; gain = 478.090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -173,7 +172,7 @@ DSP Report: Generating DSP addrb0, operation Mode is: C+A*(B:0x280).
 DSP Report: operator addrb0 is absorbed into DSP addrb0.
 DSP Report: operator addrb1 is absorbed into DSP addrb0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 787.520 ; gain = 477.266
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 787.918 ; gain = 478.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -202,13 +201,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clocker/PixelClk' to pin 'clocker/bbstub_PixelClk/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 846.871 ; gain = 536.617
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 846.348 ; gain = 536.520
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 867.426 ; gain = 557.172
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 866.977 ; gain = 557.148
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -220,7 +219,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -243,11 +242,8 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module vidMemory has unconnected pin dinb[2]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module vidMemory has unconnected pin dinb[1]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module vidMemory has unconnected pin dinb[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -260,7 +256,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -272,25 +268,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -330,27 +326,27 @@ Report Instance Areas:
 |3     |    HS   |HPulse |    43|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 3 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 868.195 ; gain = 239.301
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 868.195 ; gain = 557.941
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 868.125 ; gain = 238.609
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 868.125 ; gain = 558.297
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 868.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 868.125 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 3 Warnings, 3 Critical Warnings and 0 Errors encountered.
+26 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 868.195 ; gain = 569.406
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 868.195 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 868.125 ; gain = 569.762
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 868.125 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/DigitalElectronics/VideoMemory/VideoMemory.runs/synth_1/Controller.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Controller_utilization_synth.rpt -pb Controller_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  3 12:47:36 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 10 10:59:59 2019...

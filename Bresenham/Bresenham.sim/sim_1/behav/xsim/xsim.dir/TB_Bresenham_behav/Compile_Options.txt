@@ -1,0 +1,1 @@
+-wto "500b2d1f7c404f4896b6a522ea4fb86e" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "TB_Bresenham_behav" "xil_defaultlib.TB_Bresenham" -log "elaborate.log" 

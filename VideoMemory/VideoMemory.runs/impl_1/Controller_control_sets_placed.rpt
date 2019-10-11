@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Oct  3 12:48:13 2019
+| Date         : Thu Oct 10 11:00:41 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Controller_control_sets_placed.rpt
 | Design       : Controller
@@ -45,9 +45,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              14 |            8 |
+| No           | No                    | No                     |              14 |            4 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              10 |            4 |
+| No           | Yes                   | No                     |              10 |            3 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              10 |            4 |
@@ -60,9 +60,9 @@ Table of Contents
 +------------------------+---------------+------------------+------------------+----------------+
 |      Clock Signal      | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +------------------------+---------------+------------------+------------------+----------------+
-|  clocker/inst/PixelClk |               | VSync/HS/clear   |                4 |             10 |
+|  clocker/inst/PixelClk |               | VSync/HS/clear   |                3 |             10 |
 |  clocker/inst/PixelClk | VSync/HS/E[0] | VSync/HS/SR[0]   |                4 |             10 |
-|  clocker/inst/PixelClk |               |                  |                8 |             14 |
+|  clocker/inst/PixelClk |               |                  |                4 |             14 |
 +------------------------+---------------+------------------+------------------+----------------+
 
 

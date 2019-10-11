@@ -40,7 +40,8 @@ component VideoMemory
         clkb    : IN  std_logic;
         web     : IN  std_logic_vector(0 DOWNTO 0);
         addrb   : IN  std_logic_vector(18 DOWNTO 0);
-        doutb   : OUT std_logic_vector(2 DOWNTO 0)
+        doutb   : OUT std_logic_vector(2 DOWNTO 0);
+        dinb    : IN std_logic_vector(2 DOWNTO 0)
     );
 end component;
 
@@ -73,7 +74,8 @@ begin
         clkb => PixelClk,
         web => "0",
         addrb => Addr,
-        doutb => Output
+        doutb => Output,
+        dinb => "000"
     );
     
     VSync : VPulse
@@ -98,7 +100,7 @@ begin
     
         if(Write = '1')
         then
-            if(Output(1) = '1')
+            if(Output(2) = '1')
             then
                 VGA_R <= "1111";
             end if;
