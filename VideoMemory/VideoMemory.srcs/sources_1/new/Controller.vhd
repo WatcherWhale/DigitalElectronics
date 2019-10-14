@@ -1,3 +1,5 @@
+-- Mathias Maes
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -24,11 +26,10 @@ signal x,y : integer;
 signal Write : std_logic;
 
 component ClockingWizard
-port
-(
-    PixelClk  : out std_logic;
-    Clk100MHz : in  std_logic
-);
+    port (
+        PixelClk  : out std_logic;
+        Clk100MHz : in  std_logic
+    );
 end component;
 
 component VideoMemory
@@ -61,12 +62,13 @@ end component;
 begin
 
     clocker : ClockingWizard
-    port map( 
+    port map ( 
         PixelClk => PixelClk,
         Clk100MHz => CLK100MHZ);
     
+    -- Unused ports are mapped to 0 or ground
     vidMemory: VideoMemory
-    port map(
+    port map (
         clka => '0',
         wea => "0",
         addra => "0000000000000000000",
@@ -79,7 +81,7 @@ begin
     );
     
     VSync : VPulse
-     Port map(
+     Port map (
         pixelClock => PixelClk,
         HSync => VGA_HS,
         VSync => VGA_VS,
@@ -89,17 +91,24 @@ begin
         
     pSetAddr : process(x, y)
     begin
+        -- Ask for the value in the memory for the current pixel
+        -- Address = pixel_x + pixel_y * 640
+        --
+        -- This formula is used because the information is stored per row (640 pixels/row = 640 x_pixels/y_pixel)
         Addr <= std_logic_vector(to_unsigned(x + y * 640,19));
     end process;
     
     pReadValue : process(Write, Output)
     begin
+        -- Set default values
         VGA_R <= "0000";
         VGA_G <= "0000";
         VGA_B <= "0000";
-    
+        
         if(Write = '1')
         then
+            -- Parse the pixel data from memory to RGB values
+
             if(Output(2) = '1')
             then
                 VGA_R <= "1111";
@@ -118,15 +127,3 @@ begin
     end process;
         
 end Behavioral;
-
-
-
-
-
-
-
-
-
-
-
-
