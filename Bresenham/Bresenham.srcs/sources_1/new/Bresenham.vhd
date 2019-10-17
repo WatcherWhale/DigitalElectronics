@@ -20,6 +20,7 @@ end Bresenham;
 architecture Behavioral of Bresenham is
     
     type tPoint is array(0 to 1) of integer;
+    type StateType IS (S, L, H);
     
     signal started : STD_LOGIC := '0';
     signal diff, dx, dy : integer := 0;   
@@ -28,19 +29,19 @@ architecture Behavioral of Bresenham is
     signal low : STD_LOGIC := '1';
     signal xyi : integer := 0;
     
+    signal state : StateType := S;
+    
 begin
     
     pClock : process(Clk)
     begin
         if(rising_edge(Clk))
         then
-            if(Start = '1' and started = '0')
+            if(state = S)
             then
-                started <= '1';
-
                 if(abs(Y1-Y0) < abs(X1-X0))
                 then
-                    low <= '1';
+                    state <= L;
                     
                     if(X0 > X1)
                     then
@@ -79,7 +80,8 @@ begin
                         end if;
                     end if;
                 else
-                    low <= '0';
+                    State <= H;
+                    --low <= '0';
                     
                     if(Y0 > Y1)
                     then
@@ -116,38 +118,48 @@ begin
                         end if;
                     end if;
                 end if;
-            elsif (started = '1' and x <= p1(0) and low = '1')
+            elsif (State = L)--started = '1' and x <= p1(0) and low = '1')
             then
-                xOut <= x;
-                YOut <= Y;
-                started <= '1';
-
-                if (diff > 0)
+                
+                if x <= p1(0)
                 then
-                    y <= y + xyi;
-                    diff <= diff - 2 * dx + 2 * dy;
+                
+                    xOut <= x;
+                    YOut <= Y;
+                    started <= '1';
+    
+                    if (diff > 0)
+                    then
+                        y <= y + xyi;
+                        diff <= diff - 2 * dx + 2 * dy;
+                    else
+                        diff <= diff + 2 * dy;
+                    end if;
                 else
-                    diff <= diff + 2 * dy;
+                    State <= S;
                 end if;
 
                 x <= x + 1;
-            elsif (started = '1' and y <= p1(1) and low = '0')
+            elsif (State = H)--started = '1' and y <= p1(1) and low = '0')
             then
-                xOut <= x;
-                yOut <= y;
-                started <= '1';
-                
-                if (diff > 0)
+                if(x <= p1(1))
                 then
-                    x <= x + xyi;
-                    diff <= diff - 2 * dy + 2 * dx;
+                    xOut <= x;
+                    yOut <= y;
+                    started <= '1';
+                    
+                    if (diff > 0)
+                    then
+                        x <= x + xyi;
+                        diff <= diff - 2 * dy + 2 * dx;
+                    else
+                        diff <= diff + 2 * dx;
+                    end if;
+                    
+                    y <= y+1;
                 else
-                    diff <= diff + 2 * dx;
+                    State <= S;
                 end if;
-                
-                y <= y+1;
-            else
-                started <= '0';
             end if;
         end if;
     end process;

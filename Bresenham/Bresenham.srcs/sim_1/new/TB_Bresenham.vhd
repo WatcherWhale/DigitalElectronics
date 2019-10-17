@@ -46,6 +46,11 @@ begin
         yOut => y,
         Plot => Plot);
        
+    pClock : process
+    begin
+        Clk <= not Clk;
+        wait for 10ns;
+    end process;
     
     pStart : process
         variable inLine : line;
@@ -74,7 +79,9 @@ begin
         
         wait for 20ns;
         Start <= '0';
-        --wait for 21ns;
+        wait for 10ns;
+        
+        i := 0;
         
         while not endfile(testFile)
         loop
@@ -126,17 +133,11 @@ begin
                 read(inLine,temp);
                 Y1 <= temp;
                 
-                wait for 20ns;
+                wait for 40ns + 20ns * i;
+                i := i+1;
                 
             end if;      
         end loop;
-    end process;
-    
-    
-    pClock : process
-    begin
-        Clk <= not Clk;
-        wait for 10ns;
     end process;
     
 end Behavioral;
