@@ -8,4 +8,4 @@ Also if I suspect people are copying the code I will take this repo offline.
 
 ## Other helpful sources
 * [Hendrik's repo](https://github.com/Hendrik-Valcke/1-Digitale-Elektronica)
-* [Wiki](https://github.com/WatcherWhale/DigitalElectronics/wiki)
+* [Wiki](https://watcherwhale.github.io/EI-Wiki/)
