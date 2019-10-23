@@ -5,3 +5,7 @@ All my projects of the course '2-digital-electronics-1' and '3-digital-electroni
 Do not just blindly copy my code, but try to understand it. The comments in between the code will help you.
 
 Also if I suspect people are copying the code I will take this repo offline.
+
+## Other helpful sources
+* [Hendrik's repo](https://github.com/Hendrik-Valcke/1-Digitale-Elektronica)
+* [Wiki](https://watcherwhale.github.io/EI-Wiki/)
