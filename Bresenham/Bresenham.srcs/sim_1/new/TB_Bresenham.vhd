@@ -11,7 +11,7 @@ end TB_Bresenham;
 
 architecture Behavioral of TB_Bresenham is
 
-    component Bresenham
+    component BresenhamErr
         Port (
             X0: in integer;
             Y0: in integer;
@@ -34,7 +34,7 @@ architecture Behavioral of TB_Bresenham is
 
 begin
     
-    bres : Bresenham
+    bres : BresenhamErr
     Port map(
         X0 => x0,
         Y0 => y0,
@@ -82,6 +82,8 @@ begin
         wait for 10ns;
         
         i := 0;
+        
+        while(Plot = '0') loop wait for 20ns; end loop;
         
         while not endfile(testFile)
         loop
