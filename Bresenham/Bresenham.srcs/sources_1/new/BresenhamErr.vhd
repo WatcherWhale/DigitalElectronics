@@ -50,8 +50,20 @@ begin
                     Plot <= '0';
                     State <= BUSY_STATE;
                     
-                    dx <= abs(p0(0) - p1(0));
-                    dy <= -1 * abs(p0(1) - p1(1));
+                    if(p0(0) - p1(0) >= 0)
+                    then
+                        dx <= (p0(0) - p1(0));
+                    else
+                        dx <= -1 * (p0(0) - p1(0));
+                    end if;
+                    
+                    if(p0(1) - p1(1) >= 0)
+                    then
+                        dy <= -1 * (p0(1) - p1(1));
+                    else
+                        dy <= (p0(1) - p1(1));
+                    end if;
+                                     
                     
                     if p0(0) < p1(0)
                     then
