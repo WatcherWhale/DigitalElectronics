@@ -68,7 +68,6 @@ begin
             assert sequence=checkValue report "Wrong sequence expected (" 
                 & to_string(checkValue) & ") but got (" & to_string(sequence) & ")" severity error;
                 
-            assert sequence/=checkValue report "Correct :)" severity warning;
             wait for 20ns;
         end loop;
         

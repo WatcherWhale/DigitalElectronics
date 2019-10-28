@@ -26,9 +26,7 @@ begin
                 lsfr(I) <= lsfr(I-1);
             end loop;
             
-            lsfr(0) <= ((lsfr(15) xor lsfr(14)) xor lsfr(13)) xor lsfr(11);
-            
-            report std_logic'image(lsfr(0));
+            lsfr(0) <= ((lsfr(15) xor lsfr(13)) xor lsfr(12)) xor lsfr(10);
         end if;
     end process;
     
