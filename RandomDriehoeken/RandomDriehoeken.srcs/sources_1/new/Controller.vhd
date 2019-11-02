@@ -12,19 +12,13 @@ end Controller;
 architecture Behavioral of Controller is
 
     signal PixelClk : std_logic;
-    signal sequence : std_logic_vector(15 downto 0);
+    signal generatedTriangle : std_logic_vector(56 downto 0);
 
 begin
     
     cClk : ClockingWizard
-   port map( 
+    port map( 
        PixelClk => PixelClk,
        Clk100MHz => Clk100MHz);
-        
-    
-    cLfsr : LFSR
-    Port map(
-        clk => PixelClk,
-        sequence => sequence);
 
 end Behavioral;

@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Oct 28 12:03:31 2019
-# Process ID: 21972
+# Start of session at: Thu Oct 31 10:48:40 2019
+# Process ID: 24508
 # Current directory: C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/VideoMemory_synth_1
 # Command line: vivado.exe -log VideoMemory.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source VideoMemory.tcl
 # Log file: C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/VideoMemory_synth_1/VideoMemory.vds

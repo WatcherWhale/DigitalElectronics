@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
 // Date        : Thu Oct 31 10:50:24 2019
 // Host        : DELLLAPTOPMAES running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/VideoMemory/VideoMemory_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+//               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ VideoMemory_sim_netlist.v
 // Design      : VideoMemory
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@
 
 (* CHECK_LICENSE_TYPE = "VideoMemory,blk_mem_gen_v8_4_2,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_2,Vivado 2018.3" *) 
 (* NotValidForBitStream *)
-module VideoMemory
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clka,
     wea,
     addra,
@@ -142,7 +142,7 @@ module VideoMemory
   (* C_WRITE_WIDTH_B = "3" *) 
   (* C_XDEVICEFAMILY = "artix7" *) 
   (* downgradeipidentifiedwarnings = "yes" *) 
-  VideoMemory_blk_mem_gen_v8_4_2 U0
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2 U0
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -208,8 +208,7 @@ module VideoMemory
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "bindec" *) 
-module VideoMemory_bindec
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bindec
    (ena_array,
     addra);
   output [0:0]ena_array;
@@ -230,7 +229,7 @@ module VideoMemory_bindec
 endmodule
 
 (* ORIG_REF_NAME = "bindec" *) 
-module VideoMemory_bindec_0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bindec_0
    (enb_array,
     addrb);
   output [0:0]enb_array;
@@ -250,8 +249,7 @@ module VideoMemory_bindec_0
         .O(enb_array));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
-module VideoMemory_blk_mem_gen_generic_cstr
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_generic_cstr
    (douta,
     doutb,
     clka,
@@ -332,13 +330,13 @@ module VideoMemory_blk_mem_gen_generic_cstr
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_bindec \bindec_a.bindec_inst_a 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bindec \bindec_a.bindec_inst_a 
        (.addra(addra[18:14]),
         .ena_array(ena_array));
-  VideoMemory_bindec_0 \bindec_b.bindec_inst_b 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bindec_0 \bindec_b.bindec_inst_b 
        (.addrb(addrb[18:14]),
         .enb_array(enb_array));
-  VideoMemory_blk_mem_gen_mux \has_mux_a.A 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_mux \has_mux_a.A 
        (.DOADO({\ramloop[11].ram.r_n_0 ,\ramloop[11].ram.r_n_1 }),
         .DOUTA(\ramloop[15].ram.r_n_0 ),
         .addra(addra[18:14]),
@@ -359,7 +357,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .\douta[2]_0 (\ramloop[14].ram.r_n_0 ),
         .\douta[2]_1 (\ramloop[13].ram.r_n_0 ),
         .\douta[2]_2 (\ramloop[12].ram.r_n_0 ));
-  VideoMemory_blk_mem_gen_mux__parameterized0 \has_mux_b.B 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_mux__parameterized0 \has_mux_b.B 
        (.DOBDO({\ramloop[11].ram.r_n_2 ,\ramloop[11].ram.r_n_3 }),
         .DOUTB(\ramloop[15].ram.r_n_1 ),
         .addrb(addrb[18:14]),
@@ -436,7 +434,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .I1(addrb[17]),
         .I2(addrb[16]),
         .O(\ram_enb_inferred__2/i__n_0 ));
-  VideoMemory_blk_mem_gen_prim_width \ramloop[0].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width \ramloop[0].ram.r 
        (.DOUTA(ram_douta),
         .DOUTB(ram_doutb),
         .ENA(ram_ena_n_0),
@@ -449,7 +447,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[0]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized9 \ramloop[10].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized9 \ramloop[10].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram (\ramloop[10].ram.r_n_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 (\ramloop[10].ram.r_n_1 ),
         .addra(addra),
@@ -462,7 +460,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[1]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized10 \ramloop[11].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized10 \ramloop[11].ram.r 
        (.DOADO({\ramloop[11].ram.r_n_0 ,\ramloop[11].ram.r_n_1 }),
         .DOBDO({\ramloop[11].ram.r_n_2 ,\ramloop[11].ram.r_n_3 }),
         .addra(addra[13:0]),
@@ -475,7 +473,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .enb_array(enb_array),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized11 \ramloop[12].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized11 \ramloop[12].ram.r 
        (.DOUTA(\ramloop[12].ram.r_n_0 ),
         .DOUTB(\ramloop[12].ram.r_n_1 ),
         .ENA(ram_ena_n_0),
@@ -488,7 +486,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[2]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized12 \ramloop[13].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized12 \ramloop[13].ram.r 
        (.DOUTA(\ramloop[13].ram.r_n_0 ),
         .DOUTB(\ramloop[13].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__0/i__n_0 ),
@@ -501,7 +499,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[2]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized13 \ramloop[14].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized13 \ramloop[14].ram.r 
        (.DOUTA(\ramloop[14].ram.r_n_0 ),
         .DOUTB(\ramloop[14].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__1/i__n_0 ),
@@ -514,7 +512,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[2]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized14 \ramloop[15].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized14 \ramloop[15].ram.r 
        (.DOUTA(\ramloop[15].ram.r_n_0 ),
         .DOUTB(\ramloop[15].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__2/i__n_0 ),
@@ -527,7 +525,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[2]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized15 \ramloop[16].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized15 \ramloop[16].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram (\ramloop[16].ram.r_n_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 (\ramloop[16].ram.r_n_1 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 (\ramloop[10].ram.r_n_2 ),
@@ -540,7 +538,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[2]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized0 \ramloop[1].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized0 \ramloop[1].ram.r 
        (.DOUTA(\ramloop[1].ram.r_n_0 ),
         .DOUTB(\ramloop[1].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__0/i__n_0 ),
@@ -553,7 +551,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[0]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized1 \ramloop[2].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized1 \ramloop[2].ram.r 
        (.DOUTA(\ramloop[2].ram.r_n_0 ),
         .DOUTB(\ramloop[2].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__1/i__n_0 ),
@@ -566,7 +564,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[0]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized2 \ramloop[3].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized2 \ramloop[3].ram.r 
        (.DOUTA(\ramloop[3].ram.r_n_0 ),
         .DOUTB(\ramloop[3].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__2/i__n_0 ),
@@ -579,7 +577,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[0]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized3 \ramloop[4].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized3 \ramloop[4].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram (\ramloop[4].ram.r_n_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 (\ramloop[4].ram.r_n_1 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 (\ramloop[10].ram.r_n_2 ),
@@ -592,7 +590,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[0]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized4 \ramloop[5].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized4 \ramloop[5].ram.r 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram (\ramloop[5].ram.r_n_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram_0 (\ramloop[5].ram.r_n_1 ),
         .addra(addra[13:0]),
@@ -605,7 +603,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .enb_array(enb_array),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized5 \ramloop[6].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized5 \ramloop[6].ram.r 
        (.DOUTA(\ramloop[6].ram.r_n_0 ),
         .DOUTB(\ramloop[6].ram.r_n_1 ),
         .ENA(ram_ena_n_0),
@@ -618,7 +616,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[1]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized6 \ramloop[7].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized6 \ramloop[7].ram.r 
        (.DOUTA(\ramloop[7].ram.r_n_0 ),
         .DOUTB(\ramloop[7].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__0/i__n_0 ),
@@ -631,7 +629,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[1]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized7 \ramloop[8].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized7 \ramloop[8].ram.r 
        (.DOUTA(\ramloop[8].ram.r_n_0 ),
         .DOUTB(\ramloop[8].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__1/i__n_0 ),
@@ -644,7 +642,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .dinb(dinb[1]),
         .wea(wea),
         .web(web));
-  VideoMemory_blk_mem_gen_prim_width__parameterized8 \ramloop[9].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized8 \ramloop[9].ram.r 
        (.DOUTA(\ramloop[9].ram.r_n_0 ),
         .DOUTB(\ramloop[9].ram.r_n_1 ),
         .ENA(\ram_ena_inferred__2/i__n_0 ),
@@ -659,8 +657,7 @@ module VideoMemory_blk_mem_gen_generic_cstr
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_mux" *) 
-module VideoMemory_blk_mem_gen_mux
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_mux
    (douta,
     addra,
     clka,
@@ -889,7 +886,7 @@ module VideoMemory_blk_mem_gen_mux
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_mux" *) 
-module VideoMemory_blk_mem_gen_mux__parameterized0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_mux__parameterized0
    (doutb,
     addrb,
     clkb,
@@ -1125,8 +1122,7 @@ module VideoMemory_blk_mem_gen_mux__parameterized0
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width
    (DOUTA,
     DOUTB,
     clka,
@@ -1165,7 +1161,7 @@ module VideoMemory_blk_mem_gen_prim_width
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1181,7 +1177,7 @@ module VideoMemory_blk_mem_gen_prim_width
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized0
    (DOUTA,
     DOUTB,
     clka,
@@ -1220,7 +1216,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized0
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized0 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized0 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1236,7 +1232,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized0
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized1
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized1
    (DOUTA,
     DOUTB,
     clka,
@@ -1275,7 +1271,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized1
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized1 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized1 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1291,7 +1287,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized1
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized10
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized10
    (DOADO,
     DOBDO,
     clka,
@@ -1330,7 +1326,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized10
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized10 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized10 \prim_init.ram 
        (.DOADO(DOADO),
         .DOBDO(DOBDO),
         .addra(addra),
@@ -1346,7 +1342,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized10
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized11
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized11
    (DOUTA,
     DOUTB,
     clka,
@@ -1385,7 +1381,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized11
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized11 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized11 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1401,7 +1397,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized11
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized12
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized12
    (DOUTA,
     DOUTB,
     clka,
@@ -1440,7 +1436,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized12
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized12 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized12 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1456,7 +1452,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized12
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized13
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized13
    (DOUTA,
     DOUTB,
     clka,
@@ -1495,7 +1491,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized13
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized13 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized13 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1511,7 +1507,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized13
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized14
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized14
    (DOUTA,
     DOUTB,
     clka,
@@ -1550,7 +1546,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized14
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized14 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized14 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1566,7 +1562,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized14
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized15
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized15
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ,
     clka,
@@ -1605,7 +1601,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized15
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized15 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized15 \prim_init.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_2 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 ),
@@ -1621,7 +1617,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized15
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized2
    (DOUTA,
     DOUTB,
     clka,
@@ -1660,7 +1656,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized2
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized2 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized2 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1676,7 +1672,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized2
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized3
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized3
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ,
     clka,
@@ -1715,7 +1711,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized3
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized3 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized3 \prim_init.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_2 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 ),
@@ -1731,7 +1727,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized3
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized4
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized4
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram_0 ,
     clka,
@@ -1770,7 +1766,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized4
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized4 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized4 \prim_init.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram_0 ),
         .addra(addra),
@@ -1786,7 +1782,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized4
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized5
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized5
    (DOUTA,
     DOUTB,
     clka,
@@ -1825,7 +1821,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized5
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized5 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized5 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1841,7 +1837,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized5
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized6
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized6
    (DOUTA,
     DOUTB,
     clka,
@@ -1880,7 +1876,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized6
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized6 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized6 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1896,7 +1892,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized6
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized7
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized7
    (DOUTA,
     DOUTB,
     clka,
@@ -1935,7 +1931,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized7
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized7 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized7 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -1951,7 +1947,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized7
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized8
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized8
    (DOUTA,
     DOUTB,
     clka,
@@ -1990,7 +1986,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized8
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized8 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized8 \prim_init.ram 
        (.DOUTA(DOUTA),
         .DOUTB(DOUTB),
         .ENA(ENA),
@@ -2006,7 +2002,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized8
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module VideoMemory_blk_mem_gen_prim_width__parameterized9
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width__parameterized9
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ,
     addra_18_sp_1,
@@ -2047,7 +2043,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized9
 
   assign addra_18_sp_1 = addra_18_sn_1;
   assign addrb_18_sp_1 = addrb_18_sn_1;
-  VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized9 \prim_init.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized9 \prim_init.ram 
        (.\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram ),
         .\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ),
         .addra(addra),
@@ -2062,8 +2058,7 @@ module VideoMemory_blk_mem_gen_prim_width__parameterized9
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init
    (DOUTA,
     DOUTB,
     clka,
@@ -2545,7 +2540,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized0
    (DOUTA,
     DOUTB,
     clka,
@@ -3027,7 +3022,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized0
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized1
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized1
    (DOUTA,
     DOUTB,
     clka,
@@ -3509,7 +3504,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized1
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized10
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized10
    (DOADO,
     DOBDO,
     clka,
@@ -3771,7 +3766,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized10
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized11
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized11
    (DOUTA,
     DOUTB,
     clka,
@@ -4253,7 +4248,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized11
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized12
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized12
    (DOUTA,
     DOUTB,
     clka,
@@ -4735,7 +4730,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized12
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized13
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized13
    (DOUTA,
     DOUTB,
     clka,
@@ -5217,7 +5212,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized13
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized14
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized14
    (DOUTA,
     DOUTB,
     clka,
@@ -5699,7 +5694,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized14
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized15
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized15
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 ,
     clka,
@@ -5961,7 +5956,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized15
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized2
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized2
    (DOUTA,
     DOUTB,
     clka,
@@ -6443,7 +6438,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized2
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized3
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized3
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 ,
     clka,
@@ -6705,7 +6700,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized3
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized4
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized4
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram_0 ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram_1 ,
     clka,
@@ -6875,7 +6870,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized4
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized5
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized5
    (DOUTA,
     DOUTB,
     clka,
@@ -7357,7 +7352,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized5
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized6
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized6
    (DOUTA,
     DOUTB,
     clka,
@@ -7839,7 +7834,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized6
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized7
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized7
    (DOUTA,
     DOUTB,
     clka,
@@ -8321,7 +8316,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized7
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized8
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized8
    (DOUTA,
     DOUTB,
     clka,
@@ -8803,7 +8798,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized8
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized9
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper_init__parameterized9
    (\DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0 ,
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1 ,
     addra_18_sp_1,
@@ -9082,8 +9077,7 @@ module VideoMemory_blk_mem_gen_prim_wrapper_init__parameterized9
         .O(addrb_18_sn_1));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
-module VideoMemory_blk_mem_gen_top
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_top
    (douta,
     doutb,
     clka,
@@ -9116,7 +9110,7 @@ module VideoMemory_blk_mem_gen_top
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_generic_cstr \valid.cstr 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_generic_cstr \valid.cstr 
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -9154,8 +9148,8 @@ endmodule
 (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) (* C_WRITE_DEPTH_A = "307200" *) 
 (* C_WRITE_DEPTH_B = "307200" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "3" *) (* C_WRITE_WIDTH_B = "3" *) (* C_XDEVICEFAMILY = "artix7" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2" *) (* downgradeipidentifiedwarnings = "yes" *) 
-module VideoMemory_blk_mem_gen_v8_4_2
+(* downgradeipidentifiedwarnings = "yes" *) 
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2
    (clka,
     rsta,
     ena,
@@ -9362,7 +9356,7 @@ module VideoMemory_blk_mem_gen_v8_4_2
   assign sbiterr = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  VideoMemory_blk_mem_gen_v8_4_2_synth inst_blk_mem_gen
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2_synth inst_blk_mem_gen
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -9375,8 +9369,7 @@ module VideoMemory_blk_mem_gen_v8_4_2
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2_synth" *) 
-module VideoMemory_blk_mem_gen_v8_4_2_synth
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_2_synth
    (douta,
     doutb,
     clka,
@@ -9409,7 +9402,7 @@ module VideoMemory_blk_mem_gen_v8_4_2_synth
   wire [0:0]wea;
   wire [0:0]web;
 
-  VideoMemory_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
