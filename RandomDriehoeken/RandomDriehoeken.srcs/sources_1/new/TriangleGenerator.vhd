@@ -7,28 +7,31 @@ use draw.Memory.TriangleFifo;
 use draw.Generators.LFSR;
 
 entity TriangleGenerator is
+    Generic(
+        g_Triangles : integer := 4);
     Port (
         clk : in std_logic;
         gen : in STD_LOGIC;
+        rd_en : in std_logic;
         
-        triangleData : out STD_LOGIC_VECTOR(58 downto 0);
-        genDone : out STD_LOGIC);
+        full : out std_logic;
+        empty : out std_logic;
+        
+        triangleData : out STD_LOGIC_VECTOR(58 downto 0));
 end TriangleGenerator;
 
 architecture Behavioral of TriangleGenerator is
     
-    type tState IS (WAIT_STATE, GEN_STATE, GENEND_STATE, READ_STATE);
-    signal State : tState := WAIT_STATE;
+    type tState IS (GEN_STATE, SEND_STATE, GENEND_STATE);
+    signal State : tState := GEN_STATE;
     
     signal sequence : std_logic_vector(15 downto 0);
     
     signal dataCounter : integer range 0 to 3 := 0;
-    signal triangleCounter : integer range 0 to 2 := 0;
+    signal triangleCounter : integer range 0 to g_Triangles := 0;
     
     signal wr_en : std_logic := '0';
-    signal rd_en : std_logic := '0';
     
-    signal full, empty : std_logic;
     signal din : std_logic_vector(58 downto 0);
     
 begin
@@ -54,18 +57,17 @@ begin
     begin
         if(rising_edge(clk))
         then
-            Case State is
-                When WAIT_STATE =>
-                    dataCounter <= 0;
-                    triangleCounter <= 0;
-                    
-                    if(gen = '1')
+            case State is
+                when WAIT_STATE =>
+                    wr_en <= '0';
+
+                    if(empty = '1')
                     then
                         State <= GEN_STATE;
                     end if;
+                    
                 When GEN_STATE =>
                     wr_en <= '1';
-                    rd_en <= '0';
                     
                     if dataCounter < 3
                     then
@@ -79,41 +81,18 @@ begin
                         triangleCounter <= triangleCounter + 1;
                         dataCounter <= 0;
                         
-                        if triangleCounter = 2
+                        State <= GEN_STATE;
+                                                
+                        if triangleCOunter = g_Triangles
                         then
-                            State <= GENEND_STATE;
+                            din(57) <= '1';
+                            din(58) <= '1';
+                            State <= WAIT_STATE;
                         end if;
                         
-                    end if;
-                
-                When GENEND_STATE =>
-                    wr_en <= '1';
-                    rd_en <= '0';
-                    
-                    if dataCounter < 3
-                    then
-                        din((dataCounter+1) * 16 - 1 downto dataCounter * 16) <= sequence;
-                        dataCounter <= dataCounter + 1;
-                    else
-                        din(56 downto 48) <= sequence(9 downto 0);
-                        din(57) <= '1';
-                        din(58) <= '1';
+
                         
-                        triangleCounter <= 0;
-                        dataCounter <= 0;
-                        genDone <= '1';
-                        
-                        State <= READ_STATE;
                     end if;
-                when READ_STATE =>
-                    wr_en <= '0';
-                    rd_en <= '1';
-                    
-                    if empty = '1'
-                    then
-                        State <= WAIT_STATE;
-                    end if;
-                    
             end Case;
         end if;
     end process;
