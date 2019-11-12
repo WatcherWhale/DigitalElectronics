@@ -4,16 +4,16 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity HPulse is
     Generic(
-    g_visible : integer := 640;
-    g_front   : integer := 16;
-    g_sync    : integer := 96;
-    g_back    : integer := 48);
+        g_visible : integer := 640;
+        g_front   : integer := 16;
+        g_sync    : integer := 96;
+        g_back    : integer := 48);
     Port(
-    Clock_in  : in  std_logic;
-    Can_write : out std_logic;
-    Sync      : out std_logic;
-    Xpos      : out integer;
-    Hcounter_out  : out integer range 0 to g_visible + g_front + g_sync + g_back);
+        Clock_in  : in  std_logic;
+        Can_write : out std_logic;
+        Sync      : out std_logic;
+        Xpos      : out integer;
+        Hcounter_out  : out integer range 0 to g_visible + g_front + g_sync + g_back);
 end HPulse;
 
 architecture Behavioral of HPulse is

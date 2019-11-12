@@ -1,0 +1,85 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Nov  7 11:57:59 2019
+# Process ID: 29764
+# Current directory: C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/impl_1
+# Command line: vivado.exe -log Controller.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Controller.tcl -notrace
+# Log file: C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/impl_1/Controller.vdi
+# Journal file: C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Controller.tcl -notrace
+Command: link_design -top Controller -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard.dcp' for cell 'cClk'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/VideoMemory/VideoMemory.dcp' for cell 'vidMemory'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleFifo/TriangleFifo.dcp' for cell 'cFramer/cTriGen/cFIFO'
+INFO: [Netlist 29-17] Analyzing 136 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-35] Removing redundant IBUF, cClk/inst/clkin1_ibufg, from the path connected to top-level port: CLK100MHZ 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'cClk/Clk100MHz' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+Parsing XDC File [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleFifo/TriangleFifo.xdc] for cell 'cFramer/cTriGen/cFIFO/U0'
+Finished Parsing XDC File [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleFifo/TriangleFifo.xdc] for cell 'cFramer/cTriGen/cFIFO/U0'
+Parsing XDC File [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard_board.xdc] for cell 'cClk/inst'
+Finished Parsing XDC File [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard_board.xdc] for cell 'cClk/inst'
+Parsing XDC File [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard.xdc] for cell 'cClk/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard.xdc:57]
+get_clocks: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1181.195 ; gain = 524.820
+Finished Parsing XDC File [c:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard.xdc] for cell 'cClk/inst'
+Parsing XDC File [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/constrs_1/new/nexys.xdc]
+Finished Parsing XDC File [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/constrs_1/new/nexys.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1181.195 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+12 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1181.195 ; gain = 883.324
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[0] has multiple drivers: cFramer/addr_reg/P[0], and cFramer/addr_reg[0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[10] has multiple drivers: cFramer/addr_reg/P[10], and cFramer/addr_reg[10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[11] has multiple drivers: cFramer/addr_reg/P[11], and cFramer/addr_reg[11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[12] has multiple drivers: cFramer/addr_reg/P[12], and cFramer/addr_reg[12]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[13] has multiple drivers: cFramer/addr_reg/P[13], and cFramer/addr_reg[13]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[14] has multiple drivers: cFramer/addr_reg/P[14], and cFramer/addr_reg[14]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[15] has multiple drivers: cFramer/addr_reg/P[15], and cFramer/addr_reg[15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[16] has multiple drivers: cFramer/addr_reg/P[16], and cFramer/addr_reg[16]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[17] has multiple drivers: cFramer/addr_reg/P[17], and cFramer/addr_reg[17]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[18] has multiple drivers: cFramer/addr_reg/P[18], and cFramer/addr_reg[18]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[1] has multiple drivers: cFramer/addr_reg/P[1], and cFramer/addr_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[2] has multiple drivers: cFramer/addr_reg/P[2], and cFramer/addr_reg[2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[3] has multiple drivers: cFramer/addr_reg/P[3], and cFramer/addr_reg[3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[4] has multiple drivers: cFramer/addr_reg/P[4], and cFramer/addr_reg[4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[5] has multiple drivers: cFramer/addr_reg/P[5], and cFramer/addr_reg[5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[6] has multiple drivers: cFramer/addr_reg/P[6], and cFramer/addr_reg[6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[7] has multiple drivers: cFramer/addr_reg/P[7], and cFramer/addr_reg[7]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[8] has multiple drivers: cFramer/addr_reg/P[8], and cFramer/addr_reg[8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/Q[9] has multiple drivers: cFramer/addr_reg/P[9], and cFramer/addr_reg[9]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/UNCONN_OUT[0] has multiple drivers: cFramer/din_reg[0]/Q, and cFramer/din_reg[0]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/UNCONN_OUT[1] has multiple drivers: cFramer/din_reg[1]/Q, and cFramer/din_reg[1]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net cFramer/UNCONN_OUT[2] has multiple drivers: cFramer/din_reg[2]/Q, and cFramer/din_reg[2]__0/Q.
+INFO: [Project 1-461] DRC finished with 22 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.775 . Memory (MB): peak = 1181.195 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+17 Infos, 2 Warnings, 0 Critical Warnings and 23 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  7 11:58:20 2019...

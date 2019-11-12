@@ -7,7 +7,12 @@ entity VPulse is
         g_visible : integer := 480;
         g_front   : integer := 10;
         g_back    : integer := 33;
-        g_sync    : integer := 2
+        g_sync    : integer := 2;
+        
+        g_visible_H : integer := 640;
+        g_front_H   : integer := 16;
+        g_sync_H    : integer := 96;
+        g_back_H    : integer := 48
     );
     Port (
         pixelClock: in std_logic;
@@ -32,6 +37,11 @@ architecture Behavioral of VPulse is
 
     -- Components
     component HPulse
+        Generic(
+        g_visible : integer;
+        g_front   : integer;
+        g_sync    : integer;
+        g_back    : integer);
         Port(
         Clock_in  : in  std_logic;
         Can_write : out std_logic;
@@ -43,6 +53,12 @@ architecture Behavioral of VPulse is
 begin
     
     HS : HPulse
+    Generic map(
+        g_visible => g_visible_H,
+        g_front => g_front_H,
+        g_sync => g_sync_H,
+        g_back => g_back
+    )
     Port map(Clock_in => pixelClock,
              Sync => HSync,
              xPos => xPos,

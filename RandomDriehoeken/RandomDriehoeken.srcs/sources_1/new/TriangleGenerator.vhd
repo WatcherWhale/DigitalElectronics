@@ -11,8 +11,8 @@ entity TriangleGenerator is
         g_Triangles : integer := 4);
     Port (
         clk : in std_logic;
-        gen : in STD_LOGIC;
         rd_en : in std_logic;
+        gen : in std_logic;
         
         full : out std_logic;
         empty : out std_logic;
@@ -22,7 +22,7 @@ end TriangleGenerator;
 
 architecture Behavioral of TriangleGenerator is
     
-    type tState IS (GEN_STATE, SEND_STATE, GENEND_STATE);
+    type tState IS (GEN_STATE, WAIT_STATE);
     signal State : tState := GEN_STATE;
     
     signal sequence : std_logic_vector(15 downto 0);
@@ -58,14 +58,15 @@ begin
         if(rising_edge(clk))
         then
             case State is
-                when WAIT_STATE =>
+                When WAIT_STATE =>
                     wr_en <= '0';
-
-                    if(empty = '1')
-                    then
-                        State <= GEN_STATE;
-                    end if;
+                    triangleCounter <= 0;
+                    dataCounter <= 0;
                     
+                    if(gen = '1')
+                    then
+                        STATE <= GEN_STATE;
+                    end if;                
                 When GEN_STATE =>
                     wr_en <= '1';
                     
@@ -74,20 +75,22 @@ begin
                         din((dataCounter+1) * 16 - 1 downto dataCounter * 16) <= sequence;
                         dataCounter <= dataCounter + 1;
                     else
-                        din(56 downto 48) <= sequence(9 downto 0);
+                        din(56 downto 48) <= sequence(8 downto 0);
                         din(57) <= '1';
                         din(58) <= '0';
                         
                         triangleCounter <= triangleCounter + 1;
                         dataCounter <= 0;
                         
-                        State <= GEN_STATE;
+                        State <= WAIT_STATE;
                                                 
-                        if triangleCOunter = g_Triangles
+                        if triangleCounter = g_Triangles
                         then
                             din(57) <= '1';
                             din(58) <= '1';
                             State <= WAIT_STATE;
+                            
+                            triangleCounter <= 0;
                         end if;
                         
 

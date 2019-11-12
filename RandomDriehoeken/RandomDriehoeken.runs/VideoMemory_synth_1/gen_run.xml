@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="VideoMemory_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1572515318">
   <File Type="PA-TCL" Name="VideoMemory.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="VideoMemory_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="VideoMemory_reports.tcl"/>
   <File Type="RDS-RDS" Name="VideoMemory.vds"/>
   <File Type="RDS-UTIL" Name="VideoMemory_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="VideoMemory_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="VideoMemory.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="VideoMemory_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="VideoMemory_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/VideoMemory">
     <File Path="$PSRCDIR/sources_1/new/VideoMemory/VideoMemory.xci">
       <FileInfo>

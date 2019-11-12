@@ -31,5 +31,17 @@ package Generators is
             triangleData : out STD_LOGIC_VECTOR(58 downto 0));
     end component;
     
+    Component FrameGenerator
+        Generic(
+            g_Triangles : integer := 4);
+        Port (
+            clk : in std_logic;
+            frame : in std_logic;
+            
+            wr_en : out std_logic;
+            addr : out std_logic_vector(18 DOWNTO 0);
+            din : out  std_logic_vector(2 DOWNTO 0));
+    end Component;
+    
     
 end Generators;
