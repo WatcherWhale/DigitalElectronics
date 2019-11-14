@@ -30,8 +30,6 @@ architecture Behavioral of Controller is
        
     signal x,y : integer;
     signal Write : std_logic;
-    
-
 
 begin
     
@@ -94,6 +92,20 @@ begin
         yPos => y,
         Write => Write);
     
+    pSwitchMemory : process(PixelClk)
+    begin
+        if rising_edge(PixelClk)
+        then
+            if Write = '0'
+            then
+                frame <= '1';
+                UseMem2 <= not UseMem2;
+            else
+                frame <= '0';
+            end if;
+        end if; 
+    end process;
+    
     pSetAddr : process(x, y, UseMem2)
     begin
         -- Ask for the value in the memory for the current pixel
@@ -136,8 +148,6 @@ begin
             then
                 VGA_B <= "1111";
             end if;
-        else
-            frame <= '1';
         end if;
     end process;
     
@@ -153,8 +163,8 @@ begin
     
     pPipeInput : process(Input, UseMem2)
     begin
-        Input1 <= "000";
-        Input2 <= "000";
+        Input1 <= "111";
+        Input2 <= "111";
     
         if UseMem2 = '0'
         then
@@ -176,6 +186,18 @@ begin
             wea2 <= wea;
         end if;
     end process;
-   
+    
+    pPipeAddr : process(Addr, UseMem2)
+    begin
+        Addr1a <= (others => '0');
+        Addr2a <= (others => '0');
+    
+        if UseMem2 = '0'
+        then
+            Addr1a <= Addr;
+        else
+            Addr2a <= Addr;
+        end if;
+    end process;
 
 end Behavioral;

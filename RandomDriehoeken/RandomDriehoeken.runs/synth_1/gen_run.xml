@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1573726825">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1573731385">
   <File Type="PA-TCL" Name="Controller.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Controller_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Controller_reports.tcl"/>
@@ -101,6 +101,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/nexys.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

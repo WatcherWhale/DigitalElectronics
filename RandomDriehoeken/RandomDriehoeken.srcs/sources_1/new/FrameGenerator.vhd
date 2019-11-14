@@ -109,7 +109,9 @@ begin
                     
                     
                     x0 <= TO_INTEGER(UNSIGNED(triangleData(9 downto 0)));
-                    x1 <= TO_INTEGER(UNSIGNED(triangleData(9 downto 0)));
+                    x1 <= TO_INTEGER(UNSIGNED(triangleData(19 downto 10)));
+                    y0 <= TO_INTEGER(UNSIGNED(triangleData(28 downto 20)));
+                    y1 <= TO_INTEGER(UNSIGNED(triangleData(37 downto 29)));
                     
                     State <= WAIT_STATE;
                 
@@ -133,14 +135,14 @@ begin
                     else
                         if(Plot = '1' AND x >= 0 AND x < 640 AND y >= 0 AND y < 479)
                         then
-                            addr <= std_logic_vector(to_unsigned(x + y * 640,19));
+                            --addr <= std_logic_vector(to_unsigned(x + y * 640,19));
                             if color = '1'
                             then
                                 -- Set color at pixel (x,y) to white
-                                din <= "111";
+                                --din <= "111";
                             else
                                 -- Set color at pixel (x,y) to black
-                                din <= "000";
+                                --din <= "111";
                             end if;
                         end if;
                     end if;
