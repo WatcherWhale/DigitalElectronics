@@ -22,13 +22,15 @@ architecture Behavioral of Controller is
     signal PixelClk : std_logic;
     signal frame : std_logic := '0';
     
-    signal wea : std_logic_vector(0 downto 0);
-    signal AddrA, AddrB : std_logic_vector(18 DOWNTO 0);
-    signal Output : std_logic_vector(2 DOWNTO 0);
-    signal Input : std_logic_vector(2 DOWNTO 0);
-    
+    signal wea1, wea2, wea: std_logic_vector(0 downto 0);
+    signal Addr1A, Addr1B, Addr2A, Addr2B, Addr : std_logic_vector(18 DOWNTO 0);
+    signal Output1, Output2, Output : std_logic_vector(2 DOWNTO 0);
+    signal Input1, Input2, Input : std_logic_vector(2 DOWNTO 0);
+    signal UseMem2 : std_logic := '0';
+       
     signal x,y : integer;
     signal Write : std_logic;
+    
 
 
 begin
@@ -41,13 +43,26 @@ begin
     vidMemory: VideoMemory
     port map (
         clka => CLK100MHZ,
-        wea => wea,
-        addra => AddrA,
-        dina => Input,
+        wea => wea1,
+        addra => Addr1A,
+        dina => Input1,
         clkb => PixelClk,
         web => "0",
-        addrb => AddrB,
-        doutb => Output,
+        addrb => Addr1B,
+        doutb => Output1,
+        dinb => "000"
+    );
+    
+    vidMemory2: VideoMemory
+    port map (
+        clka => CLK100MHZ,
+        wea => wea2,
+        addra => Addr2A,
+        dina => Input2,
+        clkb => PixelClk,
+        web => "0",
+        addrb => Addr2B,
+        doutb => Output2,
         dinb => "000"
     );
        
@@ -56,10 +71,10 @@ begin
         clk => Clk100MHZ,
         frame => frame,
         wr_en => wea(0),
-        addr => AddrA,
+        addr => Addr,
         din => Input);
     
-    VSync : VPulse
+    cVSync : VPulse
     Generic map(
         g_visible => visible_V,
         g_front => front_V,
@@ -79,13 +94,22 @@ begin
         yPos => y,
         Write => Write);
     
-    pSetAddr : process(x, y)
+    pSetAddr : process(x, y, UseMem2)
     begin
         -- Ask for the value in the memory for the current pixel
         -- Address = pixel_x + pixel_y * 640
         --
-        -- This formula is used because the information is stored per row (640 pixels/row = 640 x_pixels/y_pixel)
-        AddrB <= std_logic_vector(to_unsigned(x + y * 640,19));
+        -- This formula is used because the information is stored per row (640 pixels/row = 640 x_pixels/y_pixel)     
+        Addr1B <= (others => '0');
+        Addr2B <= (others => '0');
+        
+        if(UseMem2 = '0')
+        then
+            Addr1B <= std_logic_vector(to_unsigned(x + y * 640,19));
+        else
+            Addr2B <= std_logic_vector(to_unsigned(x + y * 640,19));
+        end if;
+        
     end process;
     
     pReadValue : process(Write, Output)
@@ -114,6 +138,42 @@ begin
             end if;
         else
             frame <= '1';
+        end if;
+    end process;
+    
+    pPipeOutput : process(Output1, Output2, UseMem2)
+    begin
+        if UseMem2 = '0'
+        then
+            Output <= Output1;
+        else
+            Output <= Output2;
+        end if;
+    end process;
+    
+    pPipeInput : process(Input, UseMem2)
+    begin
+        Input1 <= "000";
+        Input2 <= "000";
+    
+        if UseMem2 = '0'
+        then
+            Input1 <= Input;
+        else
+            Input2 <= Input;
+        end if;
+    end process;
+    
+    pPipeWriteEnable : process(wea, UseMem2)
+    begin
+        wea1 <= "0";
+        wea2 <= "0";
+        
+        if UseMem2 = '0'
+        then
+            wea1 <= wea;
+        else
+            wea2 <= wea;
         end if;
     end process;
    

@@ -12,7 +12,6 @@ entity TriangleGenerator is
     Port (
         clk : in std_logic;
         rd_en : in std_logic;
-        gen : in std_logic;
         
         full : out std_logic;
         empty : out std_logic;
@@ -22,7 +21,7 @@ end TriangleGenerator;
 
 architecture Behavioral of TriangleGenerator is
     
-    type tState IS (GEN_STATE, WAIT_STATE);
+    type tState IS (GEN_STATE, START_STATE);
     signal State : tState := GEN_STATE;
     
     signal sequence : std_logic_vector(15 downto 0);
@@ -58,15 +57,14 @@ begin
         if(rising_edge(clk))
         then
             case State is
-                When WAIT_STATE =>
+                When START_STATE =>
                     wr_en <= '0';
+                    
                     triangleCounter <= 0;
                     dataCounter <= 0;
                     
-                    if(gen = '1')
-                    then
-                        STATE <= GEN_STATE;
-                    end if;                
+                    STATE <= GEN_STATE;
+                    
                 When GEN_STATE =>
                     wr_en <= '1';
                     
@@ -81,20 +79,15 @@ begin
                         
                         triangleCounter <= triangleCounter + 1;
                         dataCounter <= 0;
-                        
-                        State <= WAIT_STATE;
                                                 
                         if triangleCounter = g_Triangles
                         then
                             din(57) <= '1';
                             din(58) <= '1';
-                            State <= WAIT_STATE;
+                            State <= START_STATE;
                             
                             triangleCounter <= 0;
                         end if;
-                        
-
-                        
                     end if;
             end Case;
         end if;

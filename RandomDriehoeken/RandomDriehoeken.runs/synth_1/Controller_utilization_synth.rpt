@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Nov  7 11:56:37 2019
+| Date         : Thu Nov 14 11:21:03 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Controller_utilization_synth.rpt -pb Controller_utilization_synth.pb
 | Design       : Controller
@@ -30,12 +30,12 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  413 |     0 |     63400 |  0.65 |
-|   LUT as Logic          |  413 |     0 |     63400 |  0.65 |
+| Slice LUTs*             |  415 |     0 |     63400 |  0.65 |
+|   LUT as Logic          |  415 |     0 |     63400 |  0.65 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  363 |     0 |    126800 |  0.29 |
-|   Register as Flip Flop |  341 |     0 |    126800 |  0.27 |
-|   Register as Latch     |   22 |     0 |    126800 |  0.02 |
+| Slice Registers         |  397 |     0 |    126800 |  0.31 |
+|   Register as Flip Flop |  397 |     0 |    126800 |  0.31 |
+|   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 22    |          Yes |           - |        Reset |
+| 0     |          Yes |           - |        Reset |
 | 95    |          Yes |         Set |            - |
-| 246   |          Yes |       Reset |            - |
+| 302   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -80,8 +80,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |    3 |     0 |       240 |  1.25 |
-|   DSP48E1 only |    3 |       |           |       |
+| DSPs           |    1 |     0 |       240 |  0.42 |
+|   DSP48E1 only |    1 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -147,19 +147,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  246 |        Flop & Latch |
-| LUT2     |  227 |                 LUT |
-| LUT3     |  130 |                 LUT |
+| FDRE     |  302 |        Flop & Latch |
+| LUT2     |  178 |                 LUT |
+| LUT4     |  102 |                 LUT |
+| LUT5     |   99 |                 LUT |
 | FDSE     |   95 |        Flop & Latch |
-| CARRY4   |   88 |          CarryLogic |
-| LUT1     |   72 |                 LUT |
-| LUT4     |   44 |                 LUT |
-| LUT6     |   37 |                 LUT |
-| LDCE     |   22 |        Flop & Latch |
+| CARRY4   |   73 |          CarryLogic |
+| LUT6     |   40 |                 LUT |
+| LUT1     |   38 |                 LUT |
+| LUT3     |   32 |                 LUT |
 | OBUF     |   14 |                  IO |
-| LUT5     |   14 |                 LUT |
-| DSP48E1  |    3 |    Block Arithmetic |
 | IBUF     |    1 |                  IO |
+| DSP48E1  |    1 |    Block Arithmetic |
 +----------+------+---------------------+
 
 
@@ -169,7 +168,7 @@ Table of Contents
 +----------------+------+
 |    Ref Name    | Used |
 +----------------+------+
-| VideoMemory    |    1 |
+| VideoMemory    |    2 |
 | TriangleFifo   |    1 |
 | ClockingWizard |    1 |
 +----------------+------+

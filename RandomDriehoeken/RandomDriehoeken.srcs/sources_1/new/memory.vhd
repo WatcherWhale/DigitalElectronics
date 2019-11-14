@@ -10,6 +10,7 @@ package Memory is
             wea     : IN  std_logic_vector(0 DOWNTO 0);
             addra   : IN  std_logic_vector(18 DOWNTO 0);
             dina    : IN  std_logic_vector(2 DOWNTO 0);
+            douta   : OUT std_logic_vector(2 DOWNTO 0);
             clkb    : IN  std_logic;
             web     : IN  std_logic_vector(0 DOWNTO 0);
             addrb   : IN  std_logic_vector(18 DOWNTO 0);

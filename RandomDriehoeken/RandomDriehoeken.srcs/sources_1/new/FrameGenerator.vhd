@@ -36,13 +36,11 @@ architecture Behavioral of FrameGenerator is
     signal lines : integer range 0 to 3;
     signal color : STD_LOGIC := '0';
     signal last : STD_LOGIC := '0';
-    signal gen : std_logic;
     
 begin
     cTriGen : TriangleGenerator
     Port map(
         clk => clk,
-        gen => gen,
         rd_en => rd_en,
         full => full,
         empty => empty,
@@ -62,7 +60,6 @@ begin
     
     pStateMachine : process(clk)
     begin
-        -- TODO: ADD Background
         if rising_edge(clk)
         then
             case State is
@@ -86,7 +83,6 @@ begin
                 when START_STATE =>
                     rd_en <= '0';
                     wr_en <= '0';
-                    gen <= '1';
                     lines <= 0;
                        
                     if empty = '0'
@@ -97,7 +93,6 @@ begin
                 when WAIT_STATE =>
                     rd_en <= '0';
                     wr_en <= '0';
-                    gen <= '0';
                     lines <= 0;
                     
                     if full = '1'
@@ -135,6 +130,19 @@ begin
                                 State <= WAIT_FOR_FRAME;
                             end if;
                         end if;
+                    else
+                        if(Plot = '1' AND x >= 0 AND x < 640 AND y >= 0 AND y < 479)
+                        then
+                            addr <= std_logic_vector(to_unsigned(x + y * 640,19));
+                            if color = '1'
+                            then
+                                -- Set color at pixel (x,y) to white
+                                din <= "111";
+                            else
+                                -- Set color at pixel (x,y) to black
+                                din <= "000";
+                            end if;
+                        end if;
                     end if;
                     
                 when WAIT_FOR_FRAME =>
@@ -148,25 +156,4 @@ begin
         end if;
     
     end process;
-    
-    
-    pDraw: process(x,y, Plot)
-    begin
-        -- Check is we may plot and if the coordinates are on the screen
-        if(Plot = '1' AND x >= 0 AND x < 640 AND y >= 0 AND y < 479)
-        then
-            addr <= std_logic_vector(to_unsigned(x + y * 640,19));
-            if color = '1'
-            then
-                -- Set color at pixel (x,y) to white
-                din <= "111";
-            else
-                -- Set color at pixel (x,y) to black
-                din <= "000";
-            end if;
-        else
-        end if;
-    end process;
-
-
 end Behavioral;
