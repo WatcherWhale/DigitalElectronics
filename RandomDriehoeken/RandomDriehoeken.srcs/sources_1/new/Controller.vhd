@@ -26,7 +26,7 @@ architecture Behavioral of Controller is
     signal Addr1A, Addr1B, Addr2A, Addr2B, Addr : std_logic_vector(18 DOWNTO 0);
     signal Output1, Output2, Output : std_logic_vector(2 DOWNTO 0);
     signal Input1, Input2, Input : std_logic_vector(2 DOWNTO 0);
-    signal UseMem2 : std_logic := '0';
+    signal UseMem2, StartedFrame : std_logic := '0';
        
     signal x,y : integer;
     signal Write : std_logic;
@@ -96,12 +96,14 @@ begin
     begin
         if rising_edge(PixelClk)
         then
-            if Write = '0'
+            if Write = '0' AND StartedFrame = '0'
             then
                 frame <= '1';
                 UseMem2 <= not UseMem2;
+                StartedFrame <= '1';
             else
                 frame <= '0';
+                StartedFrame <= '0';
             end if;
         end if; 
     end process;

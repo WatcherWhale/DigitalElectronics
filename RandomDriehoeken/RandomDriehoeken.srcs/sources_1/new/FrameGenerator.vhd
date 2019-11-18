@@ -20,8 +20,8 @@ end FrameGenerator;
 
 architecture Behavioral of FrameGenerator is
 
-    type tState IS (START_STATE, READ_STATE, WAIT_STATE, GEN_STATE, WAIT_FOR_FRAME, BACKGROUND_STATE);
-    signal State : tState := BACKGROUND_STATE;
+    type tState IS (READ_STATE, WAIT_STATE, GEN_STATE, WAIT_FOR_FRAME, BACKGROUND_STATE);
+    signal State : tState := WAIT_FOR_FRAME;
 
     signal triangleData : STD_LOGIC_VECTOR(58 downto 0);
     
@@ -76,18 +76,8 @@ begin
                         
                         if(yB = 479)
                         then
-                            State <= START_STATE;
+                            State <= WAIT_STATE;
                         end if;
-                    end if;
-                
-                when START_STATE =>
-                    rd_en <= '0';
-                    wr_en <= '0';
-                    lines <= 0;
-                       
-                    if empty = '0'
-                    then
-                        State <= READ_STATE;
                     end if;
                 
                 when WAIT_STATE =>
@@ -125,7 +115,7 @@ begin
                         
                         if(lines = 2)
                         then
-                            State <= START_STATE;
+                            State <= WAIT_STATE;
                             
                             if(last = '1')
                             then
@@ -139,10 +129,10 @@ begin
                             if color = '1'
                             then
                                 -- Set color at pixel (x,y) to white
-                                --din <= "111";
+                                din <= "111";
                             else
                                 -- Set color at pixel (x,y) to black
-                                --din <= "111";
+                                din <= "000";
                             end if;
                         end if;
                     end if;
