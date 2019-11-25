@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../FloatingPointAdder.srcs/sources_1/new/FPAdder.vhd" \
+"../../../../FloatingPointAdder.srcs/sim_1/new/TB_FPAdder.vhd" \
+
+# Do not sort compile order
+nosort

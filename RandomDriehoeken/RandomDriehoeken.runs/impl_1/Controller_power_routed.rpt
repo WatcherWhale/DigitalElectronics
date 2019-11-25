@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Thu Nov 14 12:38:29 2019
+| Date             : Thu Nov 21 11:44:19 2019
 | Host             : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command          : report_power -file Controller_power_routed.rpt -pb Controller_power_summary_routed.pb -rpx Controller_power_routed.rpx
 | Design           : Controller
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.244        |
+| Total On-Chip Power (W)  | 0.237        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.144        |
+| Dynamic (W)              | 0.137        |
 | Device Static (W)        | 0.100        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |        6 |       --- |             --- |
-| Slice Logic    |     0.001 |     1185 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      470 |     63400 |            0.74 |
-|   CARRY4       |    <0.001 |       80 |     15850 |            0.50 |
-|   Register     |    <0.001 |      341 |    126800 |            0.27 |
+| Clocks         |     0.004 |        6 |       --- |             --- |
+| Slice Logic    |    <0.001 |      697 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      250 |     63400 |            0.39 |
+|   CARRY4       |    <0.001 |       34 |     15850 |            0.21 |
+|   Register     |    <0.001 |      166 |    126800 |            0.13 |
 |   F7/F8 Muxes  |    <0.001 |        6 |     63400 |           <0.01 |
-|   Others       |     0.000 |      185 |       --- |             --- |
-| Signals        |     0.003 |      936 |       --- |             --- |
-| Block RAM      |     0.015 |       58 |       135 |           42.96 |
+|   Others       |     0.000 |      179 |       --- |             --- |
+| Signals        |    <0.001 |      589 |       --- |             --- |
+| Block RAM      |     0.016 |       57 |       135 |           42.22 |
 | MMCM           |     0.115 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        2 |       240 |            0.83 |
-| I/O            |     0.005 |       15 |       210 |            7.14 |
+| I/O            |     0.001 |       15 |       210 |            7.14 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.244 |          |           |                 |
+| Total          |     0.237 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.039 |       0.022 |      0.017 |
+| Vccint    |       1.000 |     0.036 |       0.019 |      0.017 |
 | Vccaux    |       1.800 |     0.082 |       0.064 |      0.018 |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -147,19 +147,17 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| Controller             |     0.144 |
+| Controller             |     0.137 |
 |   cClk                 |     0.115 |
 |     inst               |     0.115 |
-|   cFramer              |     0.007 |
-|     cBres              |     0.002 |
-|     cTriGen            |     0.003 |
-|       cFIFO            |     0.002 |
-|   vidMemory            |     0.008 |
-|     U0                 |     0.008 |
-|       inst_blk_mem_gen |     0.008 |
-|   vidMemory2           |     0.008 |
-|     U0                 |     0.008 |
-|       inst_blk_mem_gen |     0.008 |
+|   cFramer              |     0.002 |
+|     cTriGen            |     0.001 |
+|   vidMemory            |     0.009 |
+|     U0                 |     0.009 |
+|       inst_blk_mem_gen |     0.009 |
+|   vidMemory2           |     0.009 |
+|     U0                 |     0.009 |
+|       inst_blk_mem_gen |     0.009 |
 +------------------------+-----------+
 
 

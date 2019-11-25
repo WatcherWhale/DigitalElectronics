@@ -96,14 +96,17 @@ begin
     begin
         if rising_edge(PixelClk)
         then
-            if Write = '0' AND StartedFrame = '0'
+            if Write = '0' AND StartedFrame = '0' AND x = 0 AND y = 0
             then
                 frame <= '1';
                 UseMem2 <= not UseMem2;
                 StartedFrame <= '1';
-            else
+            elsif x = 640 AND y = 480
+            then
                 frame <= '0';
                 StartedFrame <= '0';
+            else
+                frame <= '0';
             end if;
         end if; 
     end process;
@@ -117,7 +120,7 @@ begin
         Addr1B <= (others => '0');
         Addr2B <= (others => '0');
         
-        if(UseMem2 = '0')
+        if(UseMem2 = '1')
         then
             Addr1B <= std_logic_vector(to_unsigned(x + y * 640,19));
         else
@@ -155,7 +158,7 @@ begin
     
     pPipeOutput : process(Output1, Output2, UseMem2)
     begin
-        if UseMem2 = '0'
+        if UseMem2 = '1'
         then
             Output <= Output1;
         else

@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Nov 14 12:36:27 2019
-# Process ID: 21700
+# Start of session at: Thu Nov 21 11:42:10 2019
+# Process ID: 24588
 # Current directory: C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1
 # Command line: vivado.exe -log Controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Controller.tcl
 # Log file: C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/Controller.vds
@@ -15,16 +15,16 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 28352 
+INFO: Helper process launched with PID 27480 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 413.277 ; gain = 104.352
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 413.707 ; gain = 104.348
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:20]
-INFO: [Synth 8-3491] module 'ClockingWizard' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-21700-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:5' bound to instance 'cClk' of component 'ClockingWizard' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:36]
-INFO: [Synth 8-638] synthesizing module 'ClockingWizard' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-21700-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'VideoMemory' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-21700-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:5' bound to instance 'vidMemory' of component 'VideoMemory' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:41]
-INFO: [Synth 8-638] synthesizing module 'VideoMemory' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-21700-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'VideoMemory' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-21700-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:5' bound to instance 'vidMemory2' of component 'VideoMemory' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:54]
+INFO: [Synth 8-3491] module 'ClockingWizard' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-24588-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:5' bound to instance 'cClk' of component 'ClockingWizard' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:36]
+INFO: [Synth 8-638] synthesizing module 'ClockingWizard' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-24588-DELLLAPTOPMAES/realtime/ClockingWizard_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'VideoMemory' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-24588-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:5' bound to instance 'vidMemory' of component 'VideoMemory' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'VideoMemory' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-24588-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'VideoMemory' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-24588-DELLLAPTOPMAES/realtime/VideoMemory_stub.vhdl:5' bound to instance 'vidMemory2' of component 'VideoMemory' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:54]
 	Parameter g_Triangles bound to: 4 - type: integer 
 INFO: [Synth 8-3491] module 'FrameGenerator' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:9' bound to instance 'cFramer' of component 'FrameGenerator' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:67]
 INFO: [Synth 8-638] synthesizing module 'FrameGenerator' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:21]
@@ -33,8 +33,8 @@ INFO: [Synth 8-638] synthesizing module 'FrameGenerator' [C:/Projects/DigitalEle
 INFO: [Synth 8-3491] module 'TriangleGenerator' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleGenerator.vhd:9' bound to instance 'cTriGen' of component 'TriangleGenerator' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:41]
 INFO: [Synth 8-638] synthesizing module 'TriangleGenerator' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleGenerator.vhd:22]
 	Parameter g_Triangles bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'TriangleFifo' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-21700-DELLLAPTOPMAES/realtime/TriangleFifo_stub.vhdl:5' bound to instance 'cFIFO' of component 'TriangleFifo' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleGenerator.vhd:38]
-INFO: [Synth 8-638] synthesizing module 'TriangleFifo' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-21700-DELLLAPTOPMAES/realtime/TriangleFifo_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'TriangleFifo' declared at 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-24588-DELLLAPTOPMAES/realtime/TriangleFifo_stub.vhdl:5' bound to instance 'cFIFO' of component 'TriangleFifo' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleGenerator.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'TriangleFifo' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/.Xil/Vivado-24588-DELLLAPTOPMAES/realtime/TriangleFifo_stub.vhdl:19]
 INFO: [Synth 8-3491] module 'LFSR' declared at 'C:/Projects/DigitalElectronics/LSFR/LSFR.srcs/sources_1/new/LFSR.vhd:6' bound to instance 'cLfsr' of component 'LFSR' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleGenerator.vhd:50]
 INFO: [Synth 8-638] synthesizing module 'LFSR' [C:/Projects/DigitalElectronics/LSFR/LSFR.srcs/sources_1/new/LFSR.vhd:14]
 	Parameter seed bound to: 16'b1000000000000000 
@@ -43,7 +43,7 @@ INFO: [Synth 8-256] done synthesizing module 'TriangleGenerator' (2#1) [C:/Proje
 INFO: [Synth 8-3491] module 'BresenhamErr' declared at 'C:/Projects/DigitalElectronics/Bresenham/Bresenham.srcs/sources_1/new/BresenhamErr.vhd:7' bound to instance 'cBres' of component 'BresenhamErr' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:49]
 INFO: [Synth 8-638] synthesizing module 'BresenhamErr' [C:/Projects/DigitalElectronics/Bresenham/Bresenham.srcs/sources_1/new/BresenhamErr.vhd:21]
 INFO: [Synth 8-256] done synthesizing module 'BresenhamErr' (3#1) [C:/Projects/DigitalElectronics/Bresenham/Bresenham.srcs/sources_1/new/BresenhamErr.vhd:21]
-WARNING: [Synth 8-6014] Unused sequential element color_reg was removed.  [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:107]
+WARNING: [Synth 8-6014] Unused sequential element color_reg was removed.  [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:98]
 INFO: [Synth 8-256] done synthesizing module 'FrameGenerator' (4#1) [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:21]
 	Parameter g_visible bound to: 480 - type: integer 
 	Parameter g_front bound to: 10 - type: integer 
@@ -79,7 +79,7 @@ INFO: [Synth 8-256] done synthesizing module 'VPulse' (6#1) [C:/Projects/Digital
 INFO: [Synth 8-256] done synthesizing module 'Controller' (7#1) [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/Controller.vhd:20]
 WARNING: [Synth 8-3331] design FrameGenerator has unconnected port frame
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 470.570 ; gain = 161.645
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 470.336 ; gain = 160.977
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -92,10 +92,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 470.570 ; gain = 161.645
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 470.336 ; gain = 160.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 470.570 ; gain = 161.645
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 470.336 ; gain = 160.977
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -116,26 +116,26 @@ Finished Parsing XDC File [C:/Projects/DigitalElectronics/RandomDriehoeken/Rando
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/constrs_1/new/nexys.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Controller_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/constrs_1/new/nexys.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Controller_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 825.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 825.598 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 825.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 825.598 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 825.891 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 825.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 825.598 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 825.598 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'vidMemory' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'vidMemory2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 825.891 ; gain = 516.965
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 825.598 ; gain = 516.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 825.891 ; gain = 516.965
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 825.598 ; gain = 516.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -147,7 +147,7 @@ Applied set_property DONT_TOUCH = true for vidMemory2. (constraint file  auto ge
 Applied set_property DONT_TOUCH = true for cFramer/cTriGen/cFIFO. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cClk. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 825.891 ; gain = 516.965
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 825.598 ; gain = 516.238
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "State" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Projects/DigitalElectronics/Bresenham/Bresenham.srcs/sources_1/new/BresenhamErr.vhd:97]
@@ -155,6 +155,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'State_reg' in module 'Brese
 INFO: [Synth 8-5545] ROM "yB" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "State" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "State" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'State_reg' in module 'FrameGenerator'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -163,8 +164,17 @@ INFO: [Synth 8-5544] ROM "State" won't be mapped to Block RAM because address si
               busy_state |                              100 |                               01
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'State_reg' using encoding 'one-hot' in module 'BresenhamErr'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          wait_for_frame |                             0001 |                              011
+        background_state |                             0010 |                              100
+              wait_state |                             0100 |                              001
+              read_state |                             1000 |                              000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'State_reg' using encoding 'one-hot' in module 'FrameGenerator'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 825.891 ; gain = 516.965
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 825.598 ; gain = 516.238
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -192,23 +202,22 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 1     
 	               10 Bit    Registers := 3     
 	                9 Bit    Registers := 3     
-	                3 Bit    Registers := 3     
+	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 8     
+	                1 Bit    Registers := 9     
 +---Muxes : 
 	   2 Input     59 Bit        Muxes := 3     
 	   2 Input     32 Bit        Muxes := 8     
 	   3 Input     32 Bit        Muxes := 3     
 	   2 Input     31 Bit        Muxes := 2     
 	   2 Input     19 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 4     
-	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
-	   7 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 12    
 	   3 Input      1 Bit        Muxes := 5     
-	   7 Input      1 Bit        Muxes := 9     
+	   4 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -219,7 +228,7 @@ Hierarchical RTL Component report
 Module Controller 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     19 Bit        Muxes := 4     
 	   2 Input      4 Bit        Muxes := 3     
@@ -270,14 +279,13 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 1     
 	               10 Bit    Registers := 2     
 	                9 Bit    Registers := 2     
-	                3 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   8 Input      3 Bit        Muxes := 1     
-	   7 Input      2 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 9     
-	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 2     
 Module HPulse 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -313,8 +321,8 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-4471] merging register 'cFramer/cTriGen/dataCounter_reg[1:0]' into 'cFramer/cTriGen/dataCounter_reg[1:0]' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/TriangleGenerator.vhd:64]
-INFO: [Synth 8-4471] merging register 'cFramer/yB_reg[31:0]' into 'cFramer/yB_reg[31:0]' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:69]
-INFO: [Synth 8-4471] merging register 'cFramer/xB_reg[31:0]' into 'cFramer/xB_reg[31:0]' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:69]
+INFO: [Synth 8-4471] merging register 'cFramer/yB_reg[31:0]' into 'cFramer/yB_reg[31:0]' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:70]
+INFO: [Synth 8-4471] merging register 'cFramer/xB_reg[31:0]' into 'cFramer/xB_reg[31:0]' [C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.srcs/sources_1/new/FrameGenerator.vhd:70]
 INFO: [Synth 8-5544] ROM "cFramer/cTriGen/State" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cFramer/State" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 DSP Report: Generating DSP cFramer/addr_reg, operation Mode is: C'+A2*(B:0x280).
@@ -326,151 +334,14 @@ DSP Report: operator cFramer/addr1 is absorbed into DSP cFramer/addr_reg.
 DSP Report: Generating DSP Addr1B0, operation Mode is: C+(A:0x280)*B.
 DSP Report: operator Addr1B0 is absorbed into DSP Addr1B0.
 DSP Report: operator Addr1B1 is absorbed into DSP Addr1B0.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[0][9] )
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][10]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][11]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][12]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][13]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][14]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][15]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][16]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][17]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][18]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][19]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][20]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][21]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][22]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][23]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][24]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][25]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][26]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][27]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][28]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][29]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][30]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[0][31]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[0]' (FDE) to 'cFramer/cBres/sy_reg[0]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[1]' (FDE) to 'cFramer/cBres/sx_reg[2]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[2]' (FDE) to 'cFramer/cBres/sx_reg[3]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[3]' (FDE) to 'cFramer/cBres/sx_reg[4]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[4]' (FDE) to 'cFramer/cBres/sx_reg[5]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[5]' (FDE) to 'cFramer/cBres/sx_reg[6]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[6]' (FDE) to 'cFramer/cBres/sx_reg[7]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[7]' (FDE) to 'cFramer/cBres/sx_reg[8]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[8]' (FDE) to 'cFramer/cBres/sx_reg[9]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[9]' (FDE) to 'cFramer/cBres/sx_reg[10]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[10]' (FDE) to 'cFramer/cBres/sx_reg[11]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[11]' (FDE) to 'cFramer/cBres/sx_reg[12]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[12]' (FDE) to 'cFramer/cBres/sx_reg[13]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[13]' (FDE) to 'cFramer/cBres/sx_reg[14]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[14]' (FDE) to 'cFramer/cBres/sx_reg[15]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[15]' (FDE) to 'cFramer/cBres/sx_reg[16]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[16]' (FDE) to 'cFramer/cBres/sx_reg[17]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[17]' (FDE) to 'cFramer/cBres/sx_reg[18]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[18]' (FDE) to 'cFramer/cBres/sx_reg[19]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[19]' (FDE) to 'cFramer/cBres/sx_reg[20]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[20]' (FDE) to 'cFramer/cBres/sx_reg[21]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[21]' (FDE) to 'cFramer/cBres/sx_reg[22]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[22]' (FDE) to 'cFramer/cBres/sx_reg[23]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[23]' (FDE) to 'cFramer/cBres/sx_reg[24]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[24]' (FDE) to 'cFramer/cBres/sx_reg[25]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[25]' (FDE) to 'cFramer/cBres/sx_reg[26]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[26]' (FDE) to 'cFramer/cBres/sx_reg[27]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[27]' (FDE) to 'cFramer/cBres/sx_reg[28]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[28]' (FDE) to 'cFramer/cBres/sx_reg[29]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[29]' (FDE) to 'cFramer/cBres/sx_reg[30]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sx_reg[30]' (FDE) to 'cFramer/cBres/sx_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p0_reg[1][8] )
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][9]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][10]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][11]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][12]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][13]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][14]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][15]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][16]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][17]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][18]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][19]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][20]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][21]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][22]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][23]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][24]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][25]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][26]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][27]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][28]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][29]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][30]' (FDE) to 'cFramer/cBres/p0_reg[1][31]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/p0_reg[1][31]' (FDE) to 'cFramer/cBres/p1_reg[0][31]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\cFramer/cBres/sy_reg[0] )
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[1]' (FDE) to 'cFramer/cBres/sy_reg[2]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[2]' (FDE) to 'cFramer/cBres/sy_reg[3]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[3]' (FDE) to 'cFramer/cBres/sy_reg[4]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[4]' (FDE) to 'cFramer/cBres/sy_reg[5]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[5]' (FDE) to 'cFramer/cBres/sy_reg[6]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[6]' (FDE) to 'cFramer/cBres/sy_reg[7]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[7]' (FDE) to 'cFramer/cBres/sy_reg[8]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[8]' (FDE) to 'cFramer/cBres/sy_reg[9]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[9]' (FDE) to 'cFramer/cBres/sy_reg[10]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[10]' (FDE) to 'cFramer/cBres/sy_reg[11]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[11]' (FDE) to 'cFramer/cBres/sy_reg[12]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[12]' (FDE) to 'cFramer/cBres/sy_reg[13]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[13]' (FDE) to 'cFramer/cBres/sy_reg[14]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[14]' (FDE) to 'cFramer/cBres/sy_reg[15]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[15]' (FDE) to 'cFramer/cBres/sy_reg[16]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[16]' (FDE) to 'cFramer/cBres/sy_reg[17]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[17]' (FDE) to 'cFramer/cBres/sy_reg[18]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[18]' (FDE) to 'cFramer/cBres/sy_reg[19]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[19]' (FDE) to 'cFramer/cBres/sy_reg[20]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[20]' (FDE) to 'cFramer/cBres/sy_reg[21]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[21]' (FDE) to 'cFramer/cBres/sy_reg[22]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[22]' (FDE) to 'cFramer/cBres/sy_reg[23]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[23]' (FDE) to 'cFramer/cBres/sy_reg[24]'
-INFO: [Synth 8-3886] merging instance 'cFramer/cBres/sy_reg[24]' (FDE) to 'cFramer/cBres/sy_reg[25]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[0][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cFramer/cBres/p1_reg[1][31] )
+INFO: [Synth 8-3886] merging instance 'cFramer/din_reg[0]' (FDE) to 'cFramer/din_reg[1]'
+INFO: [Synth 8-3886] merging instance 'cFramer/din_reg[1]' (FDE) to 'cFramer/din_reg[2]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\cFramer/din_reg[2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\cFramer/cBres/sy_reg[31] )
+WARNING: [Synth 8-3332] Sequential element (cFramer/cBres/FSM_onehot_State_reg[2]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (cFramer/cBres/FSM_onehot_State_reg[1]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (cFramer/cBres/FSM_onehot_State_reg[0]) is unused and will be removed from module Controller.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 825.891 ; gain = 516.965
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 825.598 ; gain = 516.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -500,13 +371,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'cClk/PixelClk' to pin 'cClk/bbstub_PixelClk/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 856.273 ; gain = 547.348
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 857.461 ; gain = 548.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 867.691 ; gain = 558.766
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 868.855 ; gain = 559.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -518,7 +389,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -542,7 +413,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -555,7 +426,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -567,25 +438,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -608,55 +479,53 @@ Report Cell Usage:
 |2     |TriangleFifo_bbox_4   |     1|
 |3     |VideoMemory_bbox_2    |     1|
 |4     |VideoMemory_bbox_3    |     1|
-|5     |CARRY4                |    72|
+|5     |CARRY4                |    26|
 |6     |DSP48E1               |     1|
-|7     |DSP48E1_2             |     1|
-|8     |LUT1                  |    70|
-|9     |LUT2                  |   206|
-|10    |LUT3                  |    64|
-|11    |LUT4                  |    11|
-|12    |LUT5                  |    46|
-|13    |LUT6                  |    37|
-|14    |FDRE                  |   178|
-|15    |FDSE                  |    95|
-|16    |OBUF                  |    14|
+|7     |DSP48E1_1             |     1|
+|8     |LUT1                  |     6|
+|9     |LUT2                  |   100|
+|10    |LUT3                  |    11|
+|11    |LUT4                  |    10|
+|12    |LUT5                  |    17|
+|13    |LUT6                  |    36|
+|14    |FDRE                  |   173|
+|15    |OBUF                  |    14|
 +------+----------------------+------+
 
 Report Instance Areas: 
 +------+------------+------------------+------+
 |      |Instance    |Module            |Cells |
 +------+------------+------------------+------+
-|1     |top         |                  |   869|
-|2     |  cFramer   |FrameGenerator    |   736|
-|3     |    cBres   |BresenhamErr      |   413|
-|4     |    cTriGen |TriangleGenerator |   158|
-|5     |      cLfsr |LFSR              |    17|
-|6     |  cVSync    |VPulse            |    66|
-|7     |    HS      |HPulse            |    35|
+|1     |top         |                  |   469|
+|2     |  cFramer   |FrameGenerator    |   315|
+|3     |    cTriGen |TriangleGenerator |   159|
+|4     |      cLfsr |LFSR              |    17|
+|5     |  cVSync    |VPulse            |    86|
+|6     |    HS      |HPulse            |    50|
 +------+------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 878.270 ; gain = 214.023
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 878.270 ; gain = 569.344
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 879.375 ; gain = 214.754
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 879.375 ; gain = 570.016
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 74 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 878.270 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 879.375 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-197 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+59 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 878.270 ; gain = 580.809
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 878.270 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 879.375 ; gain = 581.480
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 879.375 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/DigitalElectronics/RandomDriehoeken/RandomDriehoeken.runs/synth_1/Controller.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Controller_utilization_synth.rpt -pb Controller_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 14 12:37:00 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 11:42:43 2019...

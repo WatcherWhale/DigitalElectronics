@@ -12,12 +12,12 @@ end FPAdder;
 
 architecture Behavioral of FPAdder is
     
-    signal M : std_logic_vector(46 downto 0);
-    signal sM : std_logic_vector(46 downto 0);
-    signal shift : integer range -128 to 127;
-    signal add : std_logic;
-    signal sign : std_logic;
-    signal exponent : std_logic_vector(7 downto 0);
+    signal M : std_logic_vector(46 downto 0) := (others => '0');
+    signal sM : std_logic_vector(46 downto 0) := (others => '0');
+    signal shift : integer range -128 to 127 := 0;
+    signal add : std_logic := '1';
+    signal sign : std_logic := '0';
+    signal exponent : std_logic_vector(7 downto 0) := (others => '0');
 begin
     
     pClkAdder : process(Clk)
@@ -25,12 +25,13 @@ begin
         
         if rising_edge(Clk)
         then
-            shift <= to_integer(signed(A(30 downto 23))) - to_integer(signed(A(30 downto 23)));
+            shift <= to_integer(signed(A(30 downto 23))) - to_integer(signed(B(30 downto 23)));
              
             if (A(31) = '0' AND B(31) = '0') OR (A(31) = '1' AND B(31) = '1')
             then
                 M(22 downto 0)  <= A(22 downto 0);
                 M(45 downto 23) <= B(22 downto 0);
+                sign <= A(31);
                 add <= '1';
             end if;
             
@@ -44,7 +45,10 @@ begin
         sM <= M;
         if shift /= 0
         then
-            if shift > 0
+            if shift > 22
+            then
+                sM(45 downto 23) <= (others => '0');
+            elsif shift > 0
             then                
                 for i in 0 to 22 - shift
                 loop
@@ -65,11 +69,15 @@ begin
         end if;
     end process;
     
-    pAdd : process(sM, add)
+    pAdd : process(sM, add, sign)
     begin
         if add = '1'
         then
             C(22 downto 0) <= std_logic_vector(unsigned(sM(22 downto 0)) + unsigned(sM(45 downto 23)));
+            C(30 downto 23) <= exponent;
+            C(31) <= sign;
+        else
+            C(22 downto 0) <= std_logic_vector(unsigned(sM(22 downto 0)) - unsigned(sM(45 downto 23)));
             C(30 downto 23) <= exponent;
             C(31) <= sign;
         end if;

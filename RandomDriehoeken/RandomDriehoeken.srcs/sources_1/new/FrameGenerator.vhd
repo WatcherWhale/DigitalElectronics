@@ -65,6 +65,7 @@ begin
             case State is
                 when BACKGROUND_STATE =>
                     wr_en <= '1';
+                    rd_en <= '0';
                     
                     addr <= std_logic_vector(to_unsigned(xB + yB * 640,19));
                     din <= "111";
@@ -77,6 +78,8 @@ begin
                         if(yB = 479)
                         then
                             State <= WAIT_STATE;
+                            xB <= 0;
+                            yB <= 0;
                         end if;
                     end if;
                 
@@ -84,6 +87,7 @@ begin
                     rd_en <= '0';
                     wr_en <= '0';
                     lines <= 0;
+                    
                     
                     if full = '1'
                     then
@@ -129,16 +133,18 @@ begin
                             if color = '1'
                             then
                                 -- Set color at pixel (x,y) to white
-                                din <= "111";
+                                --din <= "111";
                             else
                                 -- Set color at pixel (x,y) to black
-                                din <= "000";
+                                --din <= "000";
                             end if;
                         end if;
                     end if;
                     
                 when WAIT_FOR_FRAME =>
                     wr_en <= '0';
+                    rd_en <= '0';
+
                     if(frame <= '1')
                     then
                         State <= BACKGROUND_STATE;

@@ -17,9 +17,18 @@ architecture Behavioral of TB_FPAdder is
            
            C : out STD_LOGIC_VECTOR (31 downto 0));
    end component;
+   
+   signal A,B,C : STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
     
 begin
-
+    
+    cFPAdder : FPAdder
+    Port map(
+        Clk => clk,
+        A => A,
+        B => B,
+        C => C);
+    
     pClk : process
     begin
         clk <= not clk;
@@ -28,8 +37,11 @@ begin
     
     pTest : process
     begin
-        
+        --wait for 10ns;
+        A <= "10111101000000001100011010000100";
+        B <= "10100010011110000010011111110010";
         wait for 10ns;
+        
     end process;
     
 
