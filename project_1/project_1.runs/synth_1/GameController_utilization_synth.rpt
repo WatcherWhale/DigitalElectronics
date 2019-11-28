@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Jul  7 21:43:11 2019
+| Date         : Thu Nov 28 12:31:43 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_utilization -file GameController_utilization_synth.rpt -pb GameController_utilization_synth.pb
 | Design       : GameController
@@ -148,13 +148,13 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | LUT2     |  912 |                 LUT |
-| LUT6     |  727 |                 LUT |
+| LUT6     |  729 |                 LUT |
 | CARRY4   |  662 |          CarryLogic |
-| LUT3     |  611 |                 LUT |
-| LUT4     |  571 |                 LUT |
+| LUT3     |  610 |                 LUT |
+| LUT4     |  570 |                 LUT |
 | FDRE     |  319 |        Flop & Latch |
-| LUT5     |  253 |                 LUT |
-| LUT1     |  212 |                 LUT |
+| LUT5     |  254 |                 LUT |
+| LUT1     |  211 |                 LUT |
 | OBUF     |   31 |                  IO |
 | IBUF     |   20 |                  IO |
 | FDSE     |   13 |        Flop & Latch |

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Nov 21 11:43:33 2019
+| Date         : Thu Nov 28 11:30:20 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Controller_control_sets_placed.rpt
 | Design       : Controller
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    10 |
-| Unused register locations in slices containing registers |    34 |
+| Number of unique control sets                            |     9 |
+| Unused register locations in slices containing registers |    35 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,11 +34,12 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      4 |            2 |
-|      5 |            1 |
+|      4 |            1 |
+|      9 |            1 |
 |     10 |            1 |
-|     13 |            1 |
-|    16+ |            5 |
+|     12 |            1 |
+|     14 |            1 |
+|    16+ |            4 |
 +--------+--------------+
 
 
@@ -48,31 +49,30 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              43 |           23 |
+| No           | No                    | No                     |              26 |           16 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              10 |            3 |
-| Yes          | No                    | No                     |             109 |           31 |
+| No           | Yes                   | No                     |              10 |            4 |
+| Yes          | No                    | No                     |             104 |           27 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               4 |            2 |
+| Yes          | Yes                   | No                     |               9 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+----------------------------------------------------------------------------------------------------+------------------+------------------+----------------+
-|     Clock Signal     |                                            Enable Signal                                           | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+----------------------+----------------------------------------------------------------------------------------------------+------------------+------------------+----------------+
-|  cClk/inst/PixelClk  | cVSync/HS/E[0]                                                                                     | cVSync/HS/SR[0]  |                2 |              4 |
-|  CLK100MHZ_IBUF_BUFG | cFramer/cTriGen/E[0]                                                                               |                  |                2 |              4 |
-|  cClk/inst/PixelClk  | cVSync/HS/E[0]                                                                                     |                  |                2 |              5 |
-|  cClk/inst/PixelClk  |                                                                                                    | cVSync/HS/clear  |                3 |             10 |
-|  CLK100MHZ_IBUF_BUFG |                                                                                                    |                  |                6 |             13 |
-|  CLK100MHZ_IBUF_BUFG | cFramer/cTriGen/cFIFO/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/E[0] |                  |                6 |             18 |
-|  CLK100MHZ_IBUF_BUFG | cFramer/cTriGen/cFIFO/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/E[0] |                  |                5 |             18 |
-|  cClk/inst/PixelClk  |                                                                                                    |                  |               17 |             30 |
-|  CLK100MHZ_IBUF_BUFG | cFramer/__0                                                                                        |                  |                8 |             32 |
-|  CLK100MHZ_IBUF_BUFG | cFramer/xB                                                                                         |                  |                8 |             32 |
-+----------------------+----------------------------------------------------------------------------------------------------+------------------+------------------+----------------+
++----------------------+----------------------------------------------------------------------------------------------------+------------------------------+------------------+----------------+
+|     Clock Signal     |                                            Enable Signal                                           |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
++----------------------+----------------------------------------------------------------------------------------------------+------------------------------+------------------+----------------+
+|  CLK100MHZ_IBUF_BUFG | cFramer/cTriGen/E[0]                                                                               |                              |                2 |              4 |
+|  cClk/inst/PixelClk  | cVSync/HS/E[0]                                                                                     | cVSync/HS/VCounter_reg[4][0] |                2 |              9 |
+|  cClk/inst/PixelClk  |                                                                                                    | cVSync/HS/SR[0]              |                4 |             10 |
+|  CLK100MHZ_IBUF_BUFG |                                                                                                    |                              |                6 |             12 |
+|  cClk/inst/PixelClk  |                                                                                                    |                              |               10 |             14 |
+|  CLK100MHZ_IBUF_BUFG | cFramer/cTriGen/cFIFO/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/E[0] |                              |                4 |             18 |
+|  CLK100MHZ_IBUF_BUFG | cFramer/cTriGen/cFIFO/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/E[0] |                              |                5 |             18 |
+|  CLK100MHZ_IBUF_BUFG | cFramer/yB[0]_i_1_n_0                                                                              |                              |                8 |             32 |
+|  CLK100MHZ_IBUF_BUFG | cFramer/FSM_onehot_State_reg_n_0_[1]                                                               |                              |                8 |             32 |
++----------------------+----------------------------------------------------------------------------------------------------+------------------------------+------------------+----------------+
 
 

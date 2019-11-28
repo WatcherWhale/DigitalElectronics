@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Nov 21 11:42:43 2019
+| Date         : Thu Nov 28 11:29:38 2019
 | Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Controller_utilization_synth.rpt -pb Controller_utilization_synth.pb
 | Design       : Controller
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  128 |     0 |     63400 |  0.20 |
-|   LUT as Logic          |  128 |     0 |     63400 |  0.20 |
+| Slice LUTs*             |  208 |     0 |     63400 |  0.33 |
+|   LUT as Logic          |  208 |     0 |     63400 |  0.33 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |  173 |     0 |    126800 |  0.14 |
 |   Register as Flip Flop |  173 |     0 |    126800 |  0.14 |
@@ -91,7 +91,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   15 |     0 |       210 |  7.14 |
+| Bonded IOB                  |   17 |     0 |       210 |  8.10 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -148,14 +148,14 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  173 |        Flop & Latch |
-| LUT2     |  100 |                 LUT |
-| LUT6     |   36 |                 LUT |
-| CARRY4   |   26 |          CarryLogic |
-| LUT5     |   17 |                 LUT |
-| OBUF     |   14 |                  IO |
-| LUT3     |   11 |                 LUT |
-| LUT4     |   10 |                 LUT |
-| LUT1     |    6 |                 LUT |
+| LUT2     |   72 |                 LUT |
+| LUT5     |   65 |                 LUT |
+| LUT4     |   42 |                 LUT |
+| LUT6     |   27 |                 LUT |
+| CARRY4   |   24 |          CarryLogic |
+| OBUF     |   16 |                  IO |
+| LUT3     |    9 |                 LUT |
+| LUT1     |    4 |                 LUT |
 | DSP48E1  |    2 |    Block Arithmetic |
 | IBUF     |    1 |                  IO |
 +----------+------+---------------------+

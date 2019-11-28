@@ -14,7 +14,8 @@ entity Controller is
         VGA_G : out std_logic_vector(3 downto 0);
         VGA_B : out std_logic_vector(3 downto 0);
         VGA_HS : out std_logic;
-        VGA_VS : out std_logic);
+        VGA_VS : out std_logic;
+        LED : out std_logic_vector(1 downto 0));
 end Controller;
 
 architecture Behavioral of Controller is
@@ -98,25 +99,31 @@ begin
         then
             if Write = '0' AND StartedFrame = '0' AND x = 0 AND y = 0
             then
-                frame <= '1';
-                UseMem2 <= not UseMem2;
+                --frame <= '1';
+                --UseMem2 <= not UseMem2;
                 StartedFrame <= '1';
             elsif x = 640 AND y = 480
             then
                 frame <= '0';
                 StartedFrame <= '0';
-            else
-                frame <= '0';
             end if;
+            
+            if UseMem2 = '1'
+            then
+                Led(1) <= '1';
+                Led(0) <= '0';
+            else
+                Led(1) <= '0';
+                Led(0) <= '1';
+            end if;
+            
         end if; 
     end process;
     
     pSetAddr : process(x, y, UseMem2)
     begin
         -- Ask for the value in the memory for the current pixel
-        -- Address = pixel_x + pixel_y * 640
-        --
-        -- This formula is used because the information is stored per row (640 pixels/row = 640 x_pixels/y_pixel)     
+        -- Address = pixel_x + pixel_y * 640    
         Addr1B <= (others => '0');
         Addr2B <= (others => '0');
         
@@ -168,8 +175,8 @@ begin
     
     pPipeInput : process(Input, UseMem2)
     begin
-        Input1 <= "111";
-        Input2 <= "111";
+        Input1 <= "000";
+        Input2 <= "000";
     
         if UseMem2 = '0'
         then

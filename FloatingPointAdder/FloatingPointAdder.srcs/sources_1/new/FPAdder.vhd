@@ -25,7 +25,7 @@ begin
         
         if rising_edge(Clk)
         then
-            shift <= to_integer(signed(A(30 downto 23))) - to_integer(signed(B(30 downto 23)));
+            shift <= (to_integer(unsigned(B(30 downto 23)))-127) - (to_integer(unsigned(A(30 downto 23))) - 127);
              
             if (A(31) = '0' AND B(31) = '0') OR (A(31) = '1' AND B(31) = '1')
             then
@@ -33,6 +33,7 @@ begin
                 M(45 downto 23) <= B(22 downto 0);
                 sign <= A(31);
                 add <= '1';
+                exponent <= A(30 downto 23);
             end if;
             
         

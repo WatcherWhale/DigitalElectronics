@@ -1,0 +1,93 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Nov 28 12:32:30 2019
+| Host         : DELLLAPTOPMAES running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file GameController_control_sets_placed.rpt
+| Design       : GameController
+| Device       : xc7a100t
+-------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    21 |
+| Unused register locations in slices containing registers |    68 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            3 |
+|      6 |            2 |
+|      8 |            1 |
+|      9 |            1 |
+|     10 |            1 |
+|     11 |            1 |
+|     12 |            1 |
+|     14 |            5 |
+|    16+ |            6 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              75 |           37 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             155 |           43 |
+| Yes          | No                    | No                     |              65 |           18 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              37 |           13 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------+-----------------------+--------------------------------+------------------+----------------+
+|        Clock Signal        |     Enable Signal     |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
++----------------------------+-----------------------+--------------------------------+------------------+----------------+
+|  clkgen/inst/CLKPixel      | VSync/HS/E[0]         |                                |                1 |              1 |
+|  au/clock/CLK              |                       |                                |                1 |              1 |
+|  CLK_BUFG                  |                       | Player1/ballPos_reg[0][31]     |                1 |              1 |
+|  au/clock/CLK              |                       | au/counter[5]_i_1__0_n_0       |                2 |              6 |
+|  ScoreBoard/clk/CLK        |                       |                                |                3 |              6 |
+|  CLK_BUFG                  |                       |                                |                4 |              8 |
+|  clkgen/inst/CLKPixel      | VSync/HS/E[0]         | VSync/HS/SR[0]                 |                4 |              9 |
+|  clkgen/inst/CLKPixel      |                       | VSync/HS/clear                 |                3 |             10 |
+|  clkgen/inst/CLKGame       |                       | ScoreBoard/clk/CLK_0           |                3 |             11 |
+|  genClocks[1].genClock/CLK |                       |                                |                6 |             12 |
+|  clkgen/inst/CLKGame       |                       | Player1/moveClock/CLK          |                4 |             14 |
+|  clkgen/inst/CLKGame       |                       | Player2/aiPlayer/moveClock/CLK |                4 |             14 |
+|  clkgen/inst/CLKGame       |                       | genClocks[0].genClock/CLK_0    |                4 |             14 |
+|  CLK_BUFG                  | Scores[0][0]_i_2_n_0  | Scores[0]                      |                4 |             14 |
+|  CLK_BUFG                  | Scores[1][13]_i_2_n_0 | Scores[1][13]_i_1_n_0          |                5 |             14 |
+|  clkgen/inst/CLKGame       |                       |                                |                9 |             17 |
+|  clkgen/inst/CLKGame       |                       | genClocks[1].genClock/CLK_0    |                6 |             21 |
+|  CLK100MHZ_IBUF_BUFG       |                       |                                |               14 |             31 |
+|  CLK_0                     | Player2/aiPlayer/yPos |                                |                9 |             32 |
+|  CLK_1                     | Player1/yPos          |                                |                8 |             32 |
+|  CLK_BUFG                  |                       | ballPos[1]                     |               16 |             64 |
++----------------------------+-----------------------+--------------------------------+------------------+----------------+
+
+
