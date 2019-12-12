@@ -24,12 +24,14 @@ architecture Behavioral of TriangleGenerator is
     type tState IS (GEN_STATE, START_STATE);
     signal State : tState := GEN_STATE;
     
-    signal sequence : std_logic_vector(15 downto 0);
+    type tSeq is array(0 to 3) of std_logic_vector(15 downto 0);
+    signal sequence : tSeq;
     
     signal dataCounter : integer range 0 to 3 := 0;
     signal triangleCounter : integer range 0 to g_Triangles := 0;
     
     signal wr_en : std_logic := '0';
+    signal is_empty : std_logic;
     
     signal din : std_logic_vector(58 downto 0);
     
@@ -44,13 +46,15 @@ begin
         rd_en => rd_en,
         dout => triangleData,
         full => full,
-        empty => empty
+        empty => is_empty
     );
     
-    cLfsr : LFSR
-    Port map(
-        clk => clk,
-        sequence => sequence);
+     genLFSR : for I in 0 to 3 generate
+        gclfsr : LFSR
+        Port map(
+            clk => clk,
+            sequence => sequence(I));
+    end generate;
     
     pClk : process(clk)
     begin
@@ -59,36 +63,32 @@ begin
             case State is
                 When START_STATE =>
                     wr_en <= '0';
+                    empty <= is_empty;
                     
-                    triangleCounter <= 0;
-                    dataCounter <= 0;
-                    
-                    STATE <= GEN_STATE;
+                    if(is_empty = '1')
+                    then
+                        STATE <= GEN_STATE;
+                    end if;
                     
                 When GEN_STATE =>
                     wr_en <= '1';
+                    empty <= is_empty;
                     
-                    if dataCounter < 3
-                    then
-                        din((dataCounter+1) * 16 - 1 downto dataCounter * 16) <= sequence;
-                        dataCounter <= dataCounter + 1;
+                    if(triangleCounter = g_Triangles)
+                    then 
+                        triangleCounter <= 0;
+                        din(58) <= '1';
                     else
-                        din(56 downto 48) <= sequence(8 downto 0);
-                        din(57) <= '1';
                         din(58) <= '0';
-                        
-                        triangleCounter <= triangleCounter + 1;
-                        dataCounter <= 0;
-                                                
-                        if triangleCounter = g_Triangles
-                        then
-                            din(57) <= '1';
-                            din(58) <= '1';
-                            State <= START_STATE;
-                            
-                            triangleCounter <= 0;
-                        end if;
                     end if;
+                    
+                    din(57) <= '1';
+                    din(56 downto 48) <= sequence(3)(8 downto 0);
+                    din(47 downto 32) <= sequence(2);
+                    din(31 downto 16) <= sequence(1);
+                    din(15 downto 0) <= sequence(0);
+                    
+                    STATE <= START_STATE;
             end Case;
         end if;
     end process;

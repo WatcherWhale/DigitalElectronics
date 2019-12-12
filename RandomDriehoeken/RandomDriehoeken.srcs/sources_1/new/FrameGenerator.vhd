@@ -11,6 +11,7 @@ entity FrameGenerator is
         g_Triangles : integer := 4);
     Port (
         clk : in std_logic;
+        fastclk : in std_logic;
         frame : in std_logic;
         
         wr_en : out std_logic;
@@ -20,14 +21,15 @@ end FrameGenerator;
 
 architecture Behavioral of FrameGenerator is
 
-    type tState IS (READ_STATE, WAIT_STATE, GEN_STATE, WAIT_FOR_FRAME, BACKGROUND_STATE);
+    type tState IS (READ_STATE, WAIT_STATE, GEN_STATE, WAIT_FOR_FRAME, NEXT_LINE);
     signal State : tState := WAIT_FOR_FRAME;
 
     signal triangleData : STD_LOGIC_VECTOR(58 downto 0);
+    signal triangleFifo : STD_LOGIC_VECTOR(58 downto 0);
     
     signal x0,y0,x1,y1 : integer := 0;
     signal x,y : integer := 0;
-    signal xB,yB : integer := 0;
+    --signal xB,yB : integer := 0;
     signal Start, Plot : std_logic := '0';
     
     signal full, empty : std_logic;
@@ -40,11 +42,11 @@ architecture Behavioral of FrameGenerator is
 begin
     cTriGen : TriangleGenerator
     Port map(
-        clk => clk,
+        clk => fastclk,
         rd_en => rd_en,
         full => full,
         empty => empty,
-        triangleData => triangleData);
+        triangleData => triangleFifo);
         
     cBres : BresenhamErr
     Port map(
@@ -62,32 +64,12 @@ begin
     begin
         if rising_edge(clk)
         then
-            case State is
-                when BACKGROUND_STATE =>
-                    wr_en <= '1';
-                    rd_en <= '0';
-                    
-                    addr <= std_logic_vector(to_unsigned(xB + yB * 640,19));
-                    din <= "111";
-                    
-                    xB <= xB +1;
-                    if(xB = 639)
-                    then
-                        yB <= yB + 1;
-                        
-                        if(yB = 479)
-                        then
-                            State <= WAIT_STATE;
-                            xB <= 0;
-                            yB <= 0;
-                        end if;
-                    end if;
-                
+            case State is                
                 when WAIT_STATE =>
                     rd_en <= '0';
                     wr_en <= '0';
                     lines <= 0;
-                    
+                    triangleData <= (others => '0');
                     
                     if full = '1'
                     then
@@ -97,46 +79,73 @@ begin
                 when READ_STATE =>
                     rd_en <= '1';
                     wr_en <= '0';
+                    lines <= 0;
+                    triangleData <= triangleFifo;
                     
-                    color <= triangleData(57);
-                    last <= triangleData(58);
+                    last <= triangleFifo(58);
+                    color <= triangleFifo(57);
                     
+                    State <= GEN_STATE;
+                
+                when NEXT_LINE =>
+                    rd_en <= '0';
+                    wr_en <= '1';
+                    lines <= lines + 1;
+                    STATE <= GEN_STATE;
                     
-                    x0 <= TO_INTEGER(UNSIGNED(triangleData(9 downto 0)));
-                    x1 <= TO_INTEGER(UNSIGNED(triangleData(19 downto 10)));
-                    y0 <= TO_INTEGER(UNSIGNED(triangleData(28 downto 20)));
-                    y1 <= TO_INTEGER(UNSIGNED(triangleData(37 downto 29)));
-                    
-                    State <= WAIT_STATE;
+                    if(lines = 0)
+                    then
+                        x0 <= to_integer(unsigned(triangleData(9 downto 0)));
+                        y0 <= to_integer(unsigned(triangleData(18 downto 10)));
+                        x1 <= to_integer(unsigned(triangleData(28 downto 19)));
+                        y1 <= to_integer(unsigned(triangleData(37 downto 29)));
+                        Start <= '1';
+                    elsif(lines = 1)
+                    then
+                        x0 <= to_integer(unsigned(triangleData(28 downto 19)));
+                        y0 <= to_integer(unsigned(triangleData(37 downto 29)));
+                        x1 <= to_integer(unsigned(triangleData(47 downto 38)));
+                        y1 <= to_integer(unsigned(triangleData(56 downto 48)));
+                        Start <= '1';
+                    elsif(lines=2)
+                    then
+                        x0 <= to_integer(unsigned(triangleData(9 downto 0)));
+                        y0 <= to_integer(unsigned(triangleData(18 downto 10)));
+                        x1 <= to_integer(unsigned(triangleData(47 downto 38)));
+                        y1 <= to_integer(unsigned(triangleData(56 downto 48)));                        
+                    elsif(lines = 3)
+                    then
+                        if(last = '1')
+                        then
+                            State <= WAIT_FOR_FRAME;
+                        else
+                            STATE <= WAIT_STATE;
+                        end if;
+                        
+                        Start <= '0';
+                    end if;
                 
                 when GEN_STATE =>
                     rd_en <= '0';
                     wr_en <= '1';
+                    lines <= lines;
                     
                     if Plot <= '0'
                     then
-                        lines <= lines + 1;
-                        
-                        if(lines = 2)
-                        then
-                            State <= WAIT_STATE;
-                            
-                            if(last = '1')
-                            then
-                                State <= WAIT_FOR_FRAME;
-                            end if;
-                        end if;
+                        STATE <= NEXT_LINE;
                     else
-                        if(Plot = '1' AND x >= 0 AND x < 640 AND y >= 0 AND y < 479)
+                        Start <= '0';
+                        
+                        if(x >= 0 AND x < 640 AND y >= 0 AND y < 479)
                         then
                             addr <= std_logic_vector(to_unsigned(x + y * 640,19));
                             if color = '1'
                             then
-                                -- Set color at pixel (x,y) to white
-                                din <= "111";
+                                -- Set color at pixel (x,y) to yellow
+                                din <= "110";
                             else
-                                -- Set color at pixel (x,y) to black
-                                din <= "000";
+                                -- Set color at pixel (x,y) to blue
+                                din <= "001";
                             end if;
                         end if;
                     end if;
@@ -147,11 +156,9 @@ begin
 
                     if(frame <= '1')
                     then
-                        State <= BACKGROUND_STATE;
+                        State <= WAIT_STATE;
                     end if;
-                    
             end case;
         end if;
-    
     end process;
 end Behavioral;

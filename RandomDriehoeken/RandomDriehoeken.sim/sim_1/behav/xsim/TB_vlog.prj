@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../RandomDriehoeken.srcs/sources_1/new/ClockingWizzard" \
+"../../../../RandomDriehoeken.srcs/sources_1/new/TriangleFifo/sim/TriangleFifo.v" \
+"../../../../RandomDriehoeken.srcs/sources_1/new/VideoMemory/sim/VideoMemory.v" \
+"../../../../RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard_clk_wiz.v" \
+"../../../../RandomDriehoeken.srcs/sources_1/new/ClockingWizzard/ClockingWizard.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

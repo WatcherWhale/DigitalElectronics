@@ -33,6 +33,9 @@ package Screen is
             VSync : out std_logic;
             Write : out std_logic;
             
+            HCount : out integer;
+            VCount : out integer;
+            
             xPos : out integer;
             yPos : out integer
          );

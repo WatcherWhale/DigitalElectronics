@@ -25,11 +25,11 @@ architecture Behavioral of Controller is
     
     signal wea1, wea2, wea: std_logic_vector(0 downto 0);
     signal Addr1A, Addr1B, Addr2A, Addr2B, Addr : std_logic_vector(18 DOWNTO 0);
-    signal Output1, Output2, Output : std_logic_vector(2 DOWNTO 0);
+    signal Output1, Output2 : std_logic_vector(2 DOWNTO 0);
     signal Input1, Input2, Input : std_logic_vector(2 DOWNTO 0);
-    signal UseMem2, StartedFrame : std_logic := '0';
+    signal UseMem2 : std_logic := '0';
        
-    signal x,y : integer;
+    signal x,y,hc,vc : integer;
     signal Write : std_logic;
 
 begin
@@ -67,7 +67,8 @@ begin
        
     cFramer : FrameGenerator
     port map(
-        clk => Clk100MHZ,
+        fastclk => Clk100MHZ,
+        clk => PixelClk,
         frame => frame,
         wr_en => wea(0),
         addr => Addr,
@@ -91,37 +92,27 @@ begin
         VSync => VGA_VS,
         xPos => x,
         yPos => y,
+        HCount => x,
+        VCount => y,
         Write => Write);
     
-    pSwitchMemory : process(PixelClk)
+    pSwitchMemory : process(CLK100MHZ)
     begin
-        if rising_edge(PixelClk)
+        if rising_edge(CLK100MHZ)
         then
-            if Write = '0' AND StartedFrame = '0' AND x = 0 AND y = 0
+            if hc = 0 AND vc = 0
             then
-                --frame <= '1';
-                --UseMem2 <= not UseMem2;
-                StartedFrame <= '1';
-            elsif x = 640 AND y = 480
-            then
-                frame <= '0';
-                StartedFrame <= '0';
+                frame <= '1';
+                UseMem2 <= not UseMem2;
             end if;
-            
-            if UseMem2 = '1'
-            then
-                Led(1) <= '1';
-                Led(0) <= '0';
-            else
-                Led(1) <= '0';
-                Led(0) <= '1';
-            end if;
-            
         end if; 
     end process;
     
     pSetAddr : process(x, y, UseMem2)
     begin
+        VGA_R <= "0000";
+        VGA_G <= "0000";
+        VGA_B <= "0000";
         -- Ask for the value in the memory for the current pixel
         -- Address = pixel_x + pixel_y * 640    
         Addr1B <= (others => '0');
@@ -129,47 +120,59 @@ begin
         
         if(UseMem2 = '1')
         then
-            Addr1B <= std_logic_vector(to_unsigned(x + y * 640,19));
+            --Addr1B <= std_logic_vector(to_unsigned(x + y * 640,19));
+            VGA_R <= "1111";
         else
-            Addr2B <= std_logic_vector(to_unsigned(x + y * 640,19));
+            --Addr2B <= std_logic_vector(to_unsigned(x + y * 640,19));
+            VGA_B <= "1111";
         end if;
         
     end process;
     
-    pReadValue : process(Write, Output)
+    pPipeOutput : process(Write, Output1, Output2, UseMem2)
     begin
-        -- Set default values
-        VGA_R <= "0000";
-        VGA_G <= "0000";
-        VGA_B <= "0000";
+        --VGA_R <= "0000";
+        --VGA_G <= "0000";
+        --VGA_B <= "0000";
         
-        if(Write = '1')
+        if(Write <= '1')
         then
-            -- Parse the pixel data from memory to RGB values
-            if(Output(2) = '1')
+            if UseMem2 = '1'
             then
-                VGA_R <= "1111";
-            end if;
+                --VGA_R <= "1111";
             
-            if(Output(1) = '1')
-            then
-                VGA_G <= "1111";
+                if(Output1(2) = '1')
+                then
+                    --VGA_R <= "1111";
+                end if;
+                
+                if(Output1(1) = '1')
+                then
+                    --VGA_G <= "1111";
+                end if;
+                
+                if(Output1(0) = '1')
+                then
+                    --VGA_B <= "1111";
+                end if;
+            else
+                --VGA_B <= "1111";
+                
+                if(Output1(2) = '1')
+                then
+                    --VGA_R <= "1111";
+                end if;
+                
+                if(Output1(1) = '1')
+                then
+                    --VGA_G <= "1111";
+                end if;
+                
+                if(Output1(0) = '1')
+                then
+                    --VGA_B <= "1111";
+                end if;
             end if;
-            
-            if(Output(0) = '1')
-            then
-                VGA_B <= "1111";
-            end if;
-        end if;
-    end process;
-    
-    pPipeOutput : process(Output1, Output2, UseMem2)
-    begin
-        if UseMem2 = '1'
-        then
-            Output <= Output1;
-        else
-            Output <= Output2;
         end if;
     end process;
     

@@ -35,6 +35,7 @@ package Generators is
             g_Triangles : integer := 4);
         Port (
             clk : in std_logic;
+            fastclk : in std_logic;
             frame : in std_logic;
             
             wr_en : out std_logic;

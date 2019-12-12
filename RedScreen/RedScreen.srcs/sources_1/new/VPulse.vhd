@@ -20,6 +20,8 @@ entity VPulse is
         HSync : out std_logic;
         VSync : out std_logic;
         Write : out std_logic;
+        Hcount: out integer;
+        Vcount: out integer;
         
         xPos : out integer;
         yPos : out integer
@@ -69,6 +71,9 @@ begin
     begin        
         if(rising_edge(pixelClock))
         then
+            Vcount <= Vcounter;
+            Hcount <= HCounter;
+            
             --Check if we can count
             if can_writeH = '1' AND HCounter = 0
             then
